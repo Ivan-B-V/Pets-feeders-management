@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetsFeeder", "PetsFeeder\PetsFeeder.csproj", "{09E64BAD-39F0-4AC9-8246-EF7CA0DF35C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presenter", "Presenter\Presenter.csproj", "{21896BDC-6B22-4499-B097-17D3740B03A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{980EEA79-104E-4EE8-BD8C-BC12532BD3B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{09E64BAD-39F0-4AC9-8246-EF7CA0DF35C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09E64BAD-39F0-4AC9-8246-EF7CA0DF35C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09E64BAD-39F0-4AC9-8246-EF7CA0DF35C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21896BDC-6B22-4499-B097-17D3740B03A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21896BDC-6B22-4499-B097-17D3740B03A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21896BDC-6B22-4499-B097-17D3740B03A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21896BDC-6B22-4499-B097-17D3740B03A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{980EEA79-104E-4EE8-BD8C-BC12532BD3B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{980EEA79-104E-4EE8-BD8C-BC12532BD3B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{980EEA79-104E-4EE8-BD8C-BC12532BD3B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{980EEA79-104E-4EE8-BD8C-BC12532BD3B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
