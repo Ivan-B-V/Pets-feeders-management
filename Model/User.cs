@@ -56,11 +56,24 @@ namespace Model
 				arr[i] = int.Parse(idsString[i]);
 			}
 			UserFeeders = arr;
+
+			feeders = new ArrayList();
 		}
 
 		public void AddFeeders(FeedersResponse response)
 		{
-			
+			int len = response.body.Length;
+
+			foreach (Dictionary<string, JsonElement> element in response.body)
+			{
+				Feeder feeder = new Feeder(element);
+				feeders.Add(feeder);
+			}
+		}
+
+		public ArrayList GetFeeders()
+		{
+			return feeders;
 		}
 	}
 }

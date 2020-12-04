@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Model;
 
 namespace PetsFeeder
 {
@@ -25,6 +26,15 @@ namespace PetsFeeder
         {
             InitializeComponent();
             d = sender;
+        }
+
+        public FeedersListItem(MyDelegate sender, Feeder feeder)
+        {
+            InitializeComponent();
+            d = sender;
+            feederName.Text = feeder.Name;
+            feederTag.Text = feeder.Tag;
+            feederCapacityBar.Value = feeder.AmountOfFeed;
         }
 
         private void FeedersListItem_Load(object sender, EventArgs e)

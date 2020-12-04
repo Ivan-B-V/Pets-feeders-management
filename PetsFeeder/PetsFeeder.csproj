@@ -338,6 +338,10 @@
     <None Include="Resources\ambulance.jpeg" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{980eea79-104e-4ee8-bd8c-bc12532bd3b3}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Presenter\Presenter.csproj">
       <Project>{21896bdc-6b22-4499-b097-17d3740b03a7}</Project>
       <Name>Presenter</Name>

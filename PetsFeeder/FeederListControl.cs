@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
+using Model;
 
 namespace PetsFeeder
 {
@@ -28,6 +30,20 @@ namespace PetsFeeder
             feedersListPanel.Controls.Add(feederform3);
             feedersListPanel.Controls.Add(feederform4);
             feedersListPanel.Controls.Add(feederform5);
+            feederCustomizationPanel.Hide();
+            this.Width = feedersListPanel.Width;
+        }
+
+        public FeederListControl(ArrayList feeders)
+        {
+            InitializeComponent();
+
+            foreach (Feeder feeder in feeders)
+            {
+                FeedersListItem feederform = new FeedersListItem(new MyDelegate(func), feeder);
+                feedersListPanel.Controls.Add(feederform);
+            }
+
             feederCustomizationPanel.Hide();
             this.Width = feedersListPanel.Width;
         }

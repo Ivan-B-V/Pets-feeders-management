@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presenter;
+using Model;
 
 namespace PetsFeeder
 {
@@ -65,9 +66,12 @@ namespace PetsFeeder
         {
             LoginListener listener = new LoginListener();
             Console.WriteLine("button clocked ");
-            listener.SignIn(usernameTextBox.Text, passwordTextBox.Text);
+            User user = listener.SignIn(usernameTextBox.Text, passwordTextBox.Text);
             
-            //MessageBox.Show("сюда надо впихнуть ошибку");
+            if(user == null)
+			{
+                MessageBox.Show("сюда надо впихнуть ошибку");
+			}
             
             if (this.usernameTextBox.Text.Equals("admin")) 
             {

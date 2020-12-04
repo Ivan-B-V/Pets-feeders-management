@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Presenter;
+using System.Collections;
 
 namespace PetsFeeder
 {
@@ -36,13 +37,13 @@ namespace PetsFeeder
         private void myFeedersButton_Click(object sender, EventArgs e)
         {
             UserFormListener formListener = new UserFormListener();
-            formListener.ShowFeeders();
+            ArrayList feeders = formListener.ShowFeeders();
             contentPanel.Controls.Clear();
             selectedButtonPanel.Height = myFeedersButton.Height;
             selectedButtonPanel.Top = myFeedersButton.Top;
             this.Width = this.MinimumSize.Width;
 
-            FeederListControl feederListControl = new FeederListControl();
+            FeederListControl feederListControl = new FeederListControl(feeders);
             contentPanel.Controls.Add(feederListControl);
         }
 

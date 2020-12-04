@@ -9,7 +9,7 @@ namespace Presenter
 {
 	public class LoginListener
 	{
-		public void SignIn(string login, string password)
+		public User SignIn(string login, string password)
 		{
 			if ((login != null) && (password != null))
 			{
@@ -20,13 +20,12 @@ namespace Presenter
 						SignIn signIn = new SignIn();
 						User user = new User(login, password);
 						User userInfo = signIn.SignInTry(user);
-
+						return userInfo;
 					}
 				}
 
 			}
-			//show error message
-			Console.WriteLine("error");
+			return null;
 		}
 	}
 }

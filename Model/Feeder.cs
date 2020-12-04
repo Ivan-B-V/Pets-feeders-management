@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace Model
 {
@@ -31,16 +32,16 @@ namespace Model
 			Type = type;
 		}
 
-		public Feeder(Response response)
+		public Feeder(Dictionary<string, JsonElement> element)
 		{
-			/*AmountOfFeed = (int)response.body["AmountOfFeed"];//проверка на null
-			FeederID = (int)response.body["FeederID"];
-			Name = (string)response.body["Name"];
-			OwnerID = (int)response.body["OwnerID"];
-			PortionSize = (int)response.body["FeederID"];
-			Schedule = (string)response.body["Name"];
-			Tag = (string)response.body["OwnerID"];
-			Type = (string)response.body["OwnerID"];*/
+			AmountOfFeed = element["AmountOfFeed"].GetInt32();
+			FeederID = element["FeederID"].GetInt32();
+			OwnerID = element["OwnerID"].GetInt32();
+			PortionSize = element["PortionSize"].GetInt32();
+			Tag = element["Tag"].GetString();
+			Type = element["Type"].GetString();
+			Schedule = element["Schedule"].GetString();
+			Name = element["Name"].GetString();
 		}
 	}
 }

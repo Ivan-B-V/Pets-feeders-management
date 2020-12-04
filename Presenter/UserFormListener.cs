@@ -4,15 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Model;
+using System.Collections;
 
 namespace Presenter
 {
 	public class UserFormListener
 	{
-		public void ShowFeeders()
+		public ArrayList ShowFeeders()
 		{
 			GetFeeders getFeeders = new GetFeeders();
-			getFeeders.TryGetFeeders();
+			ArrayList feeders = getFeeders.TryGetFeeders();
+			return feeders;
 		}
 		public void AddFeeder(string Name, string Tag, string Type)
 		{
