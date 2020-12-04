@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Presenter;
 
 namespace PetsFeeder
 {
@@ -34,6 +35,8 @@ namespace PetsFeeder
 
         private void myFeedersButton_Click(object sender, EventArgs e)
         {
+            UserFormListener formListener = new UserFormListener();
+            formListener.ShowFeeders();
             contentPanel.Controls.Clear();
             selectedButtonPanel.Height = myFeedersButton.Height;
             selectedButtonPanel.Top = myFeedersButton.Top;

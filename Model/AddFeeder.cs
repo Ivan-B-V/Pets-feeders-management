@@ -12,7 +12,7 @@ namespace Model
 	{
 		public void AddFeederTry(Feeder feeder)
 		{
-			Services services = new Services();
+			Services services = Services.GetInstance();
 
 			string requestString = JsonSerializer.Serialize<Feeder>(feeder);
 

@@ -7,10 +7,10 @@ using System.Text.Json;
 
 namespace Model
 {
-	public class Response
+	public class FeedersResponse
 	{
 		public int statusCode { get; set; }
 		public Dictionary<string, string> headers { get; set; }
-		public Dictionary<string, JsonElement> body { get; set; }
+		public Dictionary<string, JsonElement>[] body { get; set; }
 	}
 }

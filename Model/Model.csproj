@@ -41,6 +41,8 @@
   <ItemGroup>
     <Compile Include="AddFeeder.cs" />
     <Compile Include="Feeder.cs" />
+    <Compile Include="FeedersResponse.cs" />
+    <Compile Include="GetFeeders.cs" />
     <Compile Include="Registrate.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="Services.cs" />
@@ -49,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
     <Reference Include="System.Net" />
     <Reference Include="System.Net.Http" />

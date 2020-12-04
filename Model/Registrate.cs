@@ -11,7 +11,7 @@ namespace Model
 	{
 		public void Registration(User user)
 		{
-			Services serverInteraction = new Services();
+			Services serverInteraction = Services.GetInstance();
 
 			string requestString = JsonSerializer.Serialize<User>(user);
 

@@ -7,7 +7,7 @@ using Model;
 
 namespace Presenter
 {
-	class LoginListener
+	public class LoginListener
 	{
 		public void SignIn(string login, string password)
 		{
@@ -15,13 +15,18 @@ namespace Presenter
 			{
 				if ((!"".Equals(login)) && (!"".Equals(password)))
 				{
-					SignIn signIn = new SignIn();
-					User user = new User(login, password);
-					signIn.SignInTry(user);
+					if ((!"Username".Equals(login)) && (!"11111111".Equals(password)))
+					{
+						SignIn signIn = new SignIn();
+						User user = new User(login, password);
+						User userInfo = signIn.SignInTry(user);
+
+					}
 				}
 
 			}
 			//show error message
+			Console.WriteLine("error");
 		}
 	}
 }

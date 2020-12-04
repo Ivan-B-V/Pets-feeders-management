@@ -9,15 +9,24 @@ namespace Model
 {
 	public class SignIn
 	{
-		public void SignInTry(User user)
+		public User SignInTry(User user)
 		{
-			Services services = new Services();
+			Services services = Services.GetInstance();
 
 			string requestString = JsonSerializer.Serialize<User>(user);
 
-			string response = services.GetResponse(requestString);
+			Response response = services.SignIn(requestString);
 
-			Console.WriteLine(response);
+			if (response == null)
+			{
+				return null;
+			}
+
+			User userInfo = new User(response);
+
+			services.userInfo = userInfo;
+
+			return userInfo;
 		}
 	}
 }

@@ -130,6 +130,7 @@
       <HintPath>..\packages\Bunifu.UI.WinForms.4.0.0\lib\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -335,6 +336,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ambulance.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Presenter\Presenter.csproj">
+      <Project>{21896bdc-6b22-4499-b097-17d3740b03a7}</Project>
+      <Name>Presenter</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,47 +11,94 @@ namespace Model
 {
 	class Services
 	{
+		private static Services instance;
 		private string keyHeader = "x-api-key: SMmRuTFKGzsQ0WtvI5z46qjDeHfv260249fYxyQ6";
-		public void SendRequest(string requestString)
+		private User user;
+		public User userInfo { get { return user; } set { user = value; } }
+
+		private Services()
+		{
+			
+		}
+
+		public static Services GetInstance()
+		{
+			if(instance == null)
+			{
+				instance = new Services();
+			}
+
+			return instance;
+		}
+
+		public void SendRequest(string requestString)//????????????
 		{
 			string site = "https://7zws77q7z3.execute-api.eu-central-1.amazonaws.com/prod/";
-			HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(site);
+			HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(site);
 
-			req.Headers.Add(keyHeader);
-			req.Method = "POST";
-
+			request.Headers.Add(keyHeader);
+			request.Method = "POST";
 			byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(requestString);
-			req.ContentType = "application/x-www-form-urlencoded";
-			req.ContentLength = byteArray.Length;
+			request.ContentType = "application/x-www-form-urlencoded";
+			request.ContentLength = byteArray.Length;
 
-			using (Stream dataStream = req.GetRequestStream())
+			using (Stream dataStream = request.GetRequestStream())
 			{
 				dataStream.Write(byteArray, 0, byteArray.Length);
 			}
 		}
 
-		public string GetResponse(string requestString)
-		{ 
-			string site = "https://owlaxhfe2b.execute-api.eu-central-1.amazonaws.com/prod/";
-			HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(site);
+		public FeedersResponse FeedersRequest()
+		{
+			string requestString = JsonSerializer.Serialize<User>(user);
+			string site = "https://lkwhpvi6nf.execute-api.eu-central-1.amazonaws.com/prod";
 
-			req.Headers.Add(keyHeader);
-			req.Method = "POST";
-
+			HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(site);
+			request.Headers.Add(keyHeader);
+			request.Method = "POST";
 			byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(requestString);
-			req.ContentType = "application/x-www-form-urlencoded";
-			req.ContentLength = byteArray.Length;
-
-			using (Stream dataStream = req.GetRequestStream())
+			request.ContentType = "application/x-www-form-urlencoded";
+			request.ContentLength = byteArray.Length;
+			using (Stream dataStream = request.GetRequestStream())
 			{
 				dataStream.Write(byteArray, 0, byteArray.Length);
 			}
 
-			HttpWebResponse response = (HttpWebResponse) req.GetResponse();
+			HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+			FeedersResponse resp;
+			using (Stream stream = response.GetResponseStream())
+			{
+				using (StreamReader reader = new StreamReader(stream))
+				{
+					string responseString = reader.ReadToEnd();
+					resp = JsonSerializer.Deserialize<FeedersResponse>(responseString);
+				}
+			}
+			response.Close();
+
+			return resp;
+		}
+
+		public Response SignIn(string requestString)
+		{ 
+			string site = "https://3a7sazfvyj.execute-api.eu-central-1.amazonaws.com/prod/";
+
+			HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(site);
+			request.Headers.Add(keyHeader);
+			request.Method = "POST";
+			byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(requestString);
+			request.ContentType = "application/x-www-form-urlencoded";
+			request.ContentLength = byteArray.Length;
+
+			using (Stream dataStream = request.GetRequestStream())
+			{
+				dataStream.Write(byteArray, 0, byteArray.Length);
+			}
+
+			HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 			Response resp;
 			using (Stream stream = response.GetResponseStream())
 			{
-				
 				using (StreamReader reader = new StreamReader(stream))
 				{
 					string responseString = reader.ReadToEnd();
@@ -60,7 +107,7 @@ namespace Model
 			}
 			response.Close();
 
-			return resp.body;
+			return resp;
 		}
 	}
 }

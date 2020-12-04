@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Presenter;
 
 namespace PetsFeeder
 {
@@ -17,7 +18,7 @@ namespace PetsFeeder
         public LoginForm()
         {
             InitializeComponent();
-            passText = this.passworTextBox.Text;
+            passText = this.passwordTextBox.Text;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -62,6 +63,12 @@ namespace PetsFeeder
 
         private void signInButton_Click(object sender, EventArgs e)
         {
+            LoginListener listener = new LoginListener();
+            Console.WriteLine("button clocked ");
+            listener.SignIn(usernameTextBox.Text, passwordTextBox.Text);
+            
+            //MessageBox.Show("сюда надо впихнуть ошибку");
+            
             if (this.usernameTextBox.Text.Equals("admin")) 
             {
                 AdminForm adminForm = new AdminForm();
@@ -92,20 +99,20 @@ namespace PetsFeeder
             }
         }
 
-        private void passworTextBox_MouseEnter(object sender, EventArgs e)
+        private void passwordTextBox_MouseEnter(object sender, EventArgs e)
         {
-            if (this.passworTextBox.Text.Equals(this.passText))
+            if (this.passwordTextBox.Text.Equals(this.passText))
             {
-                this.passworTextBox.Text = "";
+                this.passwordTextBox.Text = "";
             }
         }
 
-        private void passworTextBox_MouseLeave(object sender, EventArgs e)
+        private void passwordTextBox_MouseLeave(object sender, EventArgs e)
         {
-            if (this.passworTextBox.Text.Equals("") && !this.passworTextBox.Focused)
+            if (this.passwordTextBox.Text.Equals("") && !this.passwordTextBox.Focused)
             {
-                this.passworTextBox.Text = passText;
+                this.passwordTextBox.Text = passText;
             }
         }
-    }
+	}
 }
