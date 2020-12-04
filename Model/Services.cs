@@ -12,7 +12,10 @@ namespace Model
 	class Services
 	{
 		private static Services instance;
-		private string keyHeader = "x-api-key: SMmRuTFKGzsQ0WtvI5z46qjDeHfv260249fYxyQ6";
+		private const string apiKeyHeader = "x-api-key: SMmRuTFKGzsQ0WtvI5z46qjDeHfv260249fYxyQ6";
+		private const string FeedURL = "https://ljpq64ubzi.execute-api.eu-central-1.amazonaws.com/prod/";
+		private const string GetFeedersURL = "https://lkwhpvi6nf.execute-api.eu-central-1.amazonaws.com/prod";
+		private const string SignInURL = "https://3a7sazfvyj.execute-api.eu-central-1.amazonaws.com/prod/";
 		private User user;
 		public User userInfo { get { return user; } set { user = value; } }
 
@@ -27,34 +30,17 @@ namespace Model
 			{
 				instance = new Services();
 			}
-
+			
 			return instance;
-		}
-
-		public void SendRequest(string requestString)//????????????
-		{
-			string site = "https://7zws77q7z3.execute-api.eu-central-1.amazonaws.com/prod/";
-			HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(site);
-
-			request.Headers.Add(keyHeader);
-			request.Method = "POST";
-			byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(requestString);
-			request.ContentType = "application/x-www-form-urlencoded";
-			request.ContentLength = byteArray.Length;
-
-			using (Stream dataStream = request.GetRequestStream())
-			{
-				dataStream.Write(byteArray, 0, byteArray.Length);
-			}
 		}
 
 		public Response Feed(Feeder feeder)
 		{
 			string requestString = JsonSerializer.Serialize<Feeder>(feeder);
-			string site = "https://ljpq64ubzi.execute-api.eu-central-1.amazonaws.com/prod/";
+			string site = FeedURL;
 
 			HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(site);
-			request.Headers.Add(keyHeader);
+			request.Headers.Add(apiKeyHeader);
 			request.Method = "POST";
 			byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(requestString);
 			request.ContentType = "application/x-www-form-urlencoded";
@@ -82,10 +68,10 @@ namespace Model
 		public FeedersResponse FeedersRequest()
 		{
 			string requestString = JsonSerializer.Serialize<User>(user);
-			string site = "https://lkwhpvi6nf.execute-api.eu-central-1.amazonaws.com/prod";
+			string site = GetFeedersURL;
 
 			HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(site);
-			request.Headers.Add(keyHeader);
+			request.Headers.Add(apiKeyHeader);
 			request.Method = "POST";
 			byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(requestString);
 			request.ContentType = "application/x-www-form-urlencoded";
@@ -112,10 +98,10 @@ namespace Model
 
 		public Response SignIn(string requestString)
 		{ 
-			string site = "https://3a7sazfvyj.execute-api.eu-central-1.amazonaws.com/prod/";
+			string site = SignInURL;
 
 			HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(site);
-			request.Headers.Add(keyHeader);
+			request.Headers.Add(apiKeyHeader);
 			request.Method = "POST";
 			byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(requestString);
 			request.ContentType = "application/x-www-form-urlencoded";
