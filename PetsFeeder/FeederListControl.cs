@@ -48,16 +48,18 @@ namespace PetsFeeder
             this.Width = feedersListPanel.Width;
         }
 
-        public void showFeederCustomizationPanel()
+        public void showFeederCustomizationPanel(Feeder feeder)
         {
+            feederName.Text = feeder.Name;
+            tagTextBox.Text = feeder.Tag;
             this.Width = feedersListPanel.Width + feederCustomizationPanel.Width;
             feederCustomizationPanel.Visible = true;
         }
 
-        private void func(bool param)
+        private void func(Feeder feeder)
         {
             //MessageBox.Show(param.ToString());
-            showFeederCustomizationPanel();
+            showFeederCustomizationPanel(feeder);
         }
 
         private void button2_Click(object sender, EventArgs e)

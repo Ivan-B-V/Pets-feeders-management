@@ -11,12 +11,13 @@ using Model;
 
 namespace PetsFeeder
 {
-    public delegate void MyDelegate(bool isClick);
+    public delegate void MyDelegate(Feeder feeder);
 
     public partial class FeedersListItem : UserControl
     {
 
         private MyDelegate d;
+        private Feeder feeder;
         public FeedersListItem()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace PetsFeeder
         {
             InitializeComponent();
             d = sender;
+            this.feeder = feeder;
             feederName.Text = feeder.Name;
             feederTag.Text = feeder.Tag;
             feederCapacityBar.Value = feeder.AmountOfFeed;
@@ -45,7 +47,7 @@ namespace PetsFeeder
 
         private void FeedersListItem_MouseClick(object sender, MouseEventArgs e)
         {
-            d(true);
+            d(feeder);
         }
     }
 }

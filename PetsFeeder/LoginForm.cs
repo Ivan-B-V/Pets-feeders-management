@@ -80,7 +80,7 @@ namespace PetsFeeder
                 this.Hide();
                 return;
             }
-            UserForm userForm = new UserForm();
+            UserForm userForm = new UserForm(user);
             userForm.Show();
             this.Hide();
         }

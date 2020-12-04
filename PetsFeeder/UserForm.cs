@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Presenter;
 using System.Collections;
+using Model;
 
 namespace PetsFeeder
 {
@@ -13,6 +14,12 @@ namespace PetsFeeder
         public UserForm()
         {
             InitializeComponent();
+        }
+
+        public UserForm(User user)
+        {
+            InitializeComponent();
+            usernameLabel.Text = user.Username;
         }
 
         private void Form1_Load(object sender, EventArgs e)
