@@ -11,7 +11,7 @@ using Model;
 
 namespace PetsFeeder
 {
-    public delegate void MyDelegate(Feeder feeder);
+    public delegate void MyDelegate(ref Feeder feeder);
 
     public partial class FeedersListItem : UserControl
     {
@@ -47,7 +47,7 @@ namespace PetsFeeder
 
         private void FeedersListItem_MouseClick(object sender, MouseEventArgs e)
         {
-            d(feeder);
+            d(ref feeder);
         }
     }
 }

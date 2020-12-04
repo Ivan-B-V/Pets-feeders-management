@@ -62,6 +62,8 @@ namespace Model
 
 		public void AddFeeders(FeedersResponse response)
 		{
+			feeders.Clear();
+
 			int len = response.body.Length;
 
 			foreach (Dictionary<string, JsonElement> element in response.body)
@@ -74,6 +76,17 @@ namespace Model
 		public ArrayList GetFeeders()
 		{
 			return feeders;
+		}
+
+		public void UpdateFeeder(Feeder feeder)
+		{
+			foreach (Feeder current in feeders)
+			{
+				if ((current.FeederID == feeder.FeederID) && (current.OwnerID == feeder.OwnerID))
+				{
+					current.AmountOfFeed = feeder.AmountOfFeed;
+				}
+			}
 		}
 	}
 }

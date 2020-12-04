@@ -71,6 +71,7 @@ namespace PetsFeeder
             if(user == null)
 			{
                 MessageBox.Show("сюда надо впихнуть ошибку");
+                return;
 			}
             
             if (this.usernameTextBox.Text.Equals("admin")) 

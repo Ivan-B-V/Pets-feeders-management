@@ -48,6 +48,37 @@ namespace Model
 			}
 		}
 
+		public Response Feed(Feeder feeder)
+		{
+			string requestString = JsonSerializer.Serialize<Feeder>(feeder);
+			string site = "https://ljpq64ubzi.execute-api.eu-central-1.amazonaws.com/prod/";
+
+			HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(site);
+			request.Headers.Add(keyHeader);
+			request.Method = "POST";
+			byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(requestString);
+			request.ContentType = "application/x-www-form-urlencoded";
+			request.ContentLength = byteArray.Length;
+			using (Stream dataStream = request.GetRequestStream())
+			{
+				dataStream.Write(byteArray, 0, byteArray.Length);
+			}
+
+			HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+			Response resp;
+			using (Stream stream = response.GetResponseStream())
+			{
+				using (StreamReader reader = new StreamReader(stream))
+				{
+					string responseString = reader.ReadToEnd();
+					resp = JsonSerializer.Deserialize<Response>(responseString);
+				}
+			}
+			response.Close();
+
+			return resp;
+		}
+
 		public FeedersResponse FeedersRequest()
 		{
 			string requestString = JsonSerializer.Serialize<User>(user);

@@ -11,13 +11,13 @@ namespace Model
 	{
 		public ArrayList TryGetFeeders()
 		{
-			Services servises = Services.GetInstance();
+			Services services = Services.GetInstance();
 
-			FeedersResponse response = servises.FeedersRequest();
+			FeedersResponse response = services.FeedersRequest();
 
-			servises.userInfo.AddFeeders(response);
+			services.userInfo.AddFeeders(response);
 
-			return servises.userInfo.GetFeeders();
+			return services.userInfo.GetFeeders();
 		}
 	}
 }

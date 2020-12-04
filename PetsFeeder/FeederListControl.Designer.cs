@@ -112,6 +112,7 @@
 			this.feedButton.TabIndex = 10;
 			this.feedButton.Text = "Feed";
 			this.feedButton.UseVisualStyleBackColor = false;
+			this.feedButton.Click += new System.EventHandler(this.feedButton_Click);
 			// 
 			// FeederImageBox
 			// 

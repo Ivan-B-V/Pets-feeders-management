@@ -45,13 +45,15 @@ namespace PetsFeeder
         {
             UserFormListener formListener = new UserFormListener();
             ArrayList feeders = formListener.ShowFeeders();
+
             contentPanel.Controls.Clear();
-            selectedButtonPanel.Height = myFeedersButton.Height;
-            selectedButtonPanel.Top = myFeedersButton.Top;
-            this.Width = this.MinimumSize.Width;
 
             FeederListControl feederListControl = new FeederListControl(feeders);
             contentPanel.Controls.Add(feederListControl);
+
+            selectedButtonPanel.Height = myFeedersButton.Height;
+            selectedButtonPanel.Top = myFeedersButton.Top;
+            this.Width = this.MinimumSize.Width;
         }
 
         private void viewLogsButton_Click(object sender, EventArgs e)
