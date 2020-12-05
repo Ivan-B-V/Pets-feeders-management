@@ -44,7 +44,7 @@
     <Compile Include="Feeder.cs" />
     <Compile Include="FeedersResponse.cs" />
     <Compile Include="GetFeeders.cs" />
-    <Compile Include="Registrate.cs" />
+    <Compile Include="Register.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="Services.cs" />
     <Compile Include="SignIn.cs" />

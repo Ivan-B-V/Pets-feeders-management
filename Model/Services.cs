@@ -114,13 +114,21 @@ namespace Model
 
 			HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 			Response resp;
-			using (Stream stream = response.GetResponseStream())
+			try
 			{
-				using (StreamReader reader = new StreamReader(stream))
+				using (Stream stream = response.GetResponseStream())
 				{
-					string responseString = reader.ReadToEnd();
-					resp = JsonSerializer.Deserialize<Response>(responseString);
+					using (StreamReader reader = new StreamReader(stream))
+					{
+						string responseString = reader.ReadToEnd();
+						resp = JsonSerializer.Deserialize<Response>(responseString);
+					}
 				}
+			}
+			catch (JsonException e)
+			{
+				Console.WriteLine(e.Message);
+				return null;
 			}
 			response.Close();
 

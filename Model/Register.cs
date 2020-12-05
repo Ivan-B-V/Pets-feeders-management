@@ -7,7 +7,7 @@ using System.Text.Json;
 
 namespace Model
 {
-	public class Registrate
+	public class Register
 	{
 		public void Registration(User user)
 		{

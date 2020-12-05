@@ -74,13 +74,13 @@ namespace PetsFeeder
                 return;
 			}
             
-            if (this.usernameTextBox.Text.Equals("admin")) 
+            /*if (this.usernameTextBox.Text.Equals("admin")) 
             {
                 AdminForm adminForm = new AdminForm();
                 adminForm.Show();
                 this.Hide();
                 return;
-            }
+            }*/
             UserForm userForm = new UserForm(user);
             userForm.Show();
             this.Hide();

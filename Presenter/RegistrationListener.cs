@@ -17,16 +17,16 @@ namespace Presenter
 				{
 					if (password.Equals(passwordRepeat))
 					{
-						Registrate registrate = new Registrate();
+						Register registrate = new Register();
 						User user = new User(login, password);
 
-						registrate.Registration(user);//todo: return success code(?)
+						registrate.Registration(user);
 
-						//change view if code equals success and return
+						
 					}
 				}
 			}
-			//show error message
+			
 		}
 	
 	}

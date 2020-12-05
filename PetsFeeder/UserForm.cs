@@ -4,10 +4,11 @@ using System.Windows.Forms;
 using Presenter;
 using System.Collections;
 using Model;
+using Presenter.IViews;
 
 namespace PetsFeeder
 {
-    public partial class UserForm : Form
+    public partial class UserForm : Form, IUserView
     {
         private Point lastPoint;
 
@@ -43,7 +44,7 @@ namespace PetsFeeder
 
         private void myFeedersButton_Click(object sender, EventArgs e)
         {
-            UserFormListener formListener = new UserFormListener();
+            UserFormListener formListener = new UserFormListener(this);
             ArrayList feeders = formListener.ShowFeeders();
 
             contentPanel.Controls.Clear();
@@ -100,7 +101,12 @@ namespace PetsFeeder
             Application.Exit();
         }
 
-        /*
+		public void UpdateFeeders()
+		{
+			throw new NotImplementedException();
+		}
+
+		/*
         private void testButton_Click(object sender, EventArgs e)
         {
             /*
@@ -125,5 +131,5 @@ namespace PetsFeeder
             contentPanel.Controls.Add(feederListControl);
         }
     */
-    }
+	}
 }

@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FeederListControlListener.cs" />
+    <Compile Include="IViews\IUserView.cs" />
     <Compile Include="LoginListener.cs" />
     <Compile Include="RegistrationListener.cs" />
     <Compile Include="UserFormListener.cs" />
