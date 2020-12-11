@@ -9,10 +9,10 @@ using Presenter.IViews;
 
 namespace Presenter
 {
-	public class UserFormListener
+	public class UserFormPresenter
 	{
 		IUserView _userView;
-		public UserFormListener(IUserView userView)
+		public UserFormPresenter(IUserView userView)
 		{
 			_userView = userView;
 		}

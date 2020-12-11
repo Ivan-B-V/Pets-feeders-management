@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Presenter.IViews;
 using Model;
 
 namespace Presenter
 {
-	public class LoginListener
+	public class LoginPresenter
 	{
-		public User SignIn(string login, string password)
+		ILoginView _loginView;
+		public LoginPresenter(ILoginView loginView)
+		{
+			_loginView = loginView;
+		}
+
+		public void SignIn(string login, string password)
 		{
 			if ((login != null) && (password != null))
 			{
@@ -17,15 +24,27 @@ namespace Presenter
 				{
 					if ((!"Username".Equals(login)) && (!"11111111".Equals(password)))
 					{
+						UserService userService = new UserService();
+
+
 						SignIn signIn = new SignIn();
+
 						User user = new User(login, password);
 						User userInfo = signIn.SignInTry(user);
-						return userInfo;
+
+						if (userInfo == null)
+						{
+							_loginView.ShowErrorMessage("No such user");
+							return;
+						}
+
+						_loginView.Confirm(userInfo.Username);
+						return;
 					}
 				}
 
 			}
-			return null;
+			_loginView.ShowErrorMessage("Incorrect login or password");
 		}
 	}
 }

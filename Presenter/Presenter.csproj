@@ -40,10 +40,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FeederListControlListener.cs" />
+    <Compile Include="IViews\ILoginView.cs" />
     <Compile Include="IViews\IUserView.cs" />
-    <Compile Include="LoginListener.cs" />
+    <Compile Include="LoginPresenter.cs" />
     <Compile Include="RegistrationListener.cs" />
-    <Compile Include="UserFormListener.cs" />
+    <Compile Include="UserFormPresenter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">

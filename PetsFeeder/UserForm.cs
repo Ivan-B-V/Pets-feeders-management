@@ -17,10 +17,10 @@ namespace PetsFeeder
             InitializeComponent();
         }
 
-        public UserForm(User user)
+        public UserForm(string username)
         {
             InitializeComponent();
-            usernameLabel.Text = user.Username;
+            usernameLabel.Text = username;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -44,8 +44,8 @@ namespace PetsFeeder
 
         private void myFeedersButton_Click(object sender, EventArgs e)
         {
-            UserFormListener formListener = new UserFormListener(this);
-            ArrayList feeders = formListener.ShowFeeders();
+            UserFormPresenter formPresenter = new UserFormPresenter(this);
+            ArrayList feeders = formPresenter.ShowFeeders();
 
             contentPanel.Controls.Clear();
 

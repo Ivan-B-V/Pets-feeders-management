@@ -8,17 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presenter;
+using Presenter.IViews;
 using Model;
 
 namespace PetsFeeder
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : Form, ILoginView
     {
         Point lastPoint;
         String passText;
+        LoginPresenter presenter;
+
         public LoginForm()
         {
             InitializeComponent();
+            presenter = new LoginPresenter(this);
             passText = this.passwordTextBox.Text;
         }
 
@@ -64,26 +68,7 @@ namespace PetsFeeder
 
         private void signInButton_Click(object sender, EventArgs e)
         {
-            LoginListener listener = new LoginListener();
-            Console.WriteLine("button clocked ");
-            User user = listener.SignIn(usernameTextBox.Text, passwordTextBox.Text);
-            
-            if(user == null)
-			{
-                MessageBox.Show("сюда надо впихнуть ошибку");
-                return;
-			}
-            
-            /*if (this.usernameTextBox.Text.Equals("admin")) 
-            {
-                AdminForm adminForm = new AdminForm();
-                adminForm.Show();
-                this.Hide();
-                return;
-            }*/
-            UserForm userForm = new UserForm(user);
-            userForm.Show();
-            this.Hide();
+            presenter.SignIn(usernameTextBox.Text, passwordTextBox.Text);
         }
 
         private void usernameTextBox_MouseEnter(object sender, EventArgs e)
@@ -118,6 +103,18 @@ namespace PetsFeeder
             {
                 this.passwordTextBox.Text = passText;
             }
+        }
+
+		public void Confirm(string username)
+		{
+            UserForm userForm = new UserForm(username);
+            userForm.Show();
+            this.Hide();
+        }
+
+		public void ShowErrorMessage(string message)
+		{
+            MessageBox.Show(message);
         }
 	}
 }
