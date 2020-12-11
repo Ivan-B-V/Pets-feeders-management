@@ -3,15 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Text.Json;
 
-namespace Model
+namespace Presenter.IViews
 {
-	public class Register
+	public interface IFeederListControlView
 	{
-		public void Registration(User user)
-		{
-
-		}
 	}
 }

@@ -12,22 +12,21 @@ namespace Presenter
 	public class UserFormPresenter
 	{
 		IUserView _userView;
+		FeederService feederService;
 		public UserFormPresenter(IUserView userView)
 		{
 			_userView = userView;
+			feederService = new FeederService();
 		}
-
 		public ArrayList ShowFeeders()
 		{
-			GetFeeders getFeeders = new GetFeeders();
-			ArrayList feeders = getFeeders.TryGetFeeders();
+			ArrayList feeders = feederService.GetFeeders();
 			return feeders;
 		}
 		public void AddFeeder(string Name, string Tag, string Type)//не доделано
 		{
-			AddFeeder addFeeder = new AddFeeder();
 			Feeder feeder = new Feeder(Name, Tag, Type);
-			addFeeder.AddFeederTry(feeder);
+			feederService.AddFeeder(feeder);
 		}
 	}
 }

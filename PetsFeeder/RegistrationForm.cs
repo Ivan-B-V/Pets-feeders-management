@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Presenter.IViews;
 
 namespace PetsFeeder
 {
-    public partial class RegistrationForm : Form
+    public partial class RegistrationForm : Form, IRegistrationPresenter
     {
         Point lastPoint;
         String passText;

@@ -9,18 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
 using Presenter;
+using Presenter.IViews;
 using Model;
 
 namespace PetsFeeder
 {
-    public partial class FeederListControl : UserControl
+    public partial class FeederListControl : UserControl, IFeederListControlView
     {
         private Feeder feeder;
+        FeederListControlPresenter presenter;
         public FeederListControl()
         {
             InitializeComponent();
             feederCustomizationPanel.Hide();
             this.Width = feedersListPanel.Width;
+            presenter = new FeederListControlPresenter(this);
         }
 
         public FeederListControl(ArrayList feeders)
@@ -35,6 +38,7 @@ namespace PetsFeeder
 
             feederCustomizationPanel.Hide();
             this.Width = feedersListPanel.Width;
+            presenter = new FeederListControlPresenter(this);
         }
 
         public void showFeederCustomizationPanel(ref Feeder feeder)
@@ -59,8 +63,7 @@ namespace PetsFeeder
 
 		private void feedButton_Click(object sender, EventArgs e)
 		{
-            FeederListControlListener listener = new FeederListControlListener();
-            Feeder newFeeder = listener.Feed(feeder);
+            Feeder newFeeder = presenter.Feed(feeder);
             feeder = newFeeder;
 		}
 	}

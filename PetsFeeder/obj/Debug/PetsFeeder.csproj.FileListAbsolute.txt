@@ -187,3 +187,6 @@ D:\Projects\C#\Pets-feeders\PetsFeeder\bin\Debug\Presenter.dll.config
 D:\Projects\C#\Pets-feeders\PetsFeeder\bin\Debug\Model.pdb
 D:\Projects\C#\Pets-feeders\PetsFeeder\bin\Debug\Model.dll.config
 D:\Projects\C#\Pets-feeders\PetsFeeder\bin\Debug\System.Buffers.dll
+D:\Projects\C#\Pets-feeders\PetsFeeder\bin\Debug\Entities.dll
+D:\Projects\C#\Pets-feeders\PetsFeeder\bin\Debug\Entities.pdb
+D:\Projects\C#\Pets-feeders\PetsFeeder\bin\Debug\Entities.dll.config

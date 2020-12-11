@@ -11,9 +11,11 @@ namespace Presenter
 	public class LoginPresenter
 	{
 		ILoginView _loginView;
+		UserService userService;
 		public LoginPresenter(ILoginView loginView)
 		{
 			_loginView = loginView;
+			userService = new UserService();
 		}
 
 		public void SignIn(string login, string password)
@@ -24,13 +26,8 @@ namespace Presenter
 				{
 					if ((!"Username".Equals(login)) && (!"11111111".Equals(password)))
 					{
-						UserService userService = new UserService();
-
-
-						SignIn signIn = new SignIn();
-
 						User user = new User(login, password);
-						User userInfo = signIn.SignInTry(user);
+						User userInfo = userService.SignIn(user);
 
 						if (userInfo == null)
 						{

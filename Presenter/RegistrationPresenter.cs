@@ -4,11 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Model;
+using Presenter.IViews;
 
 namespace Presenter
 {
-	class RegistrationListener
+	class RegistrationPresenter
 	{
+		IRegistrationPresenter _registrationPresenter;
+		UserService userService;
+		public RegistrationPresenter(IRegistrationPresenter registrationPresenter)
+		{
+			_registrationPresenter = registrationPresenter;
+			userService = new UserService();
+		}
 		public void Registrate(string login, string password, string passwordRepeat)
 		{
 			if ((login != null) && (password != null) && (passwordRepeat != null))
@@ -17,17 +25,12 @@ namespace Presenter
 				{
 					if (password.Equals(passwordRepeat))
 					{
-						Register registrate = new Register();
-						User user = new User(login, password);
-
-						registrate.Registration(user);
+						
 
 						
 					}
 				}
 			}
-			
 		}
-	
 	}
 }
