@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Model;
 using System.Collections;
 using Presenter.IViews;
+using Entities;
 
 namespace Presenter
 {
@@ -18,10 +19,15 @@ namespace Presenter
 			_userView = userView;
 			feederService = new FeederService();
 		}
-		public ArrayList ShowFeeders()
+		public void ShowFeeders()
 		{
 			ArrayList feeders = feederService.GetFeeders();
-			return feeders;
+			if (feeders.Count == 0)
+			{
+				_userView.ShowMessage("No feeders found");
+				return;
+			}
+			_userView.ShowFeeders(feeders);
 		}
 		public void AddFeeder(string Name, string Tag, string Type)//не доделано
 		{

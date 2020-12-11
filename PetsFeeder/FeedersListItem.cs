@@ -7,16 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Model;
+using Entities;
 
 namespace PetsFeeder
 {
-    public delegate void MyDelegate(ref Feeder feeder);
+    public delegate void MyDelegate(Feeder feeder);
 
     public partial class FeedersListItem : UserControl
     {
 
-        private MyDelegate d;
+        private MyDelegate myDelegate;
         private Feeder feeder;
         public FeedersListItem()
         {
@@ -26,13 +26,13 @@ namespace PetsFeeder
         public FeedersListItem(MyDelegate sender)
         {
             InitializeComponent();
-            d = sender;
+            myDelegate = sender;
         }
 
         public FeedersListItem(MyDelegate sender, Feeder feeder)
         {
             InitializeComponent();
-            d = sender;
+            myDelegate = sender;
             this.feeder = feeder;
             feederName.Text = feeder.Name;
             feederTag.Text = feeder.Tag;
@@ -47,7 +47,7 @@ namespace PetsFeeder
 
         private void FeedersListItem_MouseClick(object sender, MouseEventArgs e)
         {
-            d(ref feeder);
+            myDelegate(feeder);
         }
     }
 }

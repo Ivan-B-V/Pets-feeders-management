@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Collections;
 using Presenter;
 using Presenter.IViews;
-using Model;
+using Entities;
 
 namespace PetsFeeder
 {
@@ -41,7 +41,7 @@ namespace PetsFeeder
             presenter = new FeederListControlPresenter(this);
         }
 
-        public void showFeederCustomizationPanel(ref Feeder feeder)
+        public void showFeederCustomizationPanel(Feeder feeder)
         {
             this.feeder = feeder;
             feederName.Text = feeder.Name;
@@ -50,10 +50,10 @@ namespace PetsFeeder
             feederCustomizationPanel.Visible = true;
         }
 
-        private void func(ref Feeder feeder)
+        private void func(Feeder feeder)
         {
             //MessageBox.Show(param.ToString());
-            showFeederCustomizationPanel(ref feeder);
+            showFeederCustomizationPanel(feeder);
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.IO;
 using System.Text.Json;
+using Entities;
 
 namespace Model
 {

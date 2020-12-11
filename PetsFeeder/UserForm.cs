@@ -3,24 +3,27 @@ using System.Drawing;
 using System.Windows.Forms;
 using Presenter;
 using System.Collections;
-using Model;
 using Presenter.IViews;
+using Entities;
 
 namespace PetsFeeder
 {
     public partial class UserForm : Form, IUserView
     {
         private Point lastPoint;
+        UserFormPresenter presenter;
 
         public UserForm()
         {
             InitializeComponent();
+            presenter = new UserFormPresenter(this);
         }
 
         public UserForm(string username)
         {
             InitializeComponent();
             usernameLabel.Text = username;
+            presenter = new UserFormPresenter(this);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -44,17 +47,7 @@ namespace PetsFeeder
 
         private void myFeedersButton_Click(object sender, EventArgs e)
         {
-            UserFormPresenter formPresenter = new UserFormPresenter(this);
-            ArrayList feeders = formPresenter.ShowFeeders();
-
-            contentPanel.Controls.Clear();
-
-            FeederListControl feederListControl = new FeederListControl(feeders);
-            contentPanel.Controls.Add(feederListControl);
-
-            selectedButtonPanel.Height = myFeedersButton.Height;
-            selectedButtonPanel.Top = myFeedersButton.Top;
-            this.Width = this.MinimumSize.Width;
+            presenter.ShowFeeders();
         }
 
         private void viewLogsButton_Click(object sender, EventArgs e)
@@ -101,12 +94,26 @@ namespace PetsFeeder
             Application.Exit();
         }
 
-		public void UpdateFeeders()
+        public void ShowFeeders(ArrayList feedersList)
 		{
-			throw new NotImplementedException();
-		}
+            ArrayList feeders = feedersList;
 
-		/*
+            contentPanel.Controls.Clear();
+
+            FeederListControl feederListControl = new FeederListControl(feeders);
+
+            contentPanel.Controls.Add(feederListControl);
+
+            selectedButtonPanel.Height = myFeedersButton.Height;
+            selectedButtonPanel.Top = myFeedersButton.Top;
+            this.Width = this.MinimumSize.Width;
+        }
+        public void ShowMessage(string message)
+        {
+            MessageBox.Show(message);
+        }
+
+        /*
         private void testButton_Click(object sender, EventArgs e)
         {
             /*
@@ -131,5 +138,5 @@ namespace PetsFeeder
             contentPanel.Controls.Add(feederListControl);
         }
     */
-	}
+    }
 }

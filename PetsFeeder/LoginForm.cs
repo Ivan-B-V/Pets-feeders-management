@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presenter;
 using Presenter.IViews;
-using Model;
 
 namespace PetsFeeder
 {

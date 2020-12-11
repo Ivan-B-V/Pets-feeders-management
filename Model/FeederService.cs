@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json;
 using System.Collections;
+using Entities;
 
 namespace Model
 {
@@ -17,7 +18,7 @@ namespace Model
 			FeedersResponse response = services.FeedersRequest();
 
 			services.userInfo.AddFeeders(response);
-
+			
 			return services.userInfo.GetFeeders();
 		}
 

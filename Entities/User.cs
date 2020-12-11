@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Collections;
 using System.Text.Json;
 
-namespace Model
+namespace Entities
 {
 	public class User
 	{

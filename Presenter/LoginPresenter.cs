@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Presenter.IViews;
+using Entities;
 using Model;
 
 namespace Presenter
