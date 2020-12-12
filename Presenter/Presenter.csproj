@@ -39,7 +39,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddFeederPresenter.cs" />
     <Compile Include="FeederListControlPresenter.cs" />
+    <Compile Include="IViews\IAddFeederView.cs" />
     <Compile Include="IViews\IFeederListControlView.cs" />
     <Compile Include="IViews\ILoginView.cs" />
     <Compile Include="IViews\IRegistrationView.cs" />

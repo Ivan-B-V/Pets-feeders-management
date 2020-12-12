@@ -37,7 +37,7 @@ namespace Presenter
 								return;
 							}
 
-							_registrationView.ShowMessage("problems with registration");
+							_registrationView.ShowMessage("something went wrong");
 							return;
 						}
 						_registrationView.ShowMessage("passwords are not equal");

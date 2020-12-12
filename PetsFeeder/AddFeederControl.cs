@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Presenter;
+using Presenter.IViews;
 
 namespace PetsFeeder
 {
-    public partial class AddFeederControl : UserControl
+    public partial class AddFeederControl : UserControl, IAddFeederView
     {
+        AddFeederPresenter presenter;
         public AddFeederControl()
         {
             InitializeComponent();
+            presenter = new AddFeederPresenter(this);
         }
 
         private void nameTextBox_MouseEnter(object sender, EventArgs e)
@@ -55,7 +59,21 @@ namespace PetsFeeder
 
         private void addButton_Click(object sender, EventArgs e)
         {
+            string type;
+            if (smartRadioButton.Checked)
+            {
+                type = "Smart";
+            }
+            else
+            {
+                type = "Not smart";
+            }
+            presenter.AddFeeder(nameTextBox.Text, tagTextBox.Text, type);
+        }
 
+        public void ShowMessage(string message)
+		{
+            MessageBox.Show(message);
         }
     }
 }

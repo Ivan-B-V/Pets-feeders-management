@@ -32,7 +32,7 @@ namespace Presenter
 
 						if (userInfo == null)
 						{
-							_loginView.ShowErrorMessage("No such user");
+							_loginView.ShowMessage("No such user");
 							return;
 						}
 
@@ -40,10 +40,10 @@ namespace Presenter
 						return;
 					}
 				}
-				_loginView.ShowErrorMessage("login or password not entered");
+				_loginView.ShowMessage("login or password not entered");
 				return;
 			}
-			_loginView.ShowErrorMessage("Incorrect login or password");
+			_loginView.ShowMessage("Incorrect login or password");
 		}
 	}
 }

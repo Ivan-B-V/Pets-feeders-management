@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Presenter.IViews
 {
-	public interface ILoginView
+	public interface IAddFeederView
 	{
-		void Confirm(string username);
 		void ShowMessage(string message);
 	}
 }

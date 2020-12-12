@@ -12,7 +12,6 @@ namespace Model
 	class CurrentUserData
 	{
 		private static User _user;
-
 		public CurrentUserData()
 		{
 

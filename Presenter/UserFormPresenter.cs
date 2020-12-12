@@ -30,10 +30,5 @@ namespace Presenter
 			}
 			_userView.ShowFeeders(feeders);
 		}
-		public void AddFeeder(string Name, string Tag, string Type)//не доделано
-		{
-			Feeder feeder = new Feeder(Name, Tag, Type);
-			feederService.AddFeeder(feeder);
-		}
 	}
 }

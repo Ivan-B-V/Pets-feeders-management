@@ -37,11 +37,15 @@ namespace Model
 			return newFeeder;
 		}
 
-		public void AddFeeder(Feeder feeder)
+		public bool AddFeeder(Feeder feeder)
 		{
-			string requestString = JsonSerializer.Serialize<Feeder>(feeder);
+			feeder.OwnerID = _currentUserData.GetUser().UserID;
+			Response response = _feederDAO.AddFeeder(feeder);
 
-			
+			Feeder newFeeder = new Feeder(response.body);
+			_currentUserData.AddFeeder(feeder);
+
+			return true;
 		}
 	}
 }

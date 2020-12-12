@@ -111,7 +111,7 @@ namespace PetsFeeder
             this.Hide();
         }
 
-		public void ShowErrorMessage(string message)
+		public void ShowMessage(string message)
 		{
             MessageBox.Show(message);
         }
