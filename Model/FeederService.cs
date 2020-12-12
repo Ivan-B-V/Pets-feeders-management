@@ -11,16 +11,16 @@ namespace Model
 {
 	public class FeederService
 	{
+		FeederDAO _feederDAO;
 		CurrentUserData _currentUserData;
 		public FeederService()
 		{
+			_feederDAO = new FeederDAO();
 			_currentUserData = new CurrentUserData();
 		}
 		public ArrayList GetFeeders()
 		{
-			Services services = Services.GetInstance();
-
-			FeedersResponse response = services.FeedersRequest();
+			FeedersResponse response = _feederDAO.GetFeeders();
 
 			_currentUserData.ReplaceFeeders(response);
 
@@ -29,24 +29,19 @@ namespace Model
 
 		public Feeder Feed(Feeder feeder)
 		{
-			Services servises = Services.GetInstance();
-
-			Response response = servises.Feed(feeder);
+			Response response = _feederDAO.Feed(feeder);
 
 			Feeder newFeeder = new Feeder(response.body);
 			_currentUserData.UpdateFeeder(newFeeder);
 			
-
 			return newFeeder;
 		}
 
 		public void AddFeeder(Feeder feeder)
 		{
-			Services services = Services.GetInstance();
-
 			string requestString = JsonSerializer.Serialize<Feeder>(feeder);
 
-			//serverInteraction.GetResponse(requestString);
+			
 		}
 	}
 }

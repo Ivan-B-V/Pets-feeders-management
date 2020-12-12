@@ -22,7 +22,8 @@ namespace Presenter
 		public void ShowFeeders()
 		{
 			ArrayList feeders = feederService.GetFeeders();
-			if (feeders.Count == 0)
+			
+			if (feeders == null || feeders.Count == 0)
 			{
 				_userView.ShowMessage("No feeders found");
 				return;
