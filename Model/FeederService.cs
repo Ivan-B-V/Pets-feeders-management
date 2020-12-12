@@ -42,6 +42,11 @@ namespace Model
 			feeder.OwnerID = _currentUserData.GetUser().UserID;
 			Response response = _feederDAO.AddFeeder(feeder);
 
+			if (response == null)
+			{
+				return false;
+			}	
+
 			Feeder newFeeder = new Feeder(response.body);
 			_currentUserData.AddFeeder(feeder);
 
