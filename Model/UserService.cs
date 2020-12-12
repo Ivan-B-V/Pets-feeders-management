@@ -19,9 +19,7 @@ namespace Model
 		}
 		public User SignIn(User user)
 		{
-			string requestString = JsonSerializer.Serialize<User>(user);
-
-			Response response = _userDAO.SignIn(requestString);
+			Response response = _userDAO.SignIn(user);
 
 			if (response == null)
 			{
@@ -33,6 +31,17 @@ namespace Model
 			_currentUserData.SetCurrentUser(userInfo);
 
 			return userInfo;
+		}
+		public bool Register(User user)
+		{
+			Response response = _userDAO.Register(user);
+
+			if (response == null)
+			{
+				return false;
+			}
+
+			return true;
 		}
 	}
 }

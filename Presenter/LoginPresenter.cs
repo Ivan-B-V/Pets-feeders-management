@@ -21,9 +21,9 @@ namespace Presenter
 
 		public void SignIn(string login, string password)
 		{
-			if ((login != null) && (password != null))
+			if ((login != null) || (password != null))
 			{
-				if ((!"".Equals(login)) && (!"".Equals(password)))
+				if ((!"".Equals(login)) || (!"".Equals(password)))
 				{
 					if ((!"Username".Equals(login)) && (!"11111111".Equals(password)))
 					{
@@ -40,7 +40,8 @@ namespace Presenter
 						return;
 					}
 				}
-
+				_loginView.ShowErrorMessage("login or password not entered");
+				return;
 			}
 			_loginView.ShowErrorMessage("Incorrect login or password");
 		}

@@ -25,9 +25,8 @@ namespace Model
 		public Response Feed(Feeder feeder)
 		{
 			string requestString = JsonSerializer.Serialize<Feeder>(feeder);
-			string site = FeedURL;
 
-			HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(site);
+			HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(FeedURL);
 			request.Headers.Add(apiKeyHeader);
 			request.Method = "POST";
 			byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(requestString);
@@ -56,9 +55,8 @@ namespace Model
 		public FeedersResponse GetFeeders()
 		{
 			string requestString = JsonSerializer.Serialize<User>(_currentUserData.GetUser());
-			string site = GetFeedersURL;
 
-			HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(site);
+			HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(GetFeedersURL);
 			request.Headers.Add(apiKeyHeader);
 			request.Method = "POST";
 			byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(requestString);

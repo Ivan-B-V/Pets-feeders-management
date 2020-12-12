@@ -8,16 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presenter.IViews;
+using Presenter;
 
 namespace PetsFeeder
 {
-    public partial class RegistrationForm : Form, IRegistrationPresenter
+    public partial class RegistrationForm : Form, IRegistrationView
     {
         Point lastPoint;
         String passText;
+        RegistrationPresenter presenter;
         public RegistrationForm()
         {
             InitializeComponent();
+            presenter = new RegistrationPresenter(this);
         }
 
         private void RegistrationForm_Load(object sender, EventArgs e)
@@ -109,5 +112,23 @@ namespace PetsFeeder
                 this.passwordTextBox2.Text = passText;
             }
         }
-    }
+
+		private void registerButton_Click(object sender, EventArgs e)
+		{
+            presenter.Register(usernameTextBox.Text, passwordTextBox1.Text, passwordTextBox2.Text);
+		}
+
+        public void ShowMessage(string message)
+		{
+            MessageBox.Show(message);
+        }
+
+        public void OpenSignIn()
+		{
+            this.Hide();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Close();
+        }
+	}
 }

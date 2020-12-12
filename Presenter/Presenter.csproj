@@ -42,7 +42,7 @@
     <Compile Include="FeederListControlPresenter.cs" />
     <Compile Include="IViews\IFeederListControlView.cs" />
     <Compile Include="IViews\ILoginView.cs" />
-    <Compile Include="IViews\IRegistrationPresenter.cs" />
+    <Compile Include="IViews\IRegistrationView.cs" />
     <Compile Include="IViews\IUserView.cs" />
     <Compile Include="LoginPresenter.cs" />
     <Compile Include="RegistrationPresenter.cs" />

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Presenter.IViews
 {
-	public interface IRegistrationPresenter
+	public interface IRegistrationView
 	{
+		void OpenSignIn();
+		void ShowMessage(string message);
 	}
 }
