@@ -23,5 +23,10 @@ namespace Presenter
 			Feeder newFeeder = feederService.Feed(feeder);
 			_feederListControlView.UpdateSelectedFeeder(newFeeder);
 		}
+		public void ChangeTag(Feeder feeder)
+		{
+			Feeder newFeeder = feederService.ChangeTag(feeder);
+			_feederListControlView.UpdateSelectedFeeder(newFeeder);
+		}
 	}
 }

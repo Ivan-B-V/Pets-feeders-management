@@ -77,5 +77,10 @@ namespace PetsFeeder
 			}
             _feeder = feeder;
 		}
+
+        private void tagTextBox_LostFocus(object sender, EventArgs e)
+        {
+            Console.WriteLine("text changed to:" + tagTextBox.Text);
+        }
 	}
 }

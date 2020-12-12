@@ -84,7 +84,7 @@ namespace Entities
 			{
 				if ((current.FeederID == feeder.FeederID) && (current.OwnerID == feeder.OwnerID))
 				{
-					current.AmountOfFeed = feeder.AmountOfFeed;
+					current.Update(feeder);
 				}
 			}
 		}

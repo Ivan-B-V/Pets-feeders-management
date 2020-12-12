@@ -16,6 +16,7 @@ namespace Model
 		private const string FeedURL = "https://ljpq64ubzi.execute-api.eu-central-1.amazonaws.com/prod/";
 		private const string GetFeedersURL = "https://lkwhpvi6nf.execute-api.eu-central-1.amazonaws.com/prod";
 		private const string AddFeederURL = "";
+		private const string ChangeFeederTagURL = "";
 
 		private CurrentUserData _currentUserData;
 		public FeederDAO()
@@ -40,13 +41,59 @@ namespace Model
 
 			HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 			Response resp;
-			using (Stream stream = response.GetResponseStream())
-			{
-				using (StreamReader reader = new StreamReader(stream))
+			try
+			{ 
+				using (Stream stream = response.GetResponseStream())
 				{
-					string responseString = reader.ReadToEnd();
-					resp = JsonSerializer.Deserialize<Response>(responseString);
+					using (StreamReader reader = new StreamReader(stream))
+					{
+						string responseString = reader.ReadToEnd();
+						resp = JsonSerializer.Deserialize<Response>(responseString);
+					}
 				}
+			}
+			catch (JsonException e)
+			{
+				Console.WriteLine(e.Message);
+				return null;
+			}
+			response.Close();
+
+			return resp;
+		}
+
+		public Response ChangeTag(Feeder feeder)
+		{
+			string requestString = JsonSerializer.Serialize<Feeder>(feeder);
+
+			HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(ChangeFeederTagURL);
+			request.Headers.Add(apiKeyHeader);
+			request.Method = "POST";
+			byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(requestString);
+			request.ContentType = "application/x-www-form-urlencoded";
+			request.ContentLength = byteArray.Length;
+			using (Stream dataStream = request.GetRequestStream())
+			{
+				dataStream.Write(byteArray, 0, byteArray.Length);
+			}
+
+			HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+			Response resp;
+			try 
+			{ 
+				using (Stream stream = response.GetResponseStream())
+				{
+					using (StreamReader reader = new StreamReader(stream))
+					{
+						string responseString = reader.ReadToEnd();
+						resp = JsonSerializer.Deserialize<Response>(responseString);
+					}
+				}
+			}
+			catch (JsonException e)
+			{
+				Console.WriteLine(e.Message);
+				return null;
 			}
 			response.Close();
 
@@ -70,13 +117,21 @@ namespace Model
 
 			HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 			FeedersResponse resp;
-			using (Stream stream = response.GetResponseStream())
-			{
-				using (StreamReader reader = new StreamReader(stream))
+			try
+			{ 
+				using (Stream stream = response.GetResponseStream())
 				{
-					string responseString = reader.ReadToEnd();
-					resp = JsonSerializer.Deserialize<FeedersResponse>(responseString);
+					using (StreamReader reader = new StreamReader(stream))
+					{
+						string responseString = reader.ReadToEnd();
+						resp = JsonSerializer.Deserialize<FeedersResponse>(responseString);
+					}
 				}
+			}
+			catch (JsonException e)
+			{
+				Console.WriteLine(e.Message);
+				return null;
 			}
 			response.Close();
 
@@ -100,13 +155,21 @@ namespace Model
 
 			HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 			Response resp;
-			using (Stream stream = response.GetResponseStream())
-			{
-				using (StreamReader reader = new StreamReader(stream))
+			try
+			{ 
+				using (Stream stream = response.GetResponseStream())
 				{
-					string responseString = reader.ReadToEnd();
-					resp = JsonSerializer.Deserialize<Response>(responseString);
+					using (StreamReader reader = new StreamReader(stream))
+					{
+						string responseString = reader.ReadToEnd();
+						resp = JsonSerializer.Deserialize<Response>(responseString);
+					}
 				}
+			}
+			catch (JsonException e)
+			{
+				Console.WriteLine(e.Message);
+				return null;
 			}
 			response.Close();
 

@@ -43,5 +43,18 @@ namespace Entities
 			Schedule = element["Schedule"].GetString();
 			Name = element["Name"].GetString();
 		}
+
+		public void Update(Feeder feeder)
+		{
+			AmountOfFeed = feeder.AmountOfFeed;
+			FeederID = feeder.FeederID;
+			OwnerID = feeder.OwnerID;
+			PortionSize = feeder.PortionSize;
+			Tag = feeder.Tag;
+			Type = feeder.Type;
+			Schedule = feeder.Schedule;
+			Name = feeder.Name;
+		}
+
 	}
 }

@@ -22,6 +22,11 @@ namespace Model
 		{
 			FeedersResponse response = _feederDAO.GetFeeders();
 
+			if (response == null)
+			{
+				return null;
+			}
+
 			_currentUserData.ReplaceFeeders(response);
 
 			return _currentUserData.GetFeeders();
@@ -30,6 +35,11 @@ namespace Model
 		public Feeder Feed(Feeder feeder)
 		{
 			Response response = _feederDAO.Feed(feeder);
+
+			if (response == null)
+			{
+				return null;
+			}
 
 			Feeder newFeeder = new Feeder(response.body);
 			_currentUserData.UpdateFeeder(newFeeder);
@@ -51,6 +61,21 @@ namespace Model
 			_currentUserData.AddFeeder(feeder);
 
 			return true;
+		}
+
+		public Feeder ChangeTag(Feeder feeder)
+		{
+			Response response = _feederDAO.ChangeTag(feeder);
+
+			if (response == null)
+			{
+				return null;
+			}
+
+			Feeder newFeeder = new Feeder(response.body);
+			_currentUserData.UpdateFeeder(newFeeder);
+
+			return newFeeder;
 		}
 	}
 }

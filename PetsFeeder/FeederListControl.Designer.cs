@@ -98,6 +98,7 @@
 			this.tagTextBox.Size = new System.Drawing.Size(100, 26);
 			this.tagTextBox.TabIndex = 11;
 			this.tagTextBox.Text = "@myHouse";
+			this.tagTextBox.Leave += new System.EventHandler(this.tagTextBox_LostFocus);
 			// 
 			// feedButton
 			// 
