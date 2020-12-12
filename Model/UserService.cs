@@ -10,13 +10,18 @@ namespace Model
 {
 	public class UserService
 	{
+		UserDAO _userDAO;
+		CurrentUserData _currentUserData;
+		public UserService()
+		{
+			_userDAO = new UserDAO();
+			_currentUserData = new CurrentUserData();
+		}
 		public User SignIn(User user)
 		{
-			Services services = Services.GetInstance();
-
 			string requestString = JsonSerializer.Serialize<User>(user);
 
-			Response response = services.SignIn(requestString);
+			Response response = _userDAO.SignIn(requestString);
 
 			if (response == null)
 			{
@@ -25,7 +30,7 @@ namespace Model
 
 			User userInfo = new User(response);
 
-			services.userInfo = userInfo;
+			_currentUserData.SetCurrentUser(userInfo);
 
 			return userInfo;
 		}

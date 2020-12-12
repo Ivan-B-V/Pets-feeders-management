@@ -11,23 +11,31 @@ namespace Model
 {
 	public class FeederService
 	{
+		CurrentUserData _currentUserData;
+		public FeederService()
+		{
+			_currentUserData = new CurrentUserData();
+		}
 		public ArrayList GetFeeders()
 		{
 			Services services = Services.GetInstance();
 
 			FeedersResponse response = services.FeedersRequest();
 
-			services.userInfo.AddFeeders(response);
-			
-			return services.userInfo.GetFeeders();
+			_currentUserData.ReplaceFeeders(response);
+
+			return _currentUserData.GetFeeders();
 		}
 
 		public Feeder Feed(Feeder feeder)
 		{
 			Services servises = Services.GetInstance();
+
 			Response response = servises.Feed(feeder);
+
 			Feeder newFeeder = new Feeder(response.body);
-			servises.userInfo.UpdateFeeder(newFeeder);
+			_currentUserData.UpdateFeeder(newFeeder);
+			
 
 			return newFeeder;
 		}

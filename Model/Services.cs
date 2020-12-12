@@ -19,10 +19,10 @@ namespace Model
 		private const string SignInURL = "https://3a7sazfvyj.execute-api.eu-central-1.amazonaws.com/prod/";
 		private User user;
 		public User userInfo { get { return user; } set { user = value; } }
-
+		CurrentUserData _currentUserData;
 		private Services()
 		{
-			
+			_currentUserData = new CurrentUserData();
 		}
 
 		public static Services GetInstance()
@@ -68,7 +68,7 @@ namespace Model
 
 		public FeedersResponse FeedersRequest()
 		{
-			string requestString = JsonSerializer.Serialize<User>(user);
+			string requestString = JsonSerializer.Serialize<User>(_currentUserData.GetUser());
 			string site = GetFeedersURL;
 
 			HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(site);

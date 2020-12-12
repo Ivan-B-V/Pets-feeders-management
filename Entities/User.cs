@@ -60,15 +60,15 @@ namespace Entities
 			feeders = new ArrayList();
 		}
 
-		public void AddFeeders(FeedersResponse response)
+		public void AddFeeder(Feeder feeder)
 		{
-			feeders.Clear();
+			feeders.Add(feeder);
+		}
 
-			int len = response.body.Length;
-
-			foreach (Dictionary<string, JsonElement> element in response.body)
+		public void AddFeeders(ArrayList newFeeders)
+		{
+			foreach (Feeder feeder in newFeeders)
 			{
-				Feeder feeder = new Feeder(element);
 				feeders.Add(feeder);
 			}
 		}
@@ -87,6 +87,11 @@ namespace Entities
 					current.AmountOfFeed = feeder.AmountOfFeed;
 				}
 			}
+		}
+
+		public void DeleteAllFeeders()
+		{
+			feeders.Clear();
 		}
 	}
 }
