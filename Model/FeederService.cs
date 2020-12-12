@@ -47,25 +47,25 @@ namespace Model
 			return newFeeder;
 		}
 
-		public bool AddFeeder(Feeder feeder)
+		public string AddFeeder(Feeder feeder)
 		{
 			feeder.OwnerID = _currentUserData.GetUser().UserID;
 			Response response = _feederDAO.AddFeeder(feeder);
 
 			if (response == null)
 			{
-				return false;
+				return "shit happens";
 			}	
 
 			Feeder newFeeder = new Feeder(response.body);
-			_currentUserData.AddFeeder(feeder);
-
-			return true;
+			_currentUserData.AddFeeder(newFeeder);
+			string message = response.headers["message"];
+			return message;
 		}
 
-		public Feeder ChangeTag(Feeder feeder)
+		public Feeder ChangeProperties(Feeder feeder)
 		{
-			Response response = _feederDAO.ChangeTag(feeder);
+			Response response = _feederDAO.ChangeProperties(feeder);
 
 			if (response == null)
 			{

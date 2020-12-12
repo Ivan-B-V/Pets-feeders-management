@@ -14,7 +14,7 @@ namespace Model
 	{
 		private const string apiKeyHeader = "x-api-key: SMmRuTFKGzsQ0WtvI5z46qjDeHfv260249fYxyQ6";
 		private const string SignInURL = "https://3a7sazfvyj.execute-api.eu-central-1.amazonaws.com/prod/";
-		private const string RegisterURL = "";
+		private const string RegisterURL = "https://m27yhhkfbd.execute-api.eu-central-1.amazonaws.com/prod";
 		public Response SignIn(User user)
 		{
 			string requestString = JsonSerializer.Serialize<User>(user);
@@ -30,16 +30,16 @@ namespace Model
 				dataStream.Write(byteArray, 0, byteArray.Length);
 			}
 
-			HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-			Response resp;
+			HttpWebResponse httpWebResponse = (HttpWebResponse)request.GetResponse();
+			Response response;
 			try
 			{
-				using (Stream stream = response.GetResponseStream())
+				using (Stream stream = httpWebResponse.GetResponseStream())
 				{
 					using (StreamReader reader = new StreamReader(stream))
 					{
 						string responseString = reader.ReadToEnd();
-						resp = JsonSerializer.Deserialize<Response>(responseString);
+						response = JsonSerializer.Deserialize<Response>(responseString);
 					}
 				}
 			}
@@ -48,9 +48,9 @@ namespace Model
 				Console.WriteLine(e.Message);
 				return null;
 			}
-			response.Close();
+			httpWebResponse.Close();
 
-			return resp;
+			return response;
 		}
 
 		public Response Register(User user)
@@ -69,16 +69,16 @@ namespace Model
 				dataStream.Write(byteArray, 0, byteArray.Length);
 			}
 
-			HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-			Response resp;
+			HttpWebResponse httpWebResponse = (HttpWebResponse)request.GetResponse();
+			Response response;
 			try
 			{
-				using (Stream stream = response.GetResponseStream())
+				using (Stream stream = httpWebResponse.GetResponseStream())
 				{
 					using (StreamReader reader = new StreamReader(stream))
 					{
 						string responseString = reader.ReadToEnd();
-						resp = JsonSerializer.Deserialize<Response>(responseString);
+						response = JsonSerializer.Deserialize<Response>(responseString);
 					}
 				}
 			}
@@ -87,9 +87,9 @@ namespace Model
 				Console.WriteLine(e.Message);
 				return null;
 			}
-			response.Close();
+			httpWebResponse.Close();
 
-			return resp;
+			return response;
 		}
 	}
 }

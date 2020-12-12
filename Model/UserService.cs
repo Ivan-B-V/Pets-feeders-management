@@ -32,16 +32,18 @@ namespace Model
 
 			return userInfo;
 		}
-		public bool Register(User user)
+		public string Register(string login, string password)
 		{
+			User user = new User(login, password);
+
 			Response response = _userDAO.Register(user);
 
 			if (response == null)
 			{
-				return false;
+				return "shit happend";
 			}
-
-			return true;
+			string message = response.headers["message"];
+			return message;
 		}
 	}
 }
