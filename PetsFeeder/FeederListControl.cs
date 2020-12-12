@@ -7,46 +7,80 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
+using Presenter;
+using Presenter.IViews;
+using Entities;
 
 namespace PetsFeeder
 {
-    public partial class FeederListControl : UserControl
+    public partial class FeederListControl : UserControl, IFeederListControlView
     {
+        private Feeder _feeder;
+        FeederListControlPresenter presenter;
         public FeederListControl()
         {
             InitializeComponent();
-            FeedersListItem feederform0 = new FeedersListItem(new MyDelegate(func));
-            FeedersListItem feederform1 = new FeedersListItem(new MyDelegate(func));
-            FeedersListItem feederform2 = new FeedersListItem(new MyDelegate(func));
-            FeedersListItem feederform3 = new FeedersListItem(new MyDelegate(func));
-            FeedersListItem feederform4 = new FeedersListItem(new MyDelegate(func));
-            FeedersListItem feederform5 = new FeedersListItem(new MyDelegate(func));
-
-            feedersListPanel.Controls.Add(feederform0);
-            feedersListPanel.Controls.Add(feederform1);
-            feedersListPanel.Controls.Add(feederform2);
-            feedersListPanel.Controls.Add(feederform3);
-            feedersListPanel.Controls.Add(feederform4);
-            feedersListPanel.Controls.Add(feederform5);
             feederCustomizationPanel.Hide();
             this.Width = feedersListPanel.Width;
+            presenter = new FeederListControlPresenter(this);
         }
 
-        public void showFeederCustomizationPanel()
+        public FeederListControl(ArrayList feeders)
         {
+            InitializeComponent();
+
+            foreach (Feeder feeder in feeders)
+            {
+                FeedersListItem feederform = new FeedersListItem(new MyDelegate(func), feeder);
+                feedersListPanel.Controls.Add(feederform);
+            }
+
+            feederCustomizationPanel.Hide();
+            this.Width = feedersListPanel.Width;
+            presenter = new FeederListControlPresenter(this);
+        }
+
+        public void showFeederCustomizationPanel(Feeder feeder)
+        {
+            this._feeder = feeder;
+            feederName.Text = feeder.Name;
+            tagTextBox.Text = feeder.Tag;
             this.Width = feedersListPanel.Width + feederCustomizationPanel.Width;
             feederCustomizationPanel.Visible = true;
         }
 
-        private void func(bool param)
+        private void func(Feeder feeder)
         {
             //MessageBox.Show(param.ToString());
-            showFeederCustomizationPanel();
+            showFeederCustomizationPanel(feeder);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
 
         }
-    }
+
+		private void feedButton_Click(object sender, EventArgs e)
+        {
+            presenter.Feed(_feeder);
+		}
+
+		public void UpdateSelectedFeeder(Feeder feeder)
+		{
+			foreach (FeedersListItem item in feedersListPanel.Controls)
+			{
+                if (item.Equals(_feeder))
+				{
+                    item.UpdateFeederInformation(feeder);
+				}
+			}
+            _feeder = feeder;
+		}
+
+        private void tagTextBox_LostFocus(object sender, EventArgs e)
+        {
+            Console.WriteLine("text changed to:" + tagTextBox.Text);
+        }
+	}
 }

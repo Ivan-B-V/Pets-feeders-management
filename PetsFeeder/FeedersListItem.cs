@@ -7,15 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entities;
 
 namespace PetsFeeder
 {
-    public delegate void MyDelegate(bool isClick);
+    public delegate void MyDelegate(Feeder feeder);
 
     public partial class FeedersListItem : UserControl
     {
 
-        private MyDelegate d;
+        private MyDelegate myDelegate;
+        private Feeder _feeder;
         public FeedersListItem()
         {
             InitializeComponent();
@@ -24,7 +26,17 @@ namespace PetsFeeder
         public FeedersListItem(MyDelegate sender)
         {
             InitializeComponent();
-            d = sender;
+            myDelegate = sender;
+        }
+
+        public FeedersListItem(MyDelegate sender, Feeder feeder)
+        {
+            InitializeComponent();
+            myDelegate = sender;
+            this._feeder = feeder;
+            feederName.Text = feeder.Name;
+            feederTag.Text = feeder.Tag;
+            feederCapacityBar.Value = feeder.AmountOfFeed;
         }
 
         private void FeedersListItem_Load(object sender, EventArgs e)
@@ -35,7 +47,24 @@ namespace PetsFeeder
 
         private void FeedersListItem_MouseClick(object sender, MouseEventArgs e)
         {
-            d(true);
+            myDelegate(_feeder);
         }
-    }
+
+        public void UpdateFeederInformation(Feeder feeder)
+		{
+            this._feeder = feeder;
+            feederName.Text = feeder.Name;
+            feederTag.Text = feeder.Tag;
+            feederCapacityBar.Value = feeder.AmountOfFeed;
+        }
+
+		public bool Equals(Feeder feeder)
+		{
+            if (_feeder.FeederID == feeder.FeederID)
+            {
+                return true;
+            }
+            return false;
+		}
+	}
 }

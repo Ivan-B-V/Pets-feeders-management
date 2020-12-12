@@ -1,16 +1,29 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Presenter;
+using System.Collections;
+using Presenter.IViews;
+using System.Threading;
 
 namespace PetsFeeder
 {
-    public partial class UserForm : Form
+    public partial class UserForm : Form, IUserView
     {
         private Point lastPoint;
+        UserFormPresenter presenter;
 
         public UserForm()
         {
             InitializeComponent();
+            presenter = new UserFormPresenter(this);
+        }
+
+        public UserForm(string username)
+        {
+            InitializeComponent();
+            usernameLabel.Text = username;
+            presenter = new UserFormPresenter(this);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -34,13 +47,7 @@ namespace PetsFeeder
 
         private void myFeedersButton_Click(object sender, EventArgs e)
         {
-            contentPanel.Controls.Clear();
-            selectedButtonPanel.Height = myFeedersButton.Height;
-            selectedButtonPanel.Top = myFeedersButton.Top;
-            this.Width = this.MinimumSize.Width;
-
-            FeederListControl feederListControl = new FeederListControl();
-            contentPanel.Controls.Add(feederListControl);
+            presenter.ShowFeeders();
         }
 
         private void viewLogsButton_Click(object sender, EventArgs e)
@@ -85,6 +92,25 @@ namespace PetsFeeder
         private void exitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        public void ShowFeeders(ArrayList feedersList)
+		{
+            ArrayList feeders = feedersList;
+
+            contentPanel.Controls.Clear();
+
+            FeederListControl feederListControl = new FeederListControl(feeders);
+
+            contentPanel.Controls.Add(feederListControl);
+
+            selectedButtonPanel.Height = myFeedersButton.Height;
+            selectedButtonPanel.Top = myFeedersButton.Top;
+            this.Width = this.MinimumSize.Width;
+        }
+        public void ShowMessage(string message)
+        {
+            MessageBox.Show(message);
         }
 
         /*
