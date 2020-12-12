@@ -17,7 +17,7 @@ namespace PetsFeeder
     {
 
         private MyDelegate myDelegate;
-        private Feeder feeder;
+        private Feeder _feeder;
         public FeedersListItem()
         {
             InitializeComponent();
@@ -33,7 +33,7 @@ namespace PetsFeeder
         {
             InitializeComponent();
             myDelegate = sender;
-            this.feeder = feeder;
+            this._feeder = feeder;
             feederName.Text = feeder.Name;
             feederTag.Text = feeder.Tag;
             feederCapacityBar.Value = feeder.AmountOfFeed;
@@ -47,7 +47,24 @@ namespace PetsFeeder
 
         private void FeedersListItem_MouseClick(object sender, MouseEventArgs e)
         {
-            myDelegate(feeder);
+            myDelegate(_feeder);
         }
-    }
+
+        public void UpdateFeederInformation(Feeder feeder)
+		{
+            this._feeder = feeder;
+            feederName.Text = feeder.Name;
+            feederTag.Text = feeder.Tag;
+            feederCapacityBar.Value = feeder.AmountOfFeed;
+        }
+
+		public bool Equals(Feeder feeder)
+		{
+            if (_feeder.FeederID == feeder.FeederID)
+            {
+                return true;
+            }
+            return false;
+		}
+	}
 }

@@ -16,7 +16,7 @@ namespace PetsFeeder
 {
     public partial class FeederListControl : UserControl, IFeederListControlView
     {
-        private Feeder feeder;
+        private Feeder _feeder;
         FeederListControlPresenter presenter;
         public FeederListControl()
         {
@@ -43,7 +43,7 @@ namespace PetsFeeder
 
         public void showFeederCustomizationPanel(Feeder feeder)
         {
-            this.feeder = feeder;
+            this._feeder = feeder;
             feederName.Text = feeder.Name;
             tagTextBox.Text = feeder.Tag;
             this.Width = feedersListPanel.Width + feederCustomizationPanel.Width;
@@ -62,9 +62,20 @@ namespace PetsFeeder
         }
 
 		private void feedButton_Click(object sender, EventArgs e)
+        {
+            presenter.Feed(_feeder);
+		}
+
+		public void UpdateSelectedFeeder(Feeder feeder)
 		{
-            Feeder newFeeder = presenter.Feed(feeder);
-            feeder = newFeeder;
+			foreach (FeedersListItem item in feedersListPanel.Controls)
+			{
+                if (item.Equals(_feeder))
+				{
+                    item.UpdateFeederInformation(feeder);
+				}
+			}
+            _feeder = feeder;
 		}
 	}
 }

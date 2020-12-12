@@ -18,10 +18,10 @@ namespace Presenter
 			_feederListControlView = feederListControlView;
 			feederService = new FeederService();
 		}
-		public Feeder Feed(Feeder feeder)
+		public void Feed(Feeder feeder)
 		{
 			Feeder newFeeder = feederService.Feed(feeder);
-			return newFeeder;
+			_feederListControlView.UpdateSelectedFeeder(newFeeder);
 		}
 	}
 }
