@@ -82,5 +82,14 @@ namespace PetsFeeder
         {
             Console.WriteLine("text changed to:" + tagTextBox.Text);
         }
-	}
+
+        private void SetScheduleButton_Click(object sender, EventArgs e)
+        {
+            SetScheduleUserControl setSchedule = new SetScheduleUserControl();
+            setSchedule.Dock = DockStyle.Fill;
+            feederCustomizationPanel.Visible = false;
+            feedersListPanel.Visible = false;
+            this.Controls.Add(setSchedule);
+        }
+    }
 }
