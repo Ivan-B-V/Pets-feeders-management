@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Presenter;
 using Presenter.IViews;
 
 namespace PetsFeeder
 {
     public partial class SetScheduleUserControl : UserControl, ISetScheduleView
     {
+        SetSchedulePresenter schedulePresenter;
+
         public SetScheduleUserControl()
         {
             InitializeComponent();
+            schedulePresenter = new SetSchedulePresenter(this);
         }
 
         private void SetScheduleUserControl_Load(object sender, EventArgs e)
@@ -30,7 +34,7 @@ namespace PetsFeeder
 
         public void GoBack()
         {
-            throw new NotImplementedException();
+            this.Hide();
         }
 
         public void ImportSchedule()
@@ -41,6 +45,11 @@ namespace PetsFeeder
         public void ExportSchedule()
         {
             throw new NotImplementedException();
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

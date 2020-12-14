@@ -198,7 +198,7 @@
             this.myFeedersButton.ForeColor = System.Drawing.Color.White;
             this.myFeedersButton.Location = new System.Drawing.Point(15, 13);
             this.myFeedersButton.Name = "myFeedersButton";
-            this.myFeedersButton.Size = new System.Drawing.Size(235, 50);
+            this.myFeedersButton.Size = new System.Drawing.Size(229, 50);
             this.myFeedersButton.TabIndex = 3;
             this.myFeedersButton.Text = "My feeders";
             this.myFeedersButton.UseVisualStyleBackColor = false;
@@ -213,7 +213,7 @@
             this.viewLogsButton.ForeColor = System.Drawing.Color.White;
             this.viewLogsButton.Location = new System.Drawing.Point(15, 79);
             this.viewLogsButton.Name = "viewLogsButton";
-            this.viewLogsButton.Size = new System.Drawing.Size(235, 50);
+            this.viewLogsButton.Size = new System.Drawing.Size(229, 50);
             this.viewLogsButton.TabIndex = 2;
             this.viewLogsButton.Text = "View logs";
             this.viewLogsButton.UseVisualStyleBackColor = false;

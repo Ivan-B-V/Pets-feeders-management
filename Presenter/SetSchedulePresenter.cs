@@ -11,5 +11,9 @@ namespace Presenter
     {
         ISetScheduleView setScheduleView;
 
+        public SetSchedulePresenter(ISetScheduleView setScheduleView)
+        {
+            this.setScheduleView = setScheduleView;
+        }
     }
 }
