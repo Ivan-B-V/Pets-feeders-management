@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Presenter.IViews;
 
 namespace PetsFeeder
 {
-    public partial class SetScheduleUserControl : UserControl
+    public partial class SetScheduleUserControl : UserControl, ISetScheduleView
     {
         public SetScheduleUserControl()
         {
@@ -24,12 +25,22 @@ namespace PetsFeeder
 
         private void backButton_Click(object sender, EventArgs e)
         {
-
+            GoBack();
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        public void GoBack()
         {
+            throw new NotImplementedException();
+        }
 
+        public void ImportSchedule()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ExportSchedule()
+        {
+            throw new NotImplementedException();
         }
     }
 }

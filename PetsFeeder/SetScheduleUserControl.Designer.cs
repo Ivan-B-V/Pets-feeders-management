@@ -85,7 +85,6 @@
             this.firstDatTimePicker1.Size = new System.Drawing.Size(98, 33);
             this.firstDatTimePicker1.TabIndex = 4;
             this.firstDatTimePicker1.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
-            this.firstDatTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label1
             // 
