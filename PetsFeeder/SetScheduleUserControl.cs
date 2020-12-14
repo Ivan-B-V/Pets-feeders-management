@@ -27,16 +27,6 @@ namespace PetsFeeder
 
         }
 
-        private void backButton_Click(object sender, EventArgs e)
-        {
-            GoBack();
-        }
-
-        public void GoBack()
-        {
-            this.Hide();
-        }
-
         public void ImportSchedule()
         {
             throw new NotImplementedException();

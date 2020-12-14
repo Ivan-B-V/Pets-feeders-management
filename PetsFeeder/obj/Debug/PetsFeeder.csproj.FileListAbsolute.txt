@@ -172,3 +172,4 @@ D:\MyProjects\C#\Pets_Feeders\PetsFeeder\obj\Debug\PetsFeeder.csproj.CopyComplet
 D:\MyProjects\C#\Pets_Feeders\PetsFeeder\obj\Debug\PetsFeeder.exe
 D:\MyProjects\C#\Pets_Feeders\PetsFeeder\obj\Debug\PetsFeeder.pdb
 D:\MyProjects\C#\Pets_Feeders\PetsFeeder\obj\Debug\PetsFeeder.SetScheduleUserControl.resources
+D:\Projects\C#\Pets-feeders\PetsFeeder\obj\Debug\PetsFeeder.SetScheduleUserControl.resources
