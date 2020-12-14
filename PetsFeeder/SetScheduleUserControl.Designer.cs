@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.backButton = new System.Windows.Forms.Button();
 			this.firstDatTimePicker1 = new System.Windows.Forms.DateTimePicker();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
@@ -55,24 +54,6 @@
 			this.button2 = new System.Windows.Forms.Button();
 			this.SaveButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
-			// 
-			// backButton
-			// 
-			this.backButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-			this.backButton.BackgroundImage = global::PetsFeeder.Properties.Resources.icons8_arrow_pointing_left_30;
-			this.backButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-			this.backButton.FlatAppearance.BorderSize = 0;
-			this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.backButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.backButton.Location = new System.Drawing.Point(0, 0);
-			this.backButton.MaximumSize = new System.Drawing.Size(60, 40);
-			this.backButton.MinimumSize = new System.Drawing.Size(60, 40);
-			this.backButton.Name = "backButton";
-			this.backButton.Size = new System.Drawing.Size(60, 40);
-			this.backButton.TabIndex = 3;
-			this.backButton.UseVisualStyleBackColor = false;
-			this.backButton.Click += new System.EventHandler(this.backButton_Click);
 			// 
 			// firstDatTimePicker1
 			// 
@@ -427,7 +408,6 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.firstDatTimePicker1);
-			this.Controls.Add(this.backButton);
 			this.Name = "SetScheduleUserControl";
 			this.Size = new System.Drawing.Size(950, 670);
 			this.Load += new System.EventHandler(this.SetScheduleUserControl_Load);
@@ -436,8 +416,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.DateTimePicker firstDatTimePicker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

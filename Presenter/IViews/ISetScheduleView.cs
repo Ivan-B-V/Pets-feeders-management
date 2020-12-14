@@ -8,7 +8,6 @@ namespace Presenter.IViews
 {
     public interface ISetScheduleView
     {
-        void GoBack();
         void ImportSchedule();
         void ExportSchedule();
     }
