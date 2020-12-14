@@ -107,6 +107,12 @@
     <Compile Include="LogsUserControl.Designer.cs">
       <DependentUpon>LogsUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="SetScheduleUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SetScheduleUserControl.Designer.cs">
+      <DependentUpon>SetScheduleUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LogsUserControl.resx">
       <DependentUpon>LogsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetScheduleUserControl.resx">
+      <DependentUpon>SetScheduleUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
@@ -250,6 +259,12 @@
       <Project>{21896bdc-6b22-4499-b097-17d3740b03a7}</Project>
       <Name>Presenter</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-arrow-pointing-left-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-back-arrow-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
