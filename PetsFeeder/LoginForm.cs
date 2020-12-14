@@ -7,17 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Presenter;
+using Presenter.IViews;
 
 namespace PetsFeeder
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : Form, ILoginView
     {
         Point lastPoint;
         String passText;
+        LoginPresenter presenter;
+
         public LoginForm()
         {
             InitializeComponent();
-            passText = this.passworTextBox.Text;
+            presenter = new LoginPresenter(this);
+            passText = this.passwordTextBox.Text;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -62,16 +67,7 @@ namespace PetsFeeder
 
         private void signInButton_Click(object sender, EventArgs e)
         {
-            if (this.usernameTextBox.Text.Equals("admin")) 
-            {
-                AdminForm adminForm = new AdminForm();
-                adminForm.Show();
-                this.Hide();
-                return;
-            }
-            UserForm userForm = new UserForm();
-            userForm.Show();
-            this.Hide();
+            presenter.SignIn(usernameTextBox.Text, passwordTextBox.Text);
         }
 
         private void usernameTextBox_MouseEnter(object sender, EventArgs e)
@@ -92,20 +88,32 @@ namespace PetsFeeder
             }
         }
 
-        private void passworTextBox_MouseEnter(object sender, EventArgs e)
+        private void passwordTextBox_MouseEnter(object sender, EventArgs e)
         {
-            if (this.passworTextBox.Text.Equals(this.passText))
+            if (this.passwordTextBox.Text.Equals(this.passText))
             {
-                this.passworTextBox.Text = "";
+                this.passwordTextBox.Text = "";
             }
         }
 
-        private void passworTextBox_MouseLeave(object sender, EventArgs e)
+        private void passwordTextBox_MouseLeave(object sender, EventArgs e)
         {
-            if (this.passworTextBox.Text.Equals("") && !this.passworTextBox.Focused)
+            if (this.passwordTextBox.Text.Equals("") && !this.passwordTextBox.Focused)
             {
-                this.passworTextBox.Text = passText;
+                this.passwordTextBox.Text = passText;
             }
         }
-    }
+
+		public void Confirm(string username)
+		{
+            UserForm userForm = new UserForm(username);
+            userForm.Show();
+            this.Hide();
+        }
+
+		public void ShowMessage(string message)
+		{
+            MessageBox.Show(message);
+        }
+	}
 }
