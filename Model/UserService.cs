@@ -17,8 +17,10 @@ namespace Model
 			_userDAO = new UserDAO();
 			_currentUserData = new CurrentUserData();
 		}
-		public User SignIn(User user)
+		public string SignIn(string login, string password)
 		{
+			User user = new User(login, password);
+
 			Response response = _userDAO.SignIn(user);
 
 			if (response == null)
@@ -26,11 +28,11 @@ namespace Model
 				return null;
 			}
 
-			User userInfo = new User(response);
+			user = new User(response);
 
-			_currentUserData.SetCurrentUser(userInfo);
+			_currentUserData.SetCurrentUser(user);
 
-			return userInfo;
+			return user.Username;
 		}
 		public string Register(string login, string password)
 		{
