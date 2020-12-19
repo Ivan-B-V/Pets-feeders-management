@@ -14,7 +14,7 @@ namespace Entities
 		public string Name { get; set; }
 		public int OwnerID { get; set; }
 		public int PortionSize { get; set; }
-		public string Schedule { get; set; }
+		public Schedule Schedule { get; set; }
 		public string Tag { get; set; }
 		public string Type { get; set; }
 
@@ -32,6 +32,14 @@ namespace Entities
 			Type = type;
 		}
 
+		public Feeder(int id, int amo, string name, string tag)
+		{
+			FeederID = id;
+			AmountOfFeed = amo;
+			Name = name;
+			Tag = tag;
+		}
+
 		public Feeder(Dictionary<string, JsonElement> element)
 		{
 			AmountOfFeed = element["AmountOfFeed"].GetInt32();
@@ -40,7 +48,7 @@ namespace Entities
 			PortionSize = element["PortionSize"].GetInt32();
 			Tag = element["Tag"].GetString();
 			Type = element["Type"].GetString();
-			Schedule = element["Schedule"].GetString();
+			Schedule = JsonSerializer.Deserialize<Schedule>(element["Schedule"].ToString());
 			Name = element["Name"].GetString();
 		}
 

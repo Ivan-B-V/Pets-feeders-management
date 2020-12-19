@@ -42,9 +42,11 @@
     <Compile Include="Feeder.cs" />
     <Compile Include="FeedersResponse.cs" />
     <Compile Include="Response.cs" />
+    <Compile Include="Schedule.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
     <Reference Include="System.Text.Json, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

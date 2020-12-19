@@ -59,8 +59,6 @@ namespace Model
 				return "shit happens";
 			}	
 
-			Feeder newFeeder = new Feeder(response.body);
-			_currentUserData.AddFeeder(newFeeder);
 			string message = response.headers["message"];
 			return message;
 		}
@@ -78,6 +76,48 @@ namespace Model
 			_currentUserData.UpdateFeeder(newFeeder);
 
 			return newFeeder;
+		}
+
+		public string SetSchedule(int feederID, ArrayList day1, ArrayList day2)
+		{
+			Schedule schedule = new Schedule(day1, day2);
+			
+			Feeder currentFeeder = null;
+			foreach (Feeder feeder in _currentUserData.GetFeeders())
+			{
+				if(feeder.FeederID == feederID)
+				{
+					currentFeeder = feeder;
+				}
+			}
+
+			if(currentFeeder == null)
+			{
+				return "wtf?";
+			}
+
+			currentFeeder.Schedule = schedule;
+
+			Response response = _feederDAO.ChangeProperties(currentFeeder);
+
+			if (response == null)
+			{
+				return "shit happens";
+			}
+			string message = response.headers["message"];
+
+			if ("Ok".Equals(message))//сообщение удачи. Изменить если надо
+			{
+				foreach (Feeder feeder in _currentUserData.GetFeeders())
+				{
+					if (feeder.FeederID == feederID)
+					{
+						feeder.Schedule = schedule;
+					}
+				}
+			}
+
+			return message;
 		}
 	}
 }

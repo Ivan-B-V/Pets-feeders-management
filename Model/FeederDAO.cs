@@ -16,8 +16,8 @@ namespace Model
 		private const string FeedURL = "https://ljpq64ubzi.execute-api.eu-central-1.amazonaws.com/prod/";
 		private const string GetFeedersURL = "https://lkwhpvi6nf.execute-api.eu-central-1.amazonaws.com/prod";
 		private const string AddFeederURL = "https://srl8nmr4qg.execute-api.eu-central-1.amazonaws.com/prod";
-		private const string ChangeFeederPropertiesURL = "";
-
+		private const string ChangeFeederPropertiesURL = "https://0iu2qo0k99.execute-api.eu-central-1.amazonaws.com/prod";
+		
 		private CurrentUserData _currentUserData;
 		public FeederDAO()
 		{
