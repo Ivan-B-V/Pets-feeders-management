@@ -21,29 +21,33 @@ namespace Presenter
 
 		public void SignIn(string login, string password)
 		{
-			if ((login != null) || (password != null))
+			if ((login == null) || (password == null))
 			{
-				if ((!"".Equals(login)) || (!"".Equals(password)))
-				{
-					if ((!"Username".Equals(login)) && (!"11111111".Equals(password)))
-					{
-						User user = new User(login, password);
-						User userInfo = userService.SignIn(user);
-
-						if (userInfo == null)
-						{
-							_loginView.ShowMessage("No such user");
-							return;
-						}
-
-						_loginView.Confirm(userInfo.Username);
-						return;
-					}
-				}
+				_loginView.ShowMessage("Incorrect login or password");
+				return;
+			}
+			
+			if (("".Equals(login)) || ("".Equals(password)))
+			{
 				_loginView.ShowMessage("login or password not entered");
 				return;
 			}
-			_loginView.ShowMessage("Incorrect login or password");
+			
+			if (("Username".Equals(login)) && ("11111111".Equals(password)))
+			{
+				_loginView.ShowMessage("login or password not entered");
+				return;
+			}
+
+			string username = userService.SignIn(login, password);
+
+			if (username == null || "".Equals(username))
+			{
+				_loginView.ShowMessage("No such user");
+				return;
+			}
+
+			_loginView.Confirm(username);
 		}
 	}
 }

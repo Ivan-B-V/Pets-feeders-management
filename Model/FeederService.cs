@@ -47,8 +47,10 @@ namespace Model
 			return newFeeder;
 		}
 
-		public string AddFeeder(Feeder feeder)
+		public string AddFeeder(string Name, string Tag, string Type)
 		{
+			Feeder feeder = new Feeder(Name, Tag, Type);
+
 			feeder.OwnerID = _currentUserData.GetUser().UserID;
 			Response response = _feederDAO.AddFeeder(feeder);
 
