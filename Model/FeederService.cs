@@ -32,8 +32,10 @@ namespace Model
 			return _currentUserData.GetFeeders();
 		}
 
-		public Feeder Feed(Feeder feeder)
+		public Feeder Feed(int feederID)
 		{
+			Feeder feeder = GetFeeder(feederID);
+
 			Response response = _feederDAO.Feed(feeder);
 
 			if (response == null)
@@ -63,8 +65,12 @@ namespace Model
 			return message;
 		}
 
-		public Feeder ChangeProperties(Feeder feeder)
+		public Feeder ChangeProperties(int feederID, string name, string tag)
 		{
+			Feeder feeder = GetFeeder(feederID);
+			feeder.Name = name;
+			feeder.Tag = tag;
+
 			Response response = _feederDAO.ChangeProperties(feeder);
 
 			if (response == null)
@@ -81,15 +87,8 @@ namespace Model
 		public string SetSchedule(int feederID, ArrayList day1, ArrayList day2)
 		{
 			Schedule schedule = new Schedule(day1, day2);
-			
-			Feeder currentFeeder = null;
-			foreach (Feeder feeder in _currentUserData.GetFeeders())
-			{
-				if(feeder.FeederID == feederID)
-				{
-					currentFeeder = feeder;
-				}
-			}
+
+			Feeder currentFeeder = GetFeeder(feederID);
 
 			if(currentFeeder == null)
 			{
@@ -118,6 +117,23 @@ namespace Model
 			}
 
 			return message;
+		}
+
+		public Feeder GetFeeder(int feederID)
+		{
+			ArrayList feeders = _currentUserData.GetFeeders();
+
+			Feeder feeder = null;
+			foreach (Feeder item in feeders)
+			{
+				if (item.FeederID == feederID)
+				{
+					feeder = item;
+					return feeder;
+				}
+			}
+
+			return null;
 		}
 	}
 }

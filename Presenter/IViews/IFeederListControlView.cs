@@ -9,6 +9,7 @@ namespace Presenter.IViews
 {
 	public interface IFeederListControlView
 	{
-		void UpdateSelectedFeeder(Feeder feeder);
+		void UpdateSelectedFeeder(string name, string tag, int amount);
+		void SetFeederData(string name, string tag);
 	}
 }

@@ -7,60 +7,57 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Entities;
+using Presenter;
+using Presenter.IViews;
 
 namespace PetsFeeder
 {
-    public delegate void MyDelegate(Feeder feeder);
+    public delegate void MyDelegate(int feederID);
 
-    public partial class FeedersListItem : UserControl
+    public partial class FeedersListItem : UserControl, IFeederListItemView
     {
-
+        FeederListItemPresenter presenter;
         private MyDelegate myDelegate;
-        private Feeder _feeder;
-        public FeedersListItem()
-        {
-            InitializeComponent();
-        }
-
-        public FeedersListItem(MyDelegate sender)
-        {
-            InitializeComponent();
-            myDelegate = sender;
-        }
-
-        public FeedersListItem(MyDelegate sender, Feeder feeder)
+        private int feederID;
+        private string feederName;
+        private string feederTag;
+        private int feederAmount;
+        
+        public FeedersListItem(MyDelegate sender, int feederID)
         {
             InitializeComponent();
             myDelegate = sender;
-            this._feeder = feeder;
-            feederName.Text = feeder.Name;
-            feederTag.Text = feeder.Tag;
-            feederCapacityBar.Value = feeder.AmountOfFeed;
+            this.feederID = feederID;
+            presenter = new FeederListItemPresenter(this);
+            presenter.LoadData(this.feederID);
         }
 
         private void FeedersListItem_Load(object sender, EventArgs e)
         {
-            //this.BackColor = Color.FromArgb(0, Color.White);
             this.BackColor = Color.Transparent;
+            feederNameLabel.Text = feederName;
+            feederTagLabel.Text = feederTag;
+            feederCapacityBar.Value = feederAmount;
         }
 
         private void FeedersListItem_MouseClick(object sender, MouseEventArgs e)
         {
-            myDelegate(_feeder);
+            myDelegate(feederID);
         }
 
-        public void UpdateFeederInformation(Feeder feeder)
-		{
-            this._feeder = feeder;
-            feederName.Text = feeder.Name;
-            feederTag.Text = feeder.Tag;
-            feederCapacityBar.Value = feeder.AmountOfFeed;
+        public void UpdateFeederInformation(string feederName, string feederTag, int feederAmount)
+		{ 
+            this.feederName = feederName;
+            this.feederTag = feederTag;
+            this.feederAmount = feederAmount;
+            feederNameLabel.Text = feederName;
+            feederTagLabel.Text = feederTag;
+            feederCapacityBar.Value = feederAmount;
         }
 
-		public bool Equals(Feeder feeder)
+		public bool Equals(int feederID)
 		{
-            if (_feeder.FeederID == feeder.FeederID)
+            if (this.feederID == feederID)
             {
                 return true;
             }

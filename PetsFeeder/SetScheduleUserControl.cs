@@ -25,7 +25,7 @@ namespace PetsFeeder
 
         private void SetScheduleUserControl_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         public void ImportSchedule()
@@ -41,11 +41,11 @@ namespace PetsFeeder
         private void SaveButton_Click(object sender, EventArgs e)
         {
             string[] day1 = new string[5];
-            day1[0] = firstDateTimePicker1.Value.Hour.ToString() + ":" + firstDateTimePicker1.Value.Minute.ToString();
-            day1[1] = firstDateTimePicker2.Value.Hour.ToString() + ":" + firstDateTimePicker2.Value.Minute.ToString();
-            day1[2] = firstDateTimePicker3.Value.Hour.ToString() + ":" + firstDateTimePicker3.Value.Minute.ToString();
-            day1[3] = firstDateTimePicker4.Value.Hour.ToString() + ":" + firstDateTimePicker4.Value.Minute.ToString();
-            day1[4] = firstDateTimePicker5.Value.Hour.ToString() + ":" + firstDateTimePicker5.Value.Minute.ToString();
+            day1[0] = firstDateTimePicker1.Value.ToShortTimeString();
+            day1[1] = firstDateTimePicker2.Value.ToShortTimeString();
+            day1[2] = firstDateTimePicker3.Value.ToShortTimeString();
+            day1[3] = firstDateTimePicker4.Value.ToShortTimeString();
+            day1[4] = firstDateTimePicker5.Value.ToShortTimeString();
             bool[] day1Check = new bool[5];
             day1Check[0] = firstDayTime1.Checked;
             day1Check[1] = firstDayTime2.Checked;
@@ -54,11 +54,11 @@ namespace PetsFeeder
             day1Check[4] = firstDayTime5.Checked;
 
             string[] day2 = new string[5];
-            day2[0] = secondDateTimePicker1.Value.Hour.ToString() + ":" + secondDateTimePicker1.Value.Minute.ToString();
-            day2[1] = secondDateTimePicker2.Value.Hour.ToString() + ":" + secondDateTimePicker2.Value.Minute.ToString();
-            day2[2] = secondDateTimePicker3.Value.Hour.ToString() + ":" + secondDateTimePicker3.Value.Minute.ToString();
-            day2[3] = secondDateTimePicker4.Value.Hour.ToString() + ":" + secondDateTimePicker4.Value.Minute.ToString();
-            day2[4] = secondDateTimePicker5.Value.Hour.ToString() + ":" + secondDateTimePicker5.Value.Minute.ToString();
+            day2[0] = secondDateTimePicker1.Value.ToShortTimeString();
+            day2[1] = secondDateTimePicker2.Value.ToShortTimeString();
+            day2[2] = secondDateTimePicker3.Value.ToShortTimeString();
+            day2[3] = secondDateTimePicker4.Value.ToShortTimeString();
+            day2[4] = secondDateTimePicker5.Value.ToShortTimeString();
             bool[] day2Check = new bool[5];
             day2Check[0] = secondDayTime1.Checked;
             day2Check[1] = secondDayTime2.Checked;

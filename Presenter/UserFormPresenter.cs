@@ -28,7 +28,12 @@ namespace Presenter
 				_userView.ShowMessage("No feeders found");
 				return;
 			}
-			_userView.ShowFeeders(feeders);
+			ArrayList IDs = new ArrayList();
+			foreach (Feeder feeder in feeders)
+			{
+				IDs.Add(feeder.FeederID);
+			}
+			_userView.ShowFeeders(IDs);
 		}
 	}
 }

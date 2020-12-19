@@ -10,13 +10,14 @@ using System.Windows.Forms;
 using System.Collections;
 using Presenter;
 using Presenter.IViews;
-using Entities;
 
 namespace PetsFeeder
 {
     public partial class FeederListControl : UserControl, IFeederListControlView
     {
-        private Feeder _feeder;
+        private int selectedFeederID;
+        private string selectedFeederName;
+        private string selectedFeederTag;
         FeederListControlPresenter presenter;
         public FeederListControl()
         {
@@ -26,13 +27,13 @@ namespace PetsFeeder
             presenter = new FeederListControlPresenter(this);
         }
 
-        public FeederListControl(ArrayList feeders)
+        public FeederListControl(ArrayList feederIDs)
         {
             InitializeComponent();
 
-            foreach (Feeder feeder in feeders)
+            foreach (int feederID in feederIDs)
             {
-                FeedersListItem feederform = new FeedersListItem(new MyDelegate(func), feeder);
+                FeedersListItem feederform = new FeedersListItem(new MyDelegate(func), feederID);
                 feedersListPanel.Controls.Add(feederform);
             }
 
@@ -41,19 +42,23 @@ namespace PetsFeeder
             presenter = new FeederListControlPresenter(this);
         }
 
-        public void showFeederCustomizationPanel(Feeder feeder)
+        public void SetFeederData(string name, string tag)
+		{
+            selectedFeederName = name;
+            selectedFeederTag = tag;
+		}
+
+        public void showFeederCustomizationPanel(int feederID)
         {
-            this._feeder = feeder;
-            feederName.Text = feeder.Name;
-            tagTextBox.Text = feeder.Tag;
+            selectedFeederID = feederID;
+            presenter.GetFeederData(feederID);
             this.Width = feedersListPanel.Width + feederCustomizationPanel.Width;
             feederCustomizationPanel.Visible = true;
         }
 
-        private void func(Feeder feeder)
+        private void func(int feederID)
         {
-            //MessageBox.Show(param.ToString());
-            showFeederCustomizationPanel(feeder);
+            showFeederCustomizationPanel(feederID);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -63,30 +68,33 @@ namespace PetsFeeder
 
 		private void feedButton_Click(object sender, EventArgs e)
         {
-            presenter.Feed(_feeder);
+            presenter.Feed(selectedFeederID);
 		}
 
-		public void UpdateSelectedFeeder(Feeder feeder)
+		public void UpdateSelectedFeeder(string name, string tag, int amount)
 		{
 			foreach (FeedersListItem item in feedersListPanel.Controls)
 			{
-                if (item.Equals(_feeder))
+                if (item.Equals(selectedFeederID))
 				{
-                    item.UpdateFeederInformation(feeder);
+                    item.UpdateFeederInformation(name, tag, amount);
 				}
 			}
-            _feeder = feeder;
-		}
+            selectedFeederName = name;
+            selectedFeederTag = tag;
+            feederName.Text = name;
+            tagTextBox.Text = tag;
+        }
 
         private void tagTextBox_LostFocus(object sender, EventArgs e)
         {
-            _feeder.Tag = tagTextBox.Text;
-            presenter.ChangeProperties(_feeder);
+            selectedFeederTag = tagTextBox.Text;
+            presenter.ChangeProperties(selectedFeederID, selectedFeederName, selectedFeederTag);
         }
 
         private void SetScheduleButton_Click(object sender, EventArgs e)
         {
-            SetScheduleUserControl setSchedule = new SetScheduleUserControl(_feeder.FeederID);
+            SetScheduleUserControl setSchedule = new SetScheduleUserControl(selectedFeederID);
             setSchedule.Dock = DockStyle.Fill;
             feederCustomizationPanel.Visible = false;
             feedersListPanel.Visible = false;
