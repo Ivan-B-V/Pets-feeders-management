@@ -21,10 +21,6 @@ namespace Model
 		{
 			_user = user;
 		}
-		public void AddFeeder(Feeder feeder)//??
-		{
-			
-		}
 		public void AddFeeders(ArrayList feeders)
 		{
 			_user.AddFeeders(feeders);

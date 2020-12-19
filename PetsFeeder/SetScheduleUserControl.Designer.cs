@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.firstDatTimePicker1 = new System.Windows.Forms.DateTimePicker();
+			this.firstDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.firstDatTimePicker2 = new System.Windows.Forms.DateTimePicker();
-			this.firstDatTimePicker3 = new System.Windows.Forms.DateTimePicker();
-			this.firstDatTimePicker4 = new System.Windows.Forms.DateTimePicker();
-			this.firstDatTimePicker5 = new System.Windows.Forms.DateTimePicker();
-			this.SecDayTimePicker5 = new System.Windows.Forms.DateTimePicker();
-			this.SecDayTimePicker4 = new System.Windows.Forms.DateTimePicker();
-			this.SecDayTimePicker3 = new System.Windows.Forms.DateTimePicker();
-			this.SecDayTimePicker2 = new System.Windows.Forms.DateTimePicker();
-			this.SecDayTimePicker1 = new System.Windows.Forms.DateTimePicker();
+			this.firstDateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+			this.firstDateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+			this.firstDateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+			this.firstDateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+			this.secondDateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+			this.secondDateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+			this.secondDateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+			this.secondDateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+			this.secondDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
 			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.checkBox2 = new System.Windows.Forms.CheckBox();
 			this.checkBox3 = new System.Windows.Forms.CheckBox();
@@ -55,18 +55,18 @@
 			this.SaveButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
-			// firstDatTimePicker1
+			// firstDateTimePicker1
 			// 
-			this.firstDatTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.firstDatTimePicker1.CalendarMonthBackground = System.Drawing.Color.Transparent;
-			this.firstDatTimePicker1.CustomFormat = "HH : mm";
-			this.firstDatTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.firstDatTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.firstDatTimePicker1.Location = new System.Drawing.Point(77, 137);
-			this.firstDatTimePicker1.Name = "firstDatTimePicker1";
-			this.firstDatTimePicker1.Size = new System.Drawing.Size(98, 31);
-			this.firstDatTimePicker1.TabIndex = 4;
-			this.firstDatTimePicker1.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
+			this.firstDateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.firstDateTimePicker1.CalendarMonthBackground = System.Drawing.Color.Transparent;
+			this.firstDateTimePicker1.CustomFormat = "HH : mm";
+			this.firstDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.firstDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.firstDateTimePicker1.Location = new System.Drawing.Point(77, 137);
+			this.firstDateTimePicker1.Name = "firstDateTimePicker1";
+			this.firstDateTimePicker1.Size = new System.Drawing.Size(98, 31);
+			this.firstDateTimePicker1.TabIndex = 4;
+			this.firstDateTimePicker1.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
 			// 
 			// label1
 			// 
@@ -95,122 +95,122 @@
 			this.label2.Text = "Second day";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// firstDatTimePicker2
+			// firstDateTimePicker2
 			// 
-			this.firstDatTimePicker2.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.firstDatTimePicker2.CalendarMonthBackground = System.Drawing.Color.Transparent;
-			this.firstDatTimePicker2.CustomFormat = "HH : mm";
-			this.firstDatTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.firstDatTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.firstDatTimePicker2.Location = new System.Drawing.Point(77, 176);
-			this.firstDatTimePicker2.Name = "firstDatTimePicker2";
-			this.firstDatTimePicker2.Size = new System.Drawing.Size(98, 31);
-			this.firstDatTimePicker2.TabIndex = 7;
-			this.firstDatTimePicker2.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
+			this.firstDateTimePicker2.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.firstDateTimePicker2.CalendarMonthBackground = System.Drawing.Color.Transparent;
+			this.firstDateTimePicker2.CustomFormat = "HH : mm";
+			this.firstDateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.firstDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.firstDateTimePicker2.Location = new System.Drawing.Point(77, 176);
+			this.firstDateTimePicker2.Name = "firstDateTimePicker2";
+			this.firstDateTimePicker2.Size = new System.Drawing.Size(98, 31);
+			this.firstDateTimePicker2.TabIndex = 7;
+			this.firstDateTimePicker2.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
 			// 
-			// firstDatTimePicker3
+			// firstDateTimePicker3
 			// 
-			this.firstDatTimePicker3.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.firstDatTimePicker3.CalendarMonthBackground = System.Drawing.Color.Transparent;
-			this.firstDatTimePicker3.CustomFormat = "HH : mm";
-			this.firstDatTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.firstDatTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.firstDatTimePicker3.Location = new System.Drawing.Point(77, 215);
-			this.firstDatTimePicker3.Name = "firstDatTimePicker3";
-			this.firstDatTimePicker3.Size = new System.Drawing.Size(98, 31);
-			this.firstDatTimePicker3.TabIndex = 8;
-			this.firstDatTimePicker3.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
+			this.firstDateTimePicker3.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.firstDateTimePicker3.CalendarMonthBackground = System.Drawing.Color.Transparent;
+			this.firstDateTimePicker3.CustomFormat = "HH : mm";
+			this.firstDateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.firstDateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.firstDateTimePicker3.Location = new System.Drawing.Point(77, 215);
+			this.firstDateTimePicker3.Name = "firstDateTimePicker3";
+			this.firstDateTimePicker3.Size = new System.Drawing.Size(98, 31);
+			this.firstDateTimePicker3.TabIndex = 8;
+			this.firstDateTimePicker3.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
 			// 
-			// firstDatTimePicker4
+			// firstDateTimePicker4
 			// 
-			this.firstDatTimePicker4.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.firstDatTimePicker4.CalendarMonthBackground = System.Drawing.Color.Transparent;
-			this.firstDatTimePicker4.CustomFormat = "HH : mm";
-			this.firstDatTimePicker4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.firstDatTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.firstDatTimePicker4.Location = new System.Drawing.Point(77, 254);
-			this.firstDatTimePicker4.Name = "firstDatTimePicker4";
-			this.firstDatTimePicker4.Size = new System.Drawing.Size(98, 31);
-			this.firstDatTimePicker4.TabIndex = 9;
-			this.firstDatTimePicker4.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
+			this.firstDateTimePicker4.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.firstDateTimePicker4.CalendarMonthBackground = System.Drawing.Color.Transparent;
+			this.firstDateTimePicker4.CustomFormat = "HH : mm";
+			this.firstDateTimePicker4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.firstDateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.firstDateTimePicker4.Location = new System.Drawing.Point(77, 254);
+			this.firstDateTimePicker4.Name = "firstDateTimePicker4";
+			this.firstDateTimePicker4.Size = new System.Drawing.Size(98, 31);
+			this.firstDateTimePicker4.TabIndex = 9;
+			this.firstDateTimePicker4.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
 			// 
-			// firstDatTimePicker5
+			// firstDateTimePicker5
 			// 
-			this.firstDatTimePicker5.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.firstDatTimePicker5.CalendarMonthBackground = System.Drawing.Color.Transparent;
-			this.firstDatTimePicker5.CustomFormat = "HH : mm";
-			this.firstDatTimePicker5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.firstDatTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.firstDatTimePicker5.Location = new System.Drawing.Point(77, 293);
-			this.firstDatTimePicker5.Name = "firstDatTimePicker5";
-			this.firstDatTimePicker5.Size = new System.Drawing.Size(98, 31);
-			this.firstDatTimePicker5.TabIndex = 10;
-			this.firstDatTimePicker5.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
+			this.firstDateTimePicker5.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.firstDateTimePicker5.CalendarMonthBackground = System.Drawing.Color.Transparent;
+			this.firstDateTimePicker5.CustomFormat = "HH : mm";
+			this.firstDateTimePicker5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.firstDateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.firstDateTimePicker5.Location = new System.Drawing.Point(77, 293);
+			this.firstDateTimePicker5.Name = "firstDateTimePicker5";
+			this.firstDateTimePicker5.Size = new System.Drawing.Size(98, 31);
+			this.firstDateTimePicker5.TabIndex = 10;
+			this.firstDateTimePicker5.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
 			// 
-			// SecDayTimePicker5
+			// secondDateTimePicker5
 			// 
-			this.SecDayTimePicker5.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.SecDayTimePicker5.CalendarMonthBackground = System.Drawing.Color.Transparent;
-			this.SecDayTimePicker5.CustomFormat = "HH : mm";
-			this.SecDayTimePicker5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.SecDayTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.SecDayTimePicker5.Location = new System.Drawing.Point(234, 293);
-			this.SecDayTimePicker5.Name = "SecDayTimePicker5";
-			this.SecDayTimePicker5.Size = new System.Drawing.Size(98, 31);
-			this.SecDayTimePicker5.TabIndex = 15;
-			this.SecDayTimePicker5.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
+			this.secondDateTimePicker5.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.secondDateTimePicker5.CalendarMonthBackground = System.Drawing.Color.Transparent;
+			this.secondDateTimePicker5.CustomFormat = "HH : mm";
+			this.secondDateTimePicker5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.secondDateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.secondDateTimePicker5.Location = new System.Drawing.Point(234, 293);
+			this.secondDateTimePicker5.Name = "secondDateTimePicker5";
+			this.secondDateTimePicker5.Size = new System.Drawing.Size(98, 31);
+			this.secondDateTimePicker5.TabIndex = 15;
+			this.secondDateTimePicker5.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
 			// 
-			// SecDayTimePicker4
+			// secondDateTimePicker4
 			// 
-			this.SecDayTimePicker4.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.SecDayTimePicker4.CalendarMonthBackground = System.Drawing.Color.Transparent;
-			this.SecDayTimePicker4.CustomFormat = "HH : mm";
-			this.SecDayTimePicker4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.SecDayTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.SecDayTimePicker4.Location = new System.Drawing.Point(234, 254);
-			this.SecDayTimePicker4.Name = "SecDayTimePicker4";
-			this.SecDayTimePicker4.Size = new System.Drawing.Size(98, 31);
-			this.SecDayTimePicker4.TabIndex = 14;
-			this.SecDayTimePicker4.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
+			this.secondDateTimePicker4.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.secondDateTimePicker4.CalendarMonthBackground = System.Drawing.Color.Transparent;
+			this.secondDateTimePicker4.CustomFormat = "HH : mm";
+			this.secondDateTimePicker4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.secondDateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.secondDateTimePicker4.Location = new System.Drawing.Point(234, 254);
+			this.secondDateTimePicker4.Name = "secondDateTimePicker4";
+			this.secondDateTimePicker4.Size = new System.Drawing.Size(98, 31);
+			this.secondDateTimePicker4.TabIndex = 14;
+			this.secondDateTimePicker4.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
 			// 
-			// SecDayTimePicker3
+			// secondDateTimePicker3
 			// 
-			this.SecDayTimePicker3.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.SecDayTimePicker3.CalendarMonthBackground = System.Drawing.Color.Transparent;
-			this.SecDayTimePicker3.CustomFormat = "HH : mm";
-			this.SecDayTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.SecDayTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.SecDayTimePicker3.Location = new System.Drawing.Point(234, 215);
-			this.SecDayTimePicker3.Name = "SecDayTimePicker3";
-			this.SecDayTimePicker3.Size = new System.Drawing.Size(98, 31);
-			this.SecDayTimePicker3.TabIndex = 13;
-			this.SecDayTimePicker3.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
+			this.secondDateTimePicker3.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.secondDateTimePicker3.CalendarMonthBackground = System.Drawing.Color.Transparent;
+			this.secondDateTimePicker3.CustomFormat = "HH : mm";
+			this.secondDateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.secondDateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.secondDateTimePicker3.Location = new System.Drawing.Point(234, 215);
+			this.secondDateTimePicker3.Name = "secondDateTimePicker3";
+			this.secondDateTimePicker3.Size = new System.Drawing.Size(98, 31);
+			this.secondDateTimePicker3.TabIndex = 13;
+			this.secondDateTimePicker3.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
 			// 
-			// SecDayTimePicker2
+			// secondDateTimePicker2
 			// 
-			this.SecDayTimePicker2.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.SecDayTimePicker2.CalendarMonthBackground = System.Drawing.Color.Transparent;
-			this.SecDayTimePicker2.CustomFormat = "HH : mm";
-			this.SecDayTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.SecDayTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.SecDayTimePicker2.Location = new System.Drawing.Point(234, 176);
-			this.SecDayTimePicker2.Name = "SecDayTimePicker2";
-			this.SecDayTimePicker2.Size = new System.Drawing.Size(98, 31);
-			this.SecDayTimePicker2.TabIndex = 12;
-			this.SecDayTimePicker2.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
+			this.secondDateTimePicker2.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.secondDateTimePicker2.CalendarMonthBackground = System.Drawing.Color.Transparent;
+			this.secondDateTimePicker2.CustomFormat = "HH : mm";
+			this.secondDateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.secondDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.secondDateTimePicker2.Location = new System.Drawing.Point(234, 176);
+			this.secondDateTimePicker2.Name = "secondDateTimePicker2";
+			this.secondDateTimePicker2.Size = new System.Drawing.Size(98, 31);
+			this.secondDateTimePicker2.TabIndex = 12;
+			this.secondDateTimePicker2.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
 			// 
-			// SecDayTimePicker1
+			// secondDateTimePicker1
 			// 
-			this.SecDayTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.SecDayTimePicker1.CalendarMonthBackground = System.Drawing.Color.Transparent;
-			this.SecDayTimePicker1.CustomFormat = "HH : mm";
-			this.SecDayTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.SecDayTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.SecDayTimePicker1.Location = new System.Drawing.Point(234, 137);
-			this.SecDayTimePicker1.Name = "SecDayTimePicker1";
-			this.SecDayTimePicker1.Size = new System.Drawing.Size(98, 31);
-			this.SecDayTimePicker1.TabIndex = 11;
-			this.SecDayTimePicker1.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
+			this.secondDateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.secondDateTimePicker1.CalendarMonthBackground = System.Drawing.Color.Transparent;
+			this.secondDateTimePicker1.CustomFormat = "HH : mm";
+			this.secondDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.secondDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.secondDateTimePicker1.Location = new System.Drawing.Point(234, 137);
+			this.secondDateTimePicker1.Name = "secondDateTimePicker1";
+			this.secondDateTimePicker1.Size = new System.Drawing.Size(98, 31);
+			this.secondDateTimePicker1.TabIndex = 11;
+			this.secondDateTimePicker1.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
 			// 
 			// checkBox1
 			// 
@@ -396,18 +396,18 @@
 			this.Controls.Add(this.checkBox1);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.button1);
-			this.Controls.Add(this.SecDayTimePicker5);
-			this.Controls.Add(this.SecDayTimePicker4);
-			this.Controls.Add(this.SecDayTimePicker3);
-			this.Controls.Add(this.SecDayTimePicker2);
-			this.Controls.Add(this.SecDayTimePicker1);
-			this.Controls.Add(this.firstDatTimePicker5);
-			this.Controls.Add(this.firstDatTimePicker4);
-			this.Controls.Add(this.firstDatTimePicker3);
-			this.Controls.Add(this.firstDatTimePicker2);
+			this.Controls.Add(this.secondDateTimePicker5);
+			this.Controls.Add(this.secondDateTimePicker4);
+			this.Controls.Add(this.secondDateTimePicker3);
+			this.Controls.Add(this.secondDateTimePicker2);
+			this.Controls.Add(this.secondDateTimePicker1);
+			this.Controls.Add(this.firstDateTimePicker5);
+			this.Controls.Add(this.firstDateTimePicker4);
+			this.Controls.Add(this.firstDateTimePicker3);
+			this.Controls.Add(this.firstDateTimePicker2);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.firstDatTimePicker1);
+			this.Controls.Add(this.firstDateTimePicker1);
 			this.Name = "SetScheduleUserControl";
 			this.Size = new System.Drawing.Size(950, 670);
 			this.Load += new System.EventHandler(this.SetScheduleUserControl_Load);
@@ -416,18 +416,18 @@
         }
 
         #endregion
-        private System.Windows.Forms.DateTimePicker firstDatTimePicker1;
+        private System.Windows.Forms.DateTimePicker firstDateTimePicker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker firstDatTimePicker2;
-        private System.Windows.Forms.DateTimePicker firstDatTimePicker3;
-        private System.Windows.Forms.DateTimePicker firstDatTimePicker4;
-        private System.Windows.Forms.DateTimePicker firstDatTimePicker5;
-        private System.Windows.Forms.DateTimePicker SecDayTimePicker5;
-        private System.Windows.Forms.DateTimePicker SecDayTimePicker4;
-        private System.Windows.Forms.DateTimePicker SecDayTimePicker3;
-        private System.Windows.Forms.DateTimePicker SecDayTimePicker2;
-        private System.Windows.Forms.DateTimePicker SecDayTimePicker1;
+        private System.Windows.Forms.DateTimePicker firstDateTimePicker2;
+        private System.Windows.Forms.DateTimePicker firstDateTimePicker3;
+        private System.Windows.Forms.DateTimePicker firstDateTimePicker4;
+        private System.Windows.Forms.DateTimePicker firstDateTimePicker5;
+        private System.Windows.Forms.DateTimePicker secondDateTimePicker5;
+        private System.Windows.Forms.DateTimePicker secondDateTimePicker4;
+        private System.Windows.Forms.DateTimePicker secondDateTimePicker3;
+        private System.Windows.Forms.DateTimePicker secondDateTimePicker2;
+        private System.Windows.Forms.DateTimePicker secondDateTimePicker1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;

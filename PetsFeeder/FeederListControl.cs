@@ -85,7 +85,7 @@ namespace PetsFeeder
 
         private void SetScheduleButton_Click(object sender, EventArgs e)
         {
-            SetScheduleUserControl setSchedule = new SetScheduleUserControl();
+            SetScheduleUserControl setSchedule = new SetScheduleUserControl(_feeder.FeederID);
             setSchedule.Dock = DockStyle.Fill;
             feederCustomizationPanel.Visible = false;
             feedersListPanel.Visible = false;

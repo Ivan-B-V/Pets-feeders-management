@@ -10,5 +10,6 @@ namespace Presenter.IViews
     {
         void ImportSchedule();
         void ExportSchedule();
+        void ShowMessage(string message);
     }
 }
