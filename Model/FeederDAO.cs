@@ -16,8 +16,7 @@ namespace Model
 		private const string FeedURL = "https://ljpq64ubzi.execute-api.eu-central-1.amazonaws.com/prod/";
 		private const string GetFeedersURL = "https://lkwhpvi6nf.execute-api.eu-central-1.amazonaws.com/prod";
 		private const string AddFeederURL = "https://srl8nmr4qg.execute-api.eu-central-1.amazonaws.com/prod";
-		private const string ChangeFeederPropertiesURL = "";
-		private const string SetScheduleURL = "";
+		private const string ChangeFeederPropertiesURL = "https://0iu2qo0k99.execute-api.eu-central-1.amazonaws.com/prod";
 		
 		private CurrentUserData _currentUserData;
 		public FeederDAO()
@@ -82,44 +81,6 @@ namespace Model
 			Response response;
 			try 
 			{ 
-				using (Stream stream = httpWebResponse.GetResponseStream())
-				{
-					using (StreamReader reader = new StreamReader(stream))
-					{
-						string responseString = reader.ReadToEnd();
-						response = JsonSerializer.Deserialize<Response>(responseString);
-					}
-				}
-			}
-			catch (JsonException e)
-			{
-				Console.WriteLine(e.Message);
-				return null;
-			}
-			httpWebResponse.Close();
-
-			return response;
-		}
-
-		public Response SetSchedule(Feeder feeder)
-		{
-			string requestString = JsonSerializer.Serialize<Feeder>(feeder);
-
-			HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(SetScheduleURL);
-			request.Headers.Add(apiKeyHeader);
-			request.Method = "POST";
-			byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(requestString);
-			request.ContentType = "application/x-www-form-urlencoded";
-			request.ContentLength = byteArray.Length;
-			using (Stream dataStream = request.GetRequestStream())
-			{
-				dataStream.Write(byteArray, 0, byteArray.Length);
-			}
-
-			HttpWebResponse httpWebResponse = (HttpWebResponse)request.GetResponse();
-			Response response;
-			try
-			{
 				using (Stream stream = httpWebResponse.GetResponseStream())
 				{
 					using (StreamReader reader = new StreamReader(stream))

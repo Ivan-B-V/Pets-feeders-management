@@ -46,6 +46,12 @@ namespace PetsFeeder
             day1[2] = firstDateTimePicker3.Value.Hour.ToString() + ":" + firstDateTimePicker3.Value.Minute.ToString();
             day1[3] = firstDateTimePicker4.Value.Hour.ToString() + ":" + firstDateTimePicker4.Value.Minute.ToString();
             day1[4] = firstDateTimePicker5.Value.Hour.ToString() + ":" + firstDateTimePicker5.Value.Minute.ToString();
+            bool[] day1Check = new bool[5];
+            day1Check[0] = firstDayTime1.Checked;
+            day1Check[1] = firstDayTime2.Checked;
+            day1Check[2] = firstDayTime3.Checked;
+            day1Check[3] = firstDayTime4.Checked;
+            day1Check[4] = firstDayTime5.Checked;
 
             string[] day2 = new string[5];
             day2[0] = secondDateTimePicker1.Value.Hour.ToString() + ":" + secondDateTimePicker1.Value.Minute.ToString();
@@ -53,8 +59,14 @@ namespace PetsFeeder
             day2[2] = secondDateTimePicker3.Value.Hour.ToString() + ":" + secondDateTimePicker3.Value.Minute.ToString();
             day2[3] = secondDateTimePicker4.Value.Hour.ToString() + ":" + secondDateTimePicker4.Value.Minute.ToString();
             day2[4] = secondDateTimePicker5.Value.Hour.ToString() + ":" + secondDateTimePicker5.Value.Minute.ToString();
+            bool[] day2Check = new bool[5];
+            day2Check[0] = secondDayTime1.Checked;
+            day2Check[1] = secondDayTime2.Checked;
+            day2Check[2] = secondDayTime3.Checked;
+            day2Check[3] = secondDayTime4.Checked;
+            day2Check[4] = secondDayTime5.Checked;
 
-            presenter.SetSchedule(_feederID, day1, day2);
+            presenter.SetSchedule(_feederID, day1, day1Check, day2, day2Check);
         }
 
         public void ShowMessage(string message)

@@ -80,7 +80,8 @@ namespace PetsFeeder
 
         private void tagTextBox_LostFocus(object sender, EventArgs e)
         {
-            Console.WriteLine("text changed to:" + tagTextBox.Text);
+            _feeder.Tag = tagTextBox.Text;
+            presenter.ChangeProperties(_feeder);
         }
 
         private void SetScheduleButton_Click(object sender, EventArgs e)

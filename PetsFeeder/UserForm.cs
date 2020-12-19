@@ -113,30 +113,9 @@ namespace PetsFeeder
             MessageBox.Show(message);
         }
 
-        /*
-        private void testButton_Click(object sender, EventArgs e)
-        {
-            /*
-            if (selectedButtonPanel.Top == myFeedersButton.Top)
-            {
-                for (int i = 0; i < contentPanel.Controls.Count; i++)
-                {
-                    if (contentPanel.Controls[i].GetType() == typeof(FeederListControl) )
-                    { 
-                      
-                    }
-                }
-            }
-
-            contentPanel.Controls.Clear();
-            selectedButtonPanel.Height = myFeedersButton.Height;
-            selectedButtonPanel.Top = myFeedersButton.Top;
-            this.Width = this.MaximumSize.Width;
-
-            FeederListControl feederListControl = new FeederListControl();
-            feederListControl.showFeederCustomizationPanel();
-            contentPanel.Controls.Add(feederListControl);
-        }
-    */
-    }
+		private void searchTextBox_TextChanged(object sender, EventArgs e)
+		{
+            
+		}
+	}
 }

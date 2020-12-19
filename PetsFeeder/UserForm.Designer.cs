@@ -92,6 +92,7 @@
 			this.searchTextBox.Name = "searchTextBox";
 			this.searchTextBox.Size = new System.Drawing.Size(244, 26);
 			this.searchTextBox.TabIndex = 2;
+			this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
 			// 
 			// accountPanel
 			// 

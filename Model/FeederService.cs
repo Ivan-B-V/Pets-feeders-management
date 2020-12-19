@@ -78,7 +78,7 @@ namespace Model
 			return newFeeder;
 		}
 
-		public string SetSchedule(int feederID, string[] day1, string[] day2)
+		public string SetSchedule(int feederID, ArrayList day1, ArrayList day2)
 		{
 			Schedule schedule = new Schedule(day1, day2);
 			
@@ -98,7 +98,7 @@ namespace Model
 
 			currentFeeder.Schedule = schedule;
 
-			Response response = _feederDAO.SetSchedule(currentFeeder);
+			Response response = _feederDAO.ChangeProperties(currentFeeder);
 
 			if (response == null)
 			{
@@ -106,7 +106,7 @@ namespace Model
 			}
 			string message = response.headers["message"];
 
-			if ("ok".Equals(message))//сообщение удачи. Изменить если надо
+			if ("Ok".Equals(message))//сообщение удачи. Изменить если надо
 			{
 				foreach (Feeder feeder in _currentUserData.GetFeeders())
 				{

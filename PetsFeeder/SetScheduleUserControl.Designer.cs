@@ -40,16 +40,16 @@
 			this.secondDateTimePicker3 = new System.Windows.Forms.DateTimePicker();
 			this.secondDateTimePicker2 = new System.Windows.Forms.DateTimePicker();
 			this.secondDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
-			this.checkBox2 = new System.Windows.Forms.CheckBox();
-			this.checkBox3 = new System.Windows.Forms.CheckBox();
-			this.checkBox4 = new System.Windows.Forms.CheckBox();
-			this.checkBox5 = new System.Windows.Forms.CheckBox();
-			this.checkBox6 = new System.Windows.Forms.CheckBox();
-			this.checkBox7 = new System.Windows.Forms.CheckBox();
-			this.checkBox8 = new System.Windows.Forms.CheckBox();
-			this.checkBox9 = new System.Windows.Forms.CheckBox();
-			this.checkBox10 = new System.Windows.Forms.CheckBox();
+			this.firstDayTime1 = new System.Windows.Forms.CheckBox();
+			this.firstDayTime2 = new System.Windows.Forms.CheckBox();
+			this.firstDayTime3 = new System.Windows.Forms.CheckBox();
+			this.firstDayTime4 = new System.Windows.Forms.CheckBox();
+			this.firstDayTime5 = new System.Windows.Forms.CheckBox();
+			this.secondDayTime1 = new System.Windows.Forms.CheckBox();
+			this.secondDayTime2 = new System.Windows.Forms.CheckBox();
+			this.secondDayTime3 = new System.Windows.Forms.CheckBox();
+			this.secondDayTime4 = new System.Windows.Forms.CheckBox();
+			this.secondDayTime5 = new System.Windows.Forms.CheckBox();
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			this.SaveButton = new System.Windows.Forms.Button();
@@ -212,125 +212,125 @@
 			this.secondDateTimePicker1.TabIndex = 11;
 			this.secondDateTimePicker1.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
 			// 
-			// checkBox1
+			// firstDayTime1
 			// 
-			this.checkBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.checkBox1.Location = new System.Drawing.Point(38, 137);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(33, 33);
-			this.checkBox1.TabIndex = 18;
-			this.checkBox1.UseVisualStyleBackColor = true;
+			this.firstDayTime1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.firstDayTime1.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.firstDayTime1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.firstDayTime1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.firstDayTime1.Location = new System.Drawing.Point(38, 137);
+			this.firstDayTime1.Name = "firstDayTime1";
+			this.firstDayTime1.Size = new System.Drawing.Size(33, 33);
+			this.firstDayTime1.TabIndex = 18;
+			this.firstDayTime1.UseVisualStyleBackColor = true;
 			// 
-			// checkBox2
+			// firstDayTime2
 			// 
-			this.checkBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.checkBox2.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.checkBox2.Location = new System.Drawing.Point(38, 176);
-			this.checkBox2.Name = "checkBox2";
-			this.checkBox2.Size = new System.Drawing.Size(33, 33);
-			this.checkBox2.TabIndex = 19;
-			this.checkBox2.UseVisualStyleBackColor = true;
+			this.firstDayTime2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.firstDayTime2.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.firstDayTime2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.firstDayTime2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.firstDayTime2.Location = new System.Drawing.Point(38, 176);
+			this.firstDayTime2.Name = "firstDayTime2";
+			this.firstDayTime2.Size = new System.Drawing.Size(33, 33);
+			this.firstDayTime2.TabIndex = 19;
+			this.firstDayTime2.UseVisualStyleBackColor = true;
 			// 
-			// checkBox3
+			// firstDayTime3
 			// 
-			this.checkBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.checkBox3.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.checkBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.checkBox3.Location = new System.Drawing.Point(38, 215);
-			this.checkBox3.Name = "checkBox3";
-			this.checkBox3.Size = new System.Drawing.Size(33, 33);
-			this.checkBox3.TabIndex = 20;
-			this.checkBox3.UseVisualStyleBackColor = true;
+			this.firstDayTime3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.firstDayTime3.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.firstDayTime3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.firstDayTime3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.firstDayTime3.Location = new System.Drawing.Point(38, 215);
+			this.firstDayTime3.Name = "firstDayTime3";
+			this.firstDayTime3.Size = new System.Drawing.Size(33, 33);
+			this.firstDayTime3.TabIndex = 20;
+			this.firstDayTime3.UseVisualStyleBackColor = true;
 			// 
-			// checkBox4
+			// firstDayTime4
 			// 
-			this.checkBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.checkBox4.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.checkBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.checkBox4.Location = new System.Drawing.Point(38, 258);
-			this.checkBox4.Name = "checkBox4";
-			this.checkBox4.Size = new System.Drawing.Size(33, 33);
-			this.checkBox4.TabIndex = 21;
-			this.checkBox4.UseVisualStyleBackColor = true;
+			this.firstDayTime4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.firstDayTime4.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.firstDayTime4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.firstDayTime4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.firstDayTime4.Location = new System.Drawing.Point(38, 258);
+			this.firstDayTime4.Name = "firstDayTime4";
+			this.firstDayTime4.Size = new System.Drawing.Size(33, 33);
+			this.firstDayTime4.TabIndex = 21;
+			this.firstDayTime4.UseVisualStyleBackColor = true;
 			// 
-			// checkBox5
+			// firstDayTime5
 			// 
-			this.checkBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.checkBox5.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.checkBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.checkBox5.Location = new System.Drawing.Point(38, 293);
-			this.checkBox5.Name = "checkBox5";
-			this.checkBox5.Size = new System.Drawing.Size(33, 33);
-			this.checkBox5.TabIndex = 22;
-			this.checkBox5.UseVisualStyleBackColor = true;
+			this.firstDayTime5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.firstDayTime5.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.firstDayTime5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.firstDayTime5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.firstDayTime5.Location = new System.Drawing.Point(38, 293);
+			this.firstDayTime5.Name = "firstDayTime5";
+			this.firstDayTime5.Size = new System.Drawing.Size(33, 33);
+			this.firstDayTime5.TabIndex = 22;
+			this.firstDayTime5.UseVisualStyleBackColor = true;
 			// 
-			// checkBox6
+			// secondDayTime1
 			// 
-			this.checkBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.checkBox6.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.checkBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.checkBox6.Location = new System.Drawing.Point(195, 137);
-			this.checkBox6.Name = "checkBox6";
-			this.checkBox6.Size = new System.Drawing.Size(33, 33);
-			this.checkBox6.TabIndex = 23;
-			this.checkBox6.UseVisualStyleBackColor = true;
+			this.secondDayTime1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.secondDayTime1.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.secondDayTime1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.secondDayTime1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.secondDayTime1.Location = new System.Drawing.Point(195, 137);
+			this.secondDayTime1.Name = "secondDayTime1";
+			this.secondDayTime1.Size = new System.Drawing.Size(33, 33);
+			this.secondDayTime1.TabIndex = 23;
+			this.secondDayTime1.UseVisualStyleBackColor = true;
 			// 
-			// checkBox7
+			// secondDayTime2
 			// 
-			this.checkBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.checkBox7.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.checkBox7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.checkBox7.Location = new System.Drawing.Point(195, 176);
-			this.checkBox7.Name = "checkBox7";
-			this.checkBox7.Size = new System.Drawing.Size(33, 33);
-			this.checkBox7.TabIndex = 24;
-			this.checkBox7.UseVisualStyleBackColor = true;
+			this.secondDayTime2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.secondDayTime2.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.secondDayTime2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.secondDayTime2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.secondDayTime2.Location = new System.Drawing.Point(195, 176);
+			this.secondDayTime2.Name = "secondDayTime2";
+			this.secondDayTime2.Size = new System.Drawing.Size(33, 33);
+			this.secondDayTime2.TabIndex = 24;
+			this.secondDayTime2.UseVisualStyleBackColor = true;
 			// 
-			// checkBox8
+			// secondDayTime3
 			// 
-			this.checkBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.checkBox8.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.checkBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.checkBox8.Location = new System.Drawing.Point(195, 215);
-			this.checkBox8.Name = "checkBox8";
-			this.checkBox8.Size = new System.Drawing.Size(33, 33);
-			this.checkBox8.TabIndex = 25;
-			this.checkBox8.UseVisualStyleBackColor = true;
+			this.secondDayTime3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.secondDayTime3.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.secondDayTime3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.secondDayTime3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.secondDayTime3.Location = new System.Drawing.Point(195, 215);
+			this.secondDayTime3.Name = "secondDayTime3";
+			this.secondDayTime3.Size = new System.Drawing.Size(33, 33);
+			this.secondDayTime3.TabIndex = 25;
+			this.secondDayTime3.UseVisualStyleBackColor = true;
 			// 
-			// checkBox9
+			// secondDayTime4
 			// 
-			this.checkBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.checkBox9.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.checkBox9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.checkBox9.Location = new System.Drawing.Point(195, 254);
-			this.checkBox9.Name = "checkBox9";
-			this.checkBox9.Size = new System.Drawing.Size(33, 33);
-			this.checkBox9.TabIndex = 26;
-			this.checkBox9.UseVisualStyleBackColor = true;
+			this.secondDayTime4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.secondDayTime4.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.secondDayTime4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.secondDayTime4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.secondDayTime4.Location = new System.Drawing.Point(195, 254);
+			this.secondDayTime4.Name = "secondDayTime4";
+			this.secondDayTime4.Size = new System.Drawing.Size(33, 33);
+			this.secondDayTime4.TabIndex = 26;
+			this.secondDayTime4.UseVisualStyleBackColor = true;
 			// 
-			// checkBox10
+			// secondDayTime5
 			// 
-			this.checkBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.checkBox10.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.checkBox10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.checkBox10.Location = new System.Drawing.Point(195, 293);
-			this.checkBox10.Name = "checkBox10";
-			this.checkBox10.Size = new System.Drawing.Size(33, 33);
-			this.checkBox10.TabIndex = 27;
-			this.checkBox10.UseVisualStyleBackColor = true;
+			this.secondDayTime5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.secondDayTime5.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.secondDayTime5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.secondDayTime5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.secondDayTime5.Location = new System.Drawing.Point(195, 293);
+			this.secondDayTime5.Name = "secondDayTime5";
+			this.secondDayTime5.Size = new System.Drawing.Size(33, 33);
+			this.secondDayTime5.TabIndex = 27;
+			this.secondDayTime5.UseVisualStyleBackColor = true;
 			// 
 			// button1
 			// 
@@ -384,16 +384,16 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.Controls.Add(this.SaveButton);
-			this.Controls.Add(this.checkBox10);
-			this.Controls.Add(this.checkBox9);
-			this.Controls.Add(this.checkBox8);
-			this.Controls.Add(this.checkBox7);
-			this.Controls.Add(this.checkBox6);
-			this.Controls.Add(this.checkBox5);
-			this.Controls.Add(this.checkBox4);
-			this.Controls.Add(this.checkBox3);
-			this.Controls.Add(this.checkBox2);
-			this.Controls.Add(this.checkBox1);
+			this.Controls.Add(this.secondDayTime5);
+			this.Controls.Add(this.secondDayTime4);
+			this.Controls.Add(this.secondDayTime3);
+			this.Controls.Add(this.secondDayTime2);
+			this.Controls.Add(this.secondDayTime1);
+			this.Controls.Add(this.firstDayTime5);
+			this.Controls.Add(this.firstDayTime4);
+			this.Controls.Add(this.firstDayTime3);
+			this.Controls.Add(this.firstDayTime2);
+			this.Controls.Add(this.firstDayTime1);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.secondDateTimePicker5);
@@ -428,16 +428,16 @@
         private System.Windows.Forms.DateTimePicker secondDateTimePicker3;
         private System.Windows.Forms.DateTimePicker secondDateTimePicker2;
         private System.Windows.Forms.DateTimePicker secondDateTimePicker1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.CheckBox checkBox10;
+        private System.Windows.Forms.CheckBox firstDayTime1;
+        private System.Windows.Forms.CheckBox firstDayTime2;
+        private System.Windows.Forms.CheckBox firstDayTime3;
+        private System.Windows.Forms.CheckBox firstDayTime4;
+        private System.Windows.Forms.CheckBox firstDayTime5;
+        private System.Windows.Forms.CheckBox secondDayTime1;
+        private System.Windows.Forms.CheckBox secondDayTime2;
+        private System.Windows.Forms.CheckBox secondDayTime3;
+        private System.Windows.Forms.CheckBox secondDayTime4;
+        private System.Windows.Forms.CheckBox secondDayTime5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button SaveButton;
