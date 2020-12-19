@@ -18,15 +18,20 @@ namespace Presenter
 			_feederListControlView = feederListControlView;
 			feederService = new FeederService();
 		}
-		public void Feed(Feeder feeder)
+		public void Feed(int feederID)
 		{
-			Feeder newFeeder = feederService.Feed(feeder);
-			_feederListControlView.UpdateSelectedFeeder(newFeeder);
+			Feeder newFeeder = feederService.Feed(feederID);
+			_feederListControlView.UpdateSelectedFeeder(newFeeder.Name, newFeeder.Tag, newFeeder.AmountOfFeed);
 		}
-		public void ChangeProperties(Feeder feeder)
+		public void ChangeProperties(int feederID, string name, string tag)
 		{
-			Feeder newFeeder = feederService.ChangeProperties(feeder);
-			_feederListControlView.UpdateSelectedFeeder(newFeeder);
+			Feeder newFeeder = feederService.ChangeProperties(feederID, name, tag);
+			_feederListControlView.UpdateSelectedFeeder(newFeeder.Name, newFeeder.Tag, newFeeder.AmountOfFeed);
+		}
+		public void GetFeederData(int feederID)
+		{
+			Feeder feeder = feederService.GetFeeder(feederID);
+			_feederListControlView.UpdateSelectedFeeder(feeder.Name, feeder.Tag, feeder.AmountOfFeed);
 		}
 	}
 }

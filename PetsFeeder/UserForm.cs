@@ -94,13 +94,16 @@ namespace PetsFeeder
             Application.Exit();
         }
 
-        public void ShowFeeders(ArrayList feedersList)
+        public void ShowFeeders(ArrayList feederIDs)
 		{
-            ArrayList feeders = feedersList;
+            if (feederIDs == null)
+            {
+                return;
+            }
 
             contentPanel.Controls.Clear();
 
-            FeederListControl feederListControl = new FeederListControl(feeders);
+            FeederListControl feederListControl = new FeederListControl(feederIDs);
 
             contentPanel.Controls.Add(feederListControl);
 
