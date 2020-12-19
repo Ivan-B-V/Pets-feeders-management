@@ -20,8 +20,7 @@ namespace Presenter
 		}
 		public void AddFeeder(string Name, string Tag, string Type)
 		{
-			Feeder feeder = new Feeder(Name, Tag, Type);
-			string message = feederService.AddFeeder(feeder);
+			string message = feederService.AddFeeder(Name, Tag, Type);
 
 			_addFeederView.ShowMessage(message);
 		}
