@@ -135,5 +135,53 @@ namespace Model
 
 			return null;
 		}
+
+		public string ExportSchedule(ArrayList day1, ArrayList day2, string fileName)
+		{
+			Schedule schedule = new Schedule(day1, day2);
+
+			string result = _feederDAO.ExportSchedule(schedule, fileName);
+
+			return result;
+		}
+
+		public bool ImportSchedule(string fileName, out string[] day1, out string[] day2)
+		{
+			string result = _feederDAO.ImportSchedule(fileName);
+			Schedule schedule = null;
+			day1 = new string[0];
+			day2 = new string[0];
+			try
+			{
+				schedule = JsonSerializer.Deserialize<Schedule>(result);
+			}
+			catch
+			{
+				return false;
+			}
+
+			if (schedule == null)
+			{
+				return false;
+			}
+
+			day1 = new string[schedule.Day1.Length];
+			int i = 0;
+			foreach (string element in schedule.Day1)
+			{
+				day1[i] = element;
+				i++;
+			}
+
+			day2 = new string[schedule.Day2.Length];
+			i = 0;
+			foreach (string element in schedule.Day2)
+			{
+				day2[i] = element;
+				i++;
+			}
+
+			return true;
+		}
 	}
 }

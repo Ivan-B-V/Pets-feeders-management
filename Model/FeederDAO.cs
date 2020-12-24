@@ -175,5 +175,25 @@ namespace Model
 
 			return response;
 		}
+
+		public string ExportSchedule(Schedule schedule, string fileName)
+		{
+			string toFileString = JsonSerializer.Serialize<Schedule>(schedule);
+			try
+			{
+				File.WriteAllText(fileName, toFileString);
+			}
+			catch
+			{
+				return "shit happens";
+			}
+			return "OK";
+		}
+
+		public string ImportSchedule(string fileName)
+		{
+			string fromFileString = File.ReadAllText(fileName);
+			return fromFileString;
+		}
 	}
 }

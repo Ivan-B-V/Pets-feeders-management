@@ -8,8 +8,7 @@ namespace Presenter.IViews
 {
     public interface ISetScheduleView
     {
-        void ImportSchedule();
-        void ExportSchedule();
+        void ImportSchedule(string[] day1, string[] day2);
         void ShowMessage(string message);
     }
 }

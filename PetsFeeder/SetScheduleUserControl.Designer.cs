@@ -50,9 +50,12 @@
 			this.secondDayTime3 = new System.Windows.Forms.CheckBox();
 			this.secondDayTime4 = new System.Windows.Forms.CheckBox();
 			this.secondDayTime5 = new System.Windows.Forms.CheckBox();
-			this.button1 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
+			this.exportButton = new System.Windows.Forms.Button();
+			this.importButton = new System.Windows.Forms.Button();
 			this.SaveButton = new System.Windows.Forms.Button();
+			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+			this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.SuspendLayout();
 			// 
 			// firstDateTimePicker1
@@ -332,35 +335,37 @@
 			this.secondDayTime5.TabIndex = 27;
 			this.secondDayTime5.UseVisualStyleBackColor = true;
 			// 
-			// button1
+			// exportButton
 			// 
-			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-			this.button1.FlatAppearance.BorderSize = 0;
-			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.button1.Location = new System.Drawing.Point(38, 557);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(202, 40);
-			this.button1.TabIndex = 16;
-			this.button1.Text = "Export schedule";
-			this.button1.UseVisualStyleBackColor = false;
+			this.exportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+			this.exportButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.exportButton.FlatAppearance.BorderSize = 0;
+			this.exportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.exportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.exportButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.exportButton.Location = new System.Drawing.Point(38, 557);
+			this.exportButton.Name = "exportButton";
+			this.exportButton.Size = new System.Drawing.Size(202, 40);
+			this.exportButton.TabIndex = 16;
+			this.exportButton.Text = "Export schedule";
+			this.exportButton.UseVisualStyleBackColor = false;
+			this.exportButton.Click += new System.EventHandler(this.ExportButton_Click);
 			// 
-			// button2
+			// importButton
 			// 
-			this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-			this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-			this.button2.FlatAppearance.BorderSize = 0;
-			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.button2.Location = new System.Drawing.Point(38, 603);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(202, 40);
-			this.button2.TabIndex = 17;
-			this.button2.Text = "Import schedule";
-			this.button2.UseVisualStyleBackColor = false;
+			this.importButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+			this.importButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.importButton.FlatAppearance.BorderSize = 0;
+			this.importButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.importButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.importButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.importButton.Location = new System.Drawing.Point(38, 603);
+			this.importButton.Name = "importButton";
+			this.importButton.Size = new System.Drawing.Size(202, 40);
+			this.importButton.TabIndex = 17;
+			this.importButton.Text = "Import schedule";
+			this.importButton.UseVisualStyleBackColor = false;
+			this.importButton.Click += new System.EventHandler(this.ImportButton_Click);
 			// 
 			// SaveButton
 			// 
@@ -378,6 +383,20 @@
 			this.SaveButton.UseVisualStyleBackColor = false;
 			this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
 			// 
+			// openFileDialog
+			// 
+			this.openFileDialog.FileName = "openFileDialog1";
+			// 
+			// saveFileDialog
+			// 
+			this.saveFileDialog.DefaultExt = "json";
+			this.saveFileDialog.Filter = "Json files(*.json)|*.json";
+			// 
+			// saveFileDialog1
+			// 
+			this.saveFileDialog1.DefaultExt = "json";
+			this.saveFileDialog1.Filter = "Json files(*.json)|*.json";
+			// 
 			// SetScheduleUserControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -394,8 +413,8 @@
 			this.Controls.Add(this.firstDayTime3);
 			this.Controls.Add(this.firstDayTime2);
 			this.Controls.Add(this.firstDayTime1);
-			this.Controls.Add(this.button2);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.importButton);
+			this.Controls.Add(this.exportButton);
 			this.Controls.Add(this.secondDateTimePicker5);
 			this.Controls.Add(this.secondDateTimePicker4);
 			this.Controls.Add(this.secondDateTimePicker3);
@@ -438,8 +457,11 @@
         private System.Windows.Forms.CheckBox secondDayTime3;
         private System.Windows.Forms.CheckBox secondDayTime4;
         private System.Windows.Forms.CheckBox secondDayTime5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button exportButton;
+        private System.Windows.Forms.Button importButton;
         private System.Windows.Forms.Button SaveButton;
-    }
+		private System.Windows.Forms.OpenFileDialog openFileDialog;
+		private System.Windows.Forms.SaveFileDialog saveFileDialog;
+		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+	}
 }

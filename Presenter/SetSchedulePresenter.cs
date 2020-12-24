@@ -24,9 +24,9 @@ namespace Presenter
             for (int i = 0; i < day1Check.Length; i++)
             { 
                 if (day1Check[i])
-				{
+        		{
                     day1Schedule.Add(day1[i]);
-				}
+        		}
             }
             ArrayList day2Schedule = new ArrayList();
             for (int i = 0; i < day2Check.Length; i++)
@@ -39,5 +39,36 @@ namespace Presenter
             string message = feederService.SetSchedule(feederID, day1Schedule, day2Schedule);
             _setScheduleView.ShowMessage(message);
 		}
+
+        public void ExportSchedule(string[] day1, string[] day2, string fileName)
+		{
+            ArrayList day1Schedule = new ArrayList();
+            for (int i = 0; i < day1.Length; i++)
+            {
+                day1Schedule.Add(day1[i]);
+            }
+            ArrayList day2Schedule = new ArrayList();
+            for (int i = 0; i < day2.Length; i++)
+            {
+                day2Schedule.Add(day2[i]);
+            }
+            string message = feederService.ExportSchedule(day1Schedule, day2Schedule, fileName);
+            _setScheduleView.ShowMessage(message);
+        }
+
+        public void ImportSchedule(string fileName)
+		{
+            string[] day1;
+            string[] day2;
+            bool done = feederService.ImportSchedule(fileName, out day1, out day2);
+
+            if (!done)
+			{
+                _setScheduleView.ShowMessage("shit happens");
+                return;
+			}
+
+            _setScheduleView.ImportSchedule(day1, day2);
+        }
     }
 }
