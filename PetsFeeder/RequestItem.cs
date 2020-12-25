@@ -16,7 +16,7 @@ namespace PetsFeeder
     {
         RequestItemPresenter presenter;
         int requestID;
-        public RequestItem(int requestID)
+        public RequestItem( int requestID)
         {
             InitializeComponent();
             this.requestID = requestID;
@@ -28,5 +28,19 @@ namespace PetsFeeder
             usernameLabel.Text = username;
 		}
 
+		private void addButton_Click(object sender, EventArgs e)
+		{
+            presenter.AddUser(requestID);
+		}
+
+		private void removeButton_Click(object sender, EventArgs e)
+		{
+            presenter.RemoveUser(requestID);
+		}
+
+        public void ShowMessage(string message)
+		{
+            MessageBox.Show(message);
+		}
     }
 }

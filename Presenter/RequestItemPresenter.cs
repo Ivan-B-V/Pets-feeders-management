@@ -25,5 +25,21 @@ namespace Presenter
 			UserRequest request = userService.GetRequest(requestID);
 			_requestItemView.UpdateInformation(request.Username);
 		}
+		public void AddUser(int ID)
+		{
+			string message = userService.AcceptUserRequest(ID);
+			if (message == null)
+			{
+				_requestItemView.ShowMessage("shit happend");
+			}
+		}
+		public void RemoveUser(int ID)
+		{
+			string message = userService.RemoveUserRequest(ID);
+			if (message == null)
+			{
+				_requestItemView.ShowMessage("shit happend");
+			}
+		}
 	}
 }

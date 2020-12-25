@@ -100,5 +100,31 @@ namespace Model
 
 			return null;
 		}
+
+		public string AcceptUserRequest(int ID)
+		{
+			UserRequest request = GetRequest(ID);
+			Response response = _userDAO.AcceptUserRequest(request);
+
+			if (response == null || response.headers == null || response.body == null)
+			{
+				return null;
+			}
+
+			return "ok";
+		}
+
+		public string RemoveUserRequest(int ID)
+		{
+			UserRequest request = GetRequest(ID);
+			Response response = _userDAO.RemoveUserRequest(request);
+
+			if (response == null || response.headers == null || response.body == null)
+			{
+				return null;
+			}
+
+			return "ok";
+		}
 	}
 }
