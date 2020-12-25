@@ -249,5 +249,19 @@ namespace Model
 
 			return response;
 		}
+
+		public string ExportLogs(Log log, string fileName)
+		{
+			string toFileString = JsonSerializer.Serialize<Log>(log);
+			try
+			{
+				File.AppendAllText(fileName, toFileString);
+			}
+			catch
+			{
+				return null;
+			}
+			return "OK";
+		}
 	}
 }

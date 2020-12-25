@@ -126,5 +126,19 @@ namespace Model
 
 			return "ok";
 		}
+		public string ExportLogs(string fileName)
+		{
+			ArrayList logs = _currentUserData.GetLogs();
+
+			foreach(Log log in logs)
+			{
+				string message = _userDAO.ExportLogs(log, fileName);
+				if (message == null)
+				{
+					return "shit happens";
+				}
+			}
+			return "ok";
+		}
 	}
 }

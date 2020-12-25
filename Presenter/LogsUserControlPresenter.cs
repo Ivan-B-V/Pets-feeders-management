@@ -36,5 +36,13 @@ namespace Presenter
 			}
 		}
 
+		public void ExportLogs(string fileName)
+		{
+			string message = userService.ExportLogs(fileName);
+			if (!"ok".Equals(message.ToLower()))
+			{
+				_logsUserControlView.ShowMessage(message);
+			}
+		}
 	}
 }

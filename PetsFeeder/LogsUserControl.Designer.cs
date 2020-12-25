@@ -32,6 +32,7 @@
 			this.exportButton = new System.Windows.Forms.Button();
 			this.logsPanel = new System.Windows.Forms.Panel();
 			this.flowLogsPanel = new System.Windows.Forms.FlowLayoutPanel();
+			this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
 			this.panel1.SuspendLayout();
 			this.logsPanel.SuspendLayout();
 			this.SuspendLayout();
@@ -58,6 +59,7 @@
 			this.exportButton.TabIndex = 9;
 			this.exportButton.Text = "Export logs";
 			this.exportButton.UseVisualStyleBackColor = false;
+			this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
 			// 
 			// logsPanel
 			// 
@@ -78,6 +80,11 @@
 			this.flowLogsPanel.Name = "flowLogsPanel";
 			this.flowLogsPanel.Size = new System.Drawing.Size(1200, 561);
 			this.flowLogsPanel.TabIndex = 0;
+			// 
+			// saveFileDialog
+			// 
+			this.saveFileDialog.DefaultExt = "json";
+			this.saveFileDialog.Filter = "Json files(*.json)|*.json";
 			// 
 			// LogsUserControl
 			// 
@@ -100,5 +107,6 @@
         private System.Windows.Forms.Button exportButton;
         private System.Windows.Forms.Panel logsPanel;
 		private System.Windows.Forms.FlowLayoutPanel flowLogsPanel;
+		private System.Windows.Forms.SaveFileDialog saveFileDialog;
 	}
 }

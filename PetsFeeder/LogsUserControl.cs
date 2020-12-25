@@ -32,5 +32,15 @@ namespace PetsFeeder
 		{
             MessageBox.Show(message);
 		}
-    }
+
+		private void exportButton_Click(object sender, EventArgs e)
+		{
+            if (!(saveFileDialog.ShowDialog() == DialogResult.OK))
+            {
+                return;
+            }
+
+            presenter.ExportLogs(saveFileDialog.FileName);
+        }
+	}
 }
