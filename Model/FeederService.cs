@@ -38,11 +38,7 @@ namespace Model
 
 			Response response = _feederDAO.Feed(feeder);
 
-			if (response == null)
-			{
-				return null;
-			}
-			if (response.body == null)
+			if (response == null || response.headers == null || response.body == null)
 			{
 				return null;
 			}
@@ -60,7 +56,7 @@ namespace Model
 			feeder.OwnerID = _currentUserData.GetUser().UserID;
 			Response response = _feederDAO.AddFeeder(feeder);
 
-			if (response == null)
+			if (response == null || response.headers == null || response.body == null)
 			{
 				return "shit happens";
 			}	
@@ -77,7 +73,7 @@ namespace Model
 
 			Response response = _feederDAO.ChangeProperties(feeder);
 
-			if (response == null)
+			if (response == null || response.headers == null || response.body == null)
 			{
 				return null;
 			}
@@ -103,7 +99,7 @@ namespace Model
 
 			Response response = _feederDAO.ChangeProperties(currentFeeder);
 
-			if (response == null)
+			if (response == null || response.headers == null || response.body == null)
 			{
 				return "shit happens";
 			}
@@ -200,11 +196,6 @@ namespace Model
 			}
 
 			Schedule schedule = feeder.Schedule;
-
-			/*if (schedule == null)
-			{
-				return false;
-			}*/
 
 			string[] daySchedule = schedule.Day1;
 			for (int i = 0; i < daySchedule.Length; i++)

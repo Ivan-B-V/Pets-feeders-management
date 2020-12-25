@@ -23,7 +23,7 @@ namespace Model
 
 			Response response = _userDAO.SignIn(user);
 
-			if (response == null)
+			if (response == null || response.headers == null || response.body == null)
 			{
 				return null;
 			}
@@ -40,7 +40,7 @@ namespace Model
 
 			Response response = _userDAO.Register(user);
 
-			if (response == null)
+			if (response == null || response.headers == null || response.body == null)
 			{
 				return "shit happend";
 			}
