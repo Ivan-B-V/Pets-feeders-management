@@ -24,7 +24,7 @@ namespace Model
 
 			Response response = _userDAO.SignIn(user);
 
-			if (response == null || response.headers == null || response.body == null)
+			if (response == null || response.headers == null || response.body == null || response.body.Count == 0)
 			{
 				return null;
 			}
@@ -41,7 +41,7 @@ namespace Model
 
 			Response response = _userDAO.Register(user);
 
-			if (response == null || response.headers == null || response.body == null)
+			if (response == null || response.headers == null)
 			{
 				return "shit happend";
 			}
@@ -70,6 +70,35 @@ namespace Model
 		public ArrayList GetLogs()
 		{
 			return _currentUserData.GetLogs();
+		}
+		public ArrayList GetRequests()
+		{
+			ArrayResponse response = _userDAO.GetUserRequests(_currentUserData.GetUser());
+
+			if (response == null || response.body == null)
+			{
+				return null;
+			}
+
+			_currentUserData.ReplaceUserRequests(response);
+
+			return _currentUserData.GetUserRequests();
+		}
+		public UserRequest GetRequest(int ID)
+		{
+			ArrayList requests = _currentUserData.GetUserRequests();
+
+			UserRequest request = null;
+			foreach (UserRequest item in requests)
+			{
+				if (item.UserID == ID)
+				{
+					request = item;
+					return request;
+				}
+			}
+
+			return null;
 		}
 	}
 }

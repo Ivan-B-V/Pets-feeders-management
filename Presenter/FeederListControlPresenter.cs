@@ -21,6 +21,11 @@ namespace Presenter
 		public void Feed(int feederID)
 		{
 			Feeder newFeeder = feederService.Feed(feederID);
+			if (newFeeder == null)
+			{
+				_feederListControlView.ShowMessage("shit happend");
+				return;
+			}
 			_feederListControlView.UpdateSelectedFeeder(newFeeder.Name, newFeeder.Tag, newFeeder.AmountOfFeed);
 		}
 		public void ChangeProperties(int feederID, string name, string tag)

@@ -77,6 +77,12 @@
     <Compile Include="FeederListControl.Designer.cs">
       <DependentUpon>FeederListControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminFeedersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminFeedersControl.Designer.cs">
+      <DependentUpon>AdminFeedersControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="FeedersListItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FeederListControl.resx">
       <DependentUpon>FeederListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminFeedersControl.resx">
+      <DependentUpon>AdminFeedersControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FeedersListItem.resx">
       <DependentUpon>FeedersListItem.cs</DependentUpon>

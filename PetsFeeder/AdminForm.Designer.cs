@@ -30,16 +30,18 @@
         {
 			this.barPanel = new System.Windows.Forms.Panel();
 			this.logsButton = new System.Windows.Forms.Button();
+			this.feedersButton = new System.Windows.Forms.Button();
 			this.requestsButton = new System.Windows.Forms.Button();
 			this.accountPanel = new System.Windows.Forms.Panel();
 			this.username = new System.Windows.Forms.Label();
 			this.userPictureBox = new System.Windows.Forms.PictureBox();
 			this.exitButton = new System.Windows.Forms.Button();
 			this.contentPanel = new System.Windows.Forms.Panel();
-			this.feedersButton = new System.Windows.Forms.Button();
+			this.flowFeedersPanel = new System.Windows.Forms.FlowLayoutPanel();
 			this.barPanel.SuspendLayout();
 			this.accountPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).BeginInit();
+			this.contentPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// barPanel
@@ -71,6 +73,20 @@
 			this.logsButton.UseVisualStyleBackColor = true;
 			this.logsButton.Click += new System.EventHandler(this.logsButton_Click);
 			// 
+			// feedersButton
+			// 
+			this.feedersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+			this.feedersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.feedersButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.feedersButton.ForeColor = System.Drawing.Color.White;
+			this.feedersButton.Location = new System.Drawing.Point(407, 12);
+			this.feedersButton.Name = "feedersButton";
+			this.feedersButton.Size = new System.Drawing.Size(133, 53);
+			this.feedersButton.TabIndex = 5;
+			this.feedersButton.Text = "FEEDERS";
+			this.feedersButton.UseVisualStyleBackColor = false;
+			this.feedersButton.Click += new System.EventHandler(this.feedersButton_Click);
+			// 
 			// requestsButton
 			// 
 			this.requestsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -82,7 +98,7 @@
 			this.requestsButton.TabIndex = 4;
 			this.requestsButton.Text = "REQUESTS";
 			this.requestsButton.UseVisualStyleBackColor = true;
-			this.requestsButton.Click += new System.EventHandler(this.usersButton_Click);
+			this.requestsButton.Click += new System.EventHandler(this.requestsButton_Click);
 			// 
 			// accountPanel
 			// 
@@ -142,24 +158,21 @@
 			// 
 			// contentPanel
 			// 
+			this.contentPanel.Controls.Add(this.flowFeedersPanel);
 			this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.contentPanel.Location = new System.Drawing.Point(0, 80);
 			this.contentPanel.Name = "contentPanel";
 			this.contentPanel.Size = new System.Drawing.Size(1200, 620);
 			this.contentPanel.TabIndex = 1;
 			// 
-			// feedersButton
+			// flowFeedersPanel
 			// 
-			this.feedersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-			this.feedersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.feedersButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.feedersButton.ForeColor = System.Drawing.Color.White;
-			this.feedersButton.Location = new System.Drawing.Point(407, 12);
-			this.feedersButton.Name = "feedersButton";
-			this.feedersButton.Size = new System.Drawing.Size(133, 53);
-			this.feedersButton.TabIndex = 5;
-			this.feedersButton.Text = "FEEDERS";
-			this.feedersButton.UseVisualStyleBackColor = false;
+			this.flowFeedersPanel.AutoScroll = true;
+			this.flowFeedersPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.flowFeedersPanel.Location = new System.Drawing.Point(0, 0);
+			this.flowFeedersPanel.Name = "flowFeedersPanel";
+			this.flowFeedersPanel.Size = new System.Drawing.Size(1200, 620);
+			this.flowFeedersPanel.TabIndex = 0;
 			// 
 			// AdminForm
 			// 
@@ -176,6 +189,7 @@
 			this.accountPanel.ResumeLayout(false);
 			this.accountPanel.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).EndInit();
+			this.contentPanel.ResumeLayout(false);
 			this.ResumeLayout(false);
 
         }
@@ -191,5 +205,6 @@
         private System.Windows.Forms.Button logsButton;
         private System.Windows.Forms.Panel contentPanel;
 		private System.Windows.Forms.Button feedersButton;
+		private System.Windows.Forms.FlowLayoutPanel flowFeedersPanel;
 	}
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presenter.IViews;
 using Presenter;
+using System.Collections;
 
 namespace PetsFeeder
 {
@@ -28,10 +29,19 @@ namespace PetsFeeder
             Application.Exit();
         }
 
-        private void usersButton_Click(object sender, EventArgs e)
+        private void requestsButton_Click(object sender, EventArgs e)
         {
+            presenter.ShowRequests();
+        }
+        public void ShowRequests(ArrayList requestsIDs)
+		{
+            if (requestsIDs == null)
+            {
+                return;
+            }
+
             contentPanel.Controls.Clear();
-            AdminUsersControl adminUsersControl = new AdminUsersControl();
+            AdminUsersControl adminUsersControl = new AdminUsersControl(requestsIDs);
             this.contentPanel.Controls.Add(adminUsersControl);
         }
 
@@ -65,9 +75,28 @@ namespace PetsFeeder
             }
         }
 
+        private void feedersButton_Click(object sender, EventArgs e)
+        {
+            presenter.ShowFeeders();
+        }
+
+        public void ShowFeeders(ArrayList feederIDs)
+		{
+            if (feederIDs == null)
+			{
+                return;
+			}
+            contentPanel.Controls.Clear();
+
+            AdminFeedersControl adminFeedersControl = new AdminFeedersControl(feederIDs);
+            contentPanel.Controls.Add(adminFeedersControl);
+            
+        }
+
         public void ShowMessage(string message)
 		{
             MessageBox.Show(message);
 		}
-    }
+
+	}
 }

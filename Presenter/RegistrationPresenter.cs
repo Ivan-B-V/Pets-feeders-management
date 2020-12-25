@@ -38,7 +38,7 @@ namespace Presenter
 				return;
 			}
 
-			if (password.Equals(passwordRepeat))
+			if (!password.Equals(passwordRepeat))
 			{
 				_registrationView.ShowMessage("passwords are not equal");
 				return;

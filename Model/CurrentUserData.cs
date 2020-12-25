@@ -13,9 +13,23 @@ namespace Model
 	{
 		private static User _user;
 		private static ArrayList logs = new ArrayList();
+		private static ArrayList userRequests = new ArrayList();
 		public CurrentUserData()
 		{
 		
+		}
+		public ArrayList GetUserRequests()
+		{
+			return userRequests;
+		}
+		public void ReplaceUserRequests(ArrayResponse response)
+		{
+			userRequests.Clear();
+			foreach (Dictionary<string, JsonElement> element in response.body)
+			{
+				UserRequest log = new UserRequest(element);
+				userRequests.Add(log);
+			}
 		}
 		public ArrayList GetLogs()
 		{

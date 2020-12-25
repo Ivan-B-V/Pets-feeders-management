@@ -38,7 +38,7 @@ namespace Model
 
 			Response response = _feederDAO.Feed(feeder);
 
-			if (response == null)
+			if (response == null || response.body == null)
 			{
 				return null;
 			}

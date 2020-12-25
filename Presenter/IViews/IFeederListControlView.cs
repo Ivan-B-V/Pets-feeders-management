@@ -11,5 +11,6 @@ namespace Presenter.IViews
 	{
 		void UpdateSelectedFeeder(string name, string tag, int amount);
 		void SetFeederData(string name, string tag);
+		void ShowMessage(string message);
 	}
 }

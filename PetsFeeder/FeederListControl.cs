@@ -100,5 +100,9 @@ namespace PetsFeeder
             feedersListPanel.Visible = false;
             this.Controls.Add(setSchedule);
         }
+        public void ShowMessage(string message)
+		{
+            MessageBox.Show(message);
+		}
     }
 }

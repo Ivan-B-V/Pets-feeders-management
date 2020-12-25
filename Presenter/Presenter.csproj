@@ -50,11 +50,13 @@
     <Compile Include="IViews\ILoginView.cs" />
     <Compile Include="IViews\ILogsUserControlView.cs" />
     <Compile Include="IViews\IRegistrationView.cs" />
+    <Compile Include="IViews\IRequestItemView.cs" />
     <Compile Include="IViews\ISetScheduleView.cs" />
     <Compile Include="IViews\IUserView.cs" />
     <Compile Include="LoginPresenter.cs" />
     <Compile Include="LogsUserControlPresenter.cs" />
     <Compile Include="RegistrationPresenter.cs" />
+    <Compile Include="RequestItemPresenter.cs" />
     <Compile Include="SetSchedulePresenter.cs" />
     <Compile Include="UserFormPresenter.cs" />
   </ItemGroup>

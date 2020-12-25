@@ -89,7 +89,7 @@
 			this.FeederImageBox.Image = global::PetsFeeder.Properties.Resources.dog;
 			this.FeederImageBox.Location = new System.Drawing.Point(20, 11);
 			this.FeederImageBox.Name = "FeederImageBox";
-			this.FeederImageBox.Size = new System.Drawing.Size(128, 130);
+			this.FeederImageBox.Size = new System.Drawing.Size(128, 128);
 			this.FeederImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.FeederImageBox.TabIndex = 5;
 			this.FeederImageBox.TabStop = false;
@@ -100,13 +100,14 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
 			this.BackColor = System.Drawing.Color.White;
+			this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.Controls.Add(this.feederCapacity);
 			this.Controls.Add(this.feederCapacityBar);
 			this.Controls.Add(this.feederTagLabel);
 			this.Controls.Add(this.feederNameLabel);
 			this.Controls.Add(this.FeederImageBox);
 			this.Name = "FeedersListItem";
-			this.Size = new System.Drawing.Size(660, 152);
+			this.Size = new System.Drawing.Size(658, 150);
 			this.Load += new System.EventHandler(this.FeedersListItem_Load);
 			this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FeedersListItem_MouseClick);
 			((System.ComponentModel.ISupportInitialize)(this.FeederImageBox)).EndInit();
