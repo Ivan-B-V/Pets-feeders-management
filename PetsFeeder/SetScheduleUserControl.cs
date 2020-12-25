@@ -30,50 +30,37 @@ namespace PetsFeeder
             
         }
 
-        public void ImportSchedule(string[] day1, string[] day2)//пытался сделать это через рефлексию. обосрался.
+        public void ImportSchedule(string[] day1, string[] day2)
         {
             char[] separators = { ':' };
-            
-            string[] t = day1[0].Split(separators);
-            DateTime time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, int.Parse(t[0]), int.Parse(t[1]), 0);
-            firstDateTimePicker1.Value = time;
+            string[] t;
+            DateTime time;
 
-            t = day1[1].Split(separators);
-            time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, int.Parse(t[0]), int.Parse(t[1]), 0);
-            firstDateTimePicker2.Value = time;
+            DateTimePicker[] first = new DateTimePicker[5];
+            first[0] = firstDateTimePicker1;
+            first[1] = firstDateTimePicker2;
+            first[2] = firstDateTimePicker3;
+            first[3] = firstDateTimePicker4;
+            first[4] = firstDateTimePicker5;
+            for (int i = 0; i < day1.Length; i++)
+			{
+                t = day1[i].Split(separators);
+                time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, int.Parse(t[0]), int.Parse(t[1]), 0);
+                first[i].Value = time;
+            }
 
-            t = day1[2].Split(separators);
-            time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, int.Parse(t[0]), int.Parse(t[1]), 0);
-            firstDateTimePicker3.Value = time;
-
-            t = day1[3].Split(separators);
-            time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, int.Parse(t[0]), int.Parse(t[1]), 0);
-            firstDateTimePicker4.Value = time;
-
-            t = day1[4].Split(separators);
-            time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, int.Parse(t[0]), int.Parse(t[1]), 0);
-            firstDateTimePicker5.Value = time;
-
-
-            t = day2[0].Split(separators);
-            time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, int.Parse(t[0]), int.Parse(t[1]), 0);
-            secondDateTimePicker1.Value = time;
-
-            t = day2[1].Split(separators);
-            time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, int.Parse(t[0]), int.Parse(t[1]), 0);
-            secondDateTimePicker2.Value = time;
-
-            t = day2[2].Split(separators);
-            time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, int.Parse(t[0]), int.Parse(t[1]), 0);
-            secondDateTimePicker3.Value = time;
-
-            t = day2[3].Split(separators);
-            time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, int.Parse(t[0]), int.Parse(t[1]), 0);
-            secondDateTimePicker4.Value = time;
-
-            t = day2[4].Split(separators);
-            time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, int.Parse(t[0]), int.Parse(t[1]), 0);
-            secondDateTimePicker5.Value = time;
+            DateTimePicker[] second = new DateTimePicker[5];
+            second[0] = secondDateTimePicker1;
+            second[1] = secondDateTimePicker2;
+            second[2] = secondDateTimePicker3;
+            second[3] = secondDateTimePicker4;
+            second[4] = secondDateTimePicker5;
+            for (int i = 0; i < day1.Length; i++)
+            {
+                t = day2[i].Split(separators);
+                time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, int.Parse(t[0]), int.Parse(t[1]), 0);
+                second[i].Value = time;
+            }
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -127,7 +114,7 @@ namespace PetsFeeder
 
 		private void ExportButton_Click(object sender, EventArgs e)
 		{
-            if (!(saveFileDialog.ShowDialog() == DialogResult.OK))//if file not choosed
+            if (!(saveFileDialog.ShowDialog() == DialogResult.OK))
             {
                 return;
             }
@@ -141,7 +128,7 @@ namespace PetsFeeder
 
         private void ImportButton_Click(object sender, EventArgs e)
         {
-            if (!(openFileDialog.ShowDialog() == DialogResult.OK))//if file not choosed
+            if (!(openFileDialog.ShowDialog() == DialogResult.OK))
             {
                 return;
             }

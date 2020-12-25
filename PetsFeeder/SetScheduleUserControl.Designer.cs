@@ -55,7 +55,6 @@
 			this.SaveButton = new System.Windows.Forms.Button();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
 			this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.SuspendLayout();
 			// 
 			// firstDateTimePicker1
@@ -392,11 +391,6 @@
 			this.saveFileDialog.DefaultExt = "json";
 			this.saveFileDialog.Filter = "Json files(*.json)|*.json";
 			// 
-			// saveFileDialog1
-			// 
-			this.saveFileDialog1.DefaultExt = "json";
-			this.saveFileDialog1.Filter = "Json files(*.json)|*.json";
-			// 
 			// SetScheduleUserControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -462,6 +456,5 @@
         private System.Windows.Forms.Button SaveButton;
 		private System.Windows.Forms.OpenFileDialog openFileDialog;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog;
-		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
 	}
 }
