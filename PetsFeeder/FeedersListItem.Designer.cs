@@ -32,6 +32,7 @@
 			this.feederNameLabel = new System.Windows.Forms.Label();
 			this.feederTagLabel = new System.Windows.Forms.Label();
 			this.feederCapacityBar = new System.Windows.Forms.ProgressBar();
+			this.feederCapacity = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.FeederImageBox)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -82,12 +83,24 @@
 			this.feederCapacityBar.TabIndex = 9;
 			this.feederCapacityBar.Value = 50;
 			// 
+			// feederCapacity
+			// 
+			this.feederCapacity.BackColor = System.Drawing.Color.Transparent;
+			this.feederCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.feederCapacity.Location = new System.Drawing.Point(361, 90);
+			this.feederCapacity.Name = "feederCapacity";
+			this.feederCapacity.Size = new System.Drawing.Size(35, 23);
+			this.feederCapacity.TabIndex = 10;
+			this.feederCapacity.Text = "label";
+			this.feederCapacity.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			// 
 			// FeedersListItem
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
 			this.BackColor = System.Drawing.Color.White;
+			this.Controls.Add(this.feederCapacity);
 			this.Controls.Add(this.feederCapacityBar);
 			this.Controls.Add(this.feederTagLabel);
 			this.Controls.Add(this.feederNameLabel);
@@ -108,5 +121,6 @@
         private System.Windows.Forms.Label feederNameLabel;
         private System.Windows.Forms.Label feederTagLabel;
         private System.Windows.Forms.ProgressBar feederCapacityBar;
-    }
+		private System.Windows.Forms.Label feederCapacity;
+	}
 }

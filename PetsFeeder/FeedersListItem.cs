@@ -22,6 +22,7 @@ namespace PetsFeeder
         private string feederName;
         private string feederTag;
         private int feederAmount;
+        private string stringCapacity;
         
         public FeedersListItem(MyDelegate sender, int feederID)
         {
@@ -35,9 +36,9 @@ namespace PetsFeeder
         private void FeedersListItem_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.Transparent;
-            feederNameLabel.Text = feederName;
-            feederTagLabel.Text = feederTag;
-            feederCapacityBar.Value = feederAmount;
+            //feederNameLabel.Text = feederName;
+            //feederTagLabel.Text = feederTag;
+            //feederCapacityBar.Value = feederAmount;
         }
 
         private void FeedersListItem_MouseClick(object sender, MouseEventArgs e)
@@ -50,9 +51,11 @@ namespace PetsFeeder
             this.feederName = feederName;
             this.feederTag = feederTag;
             this.feederAmount = feederAmount;
+            this.stringCapacity = feederAmount.ToString();
             feederNameLabel.Text = feederName;
             feederTagLabel.Text = feederTag;
             feederCapacityBar.Value = feederAmount;
+            feederCapacity.Text = feederAmount.ToString();
         }
 
 		public bool Equals(int feederID)
