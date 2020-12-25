@@ -13,7 +13,7 @@ namespace PetsFeeder
     public partial class AdminUsersControl : UserControl
     {
 
-        UserItemAdmin userItemAdmin = new UserItemAdmin();
+        RequestItem userItemAdmin = new RequestItem();
 
         public AdminUsersControl()
         {

@@ -52,19 +52,15 @@ namespace PetsFeeder
 
         private void viewLogsButton_Click(object sender, EventArgs e)
         {
+            presenter.LoadLogs();
+            
             contentPanel.Controls.Clear();
             this.selectedButtonPanel.Height = viewLogsButton.Height;
             this.selectedButtonPanel.Top = viewLogsButton.Top;
-
+            
             LogsUserControl logsUserControl = new LogsUserControl();
-            logsUserControl.hidePanel();
+            logsUserControl.Width = contentPanel.Width;
             contentPanel.Controls.Add(logsUserControl);
-        }
-
-        private void helpButton_Click(object sender, EventArgs e)
-        {
-            HelpForm helpForm = new HelpForm();
-            helpForm.Show();
         }
 
         private void barPanel_MouseDown(object sender, MouseEventArgs e)

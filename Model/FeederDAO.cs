@@ -100,7 +100,7 @@ namespace Model
 			return response;
 		}
 
-		public FeedersResponse GetFeeders()
+		public ArrayResponse GetFeeders()
 		{
 			string requestString = JsonSerializer.Serialize<User>(_currentUserData.GetUser());
 
@@ -116,7 +116,7 @@ namespace Model
 			}
 
 			HttpWebResponse httpWebResponse = (HttpWebResponse)request.GetResponse();
-			FeedersResponse response;
+			ArrayResponse response;
 			try
 			{ 
 				using (Stream stream = httpWebResponse.GetResponseStream())
@@ -124,7 +124,7 @@ namespace Model
 					using (StreamReader reader = new StreamReader(stream))
 					{
 						string responseString = reader.ReadToEnd();
-						response = JsonSerializer.Deserialize<FeedersResponse>(responseString);
+						response = JsonSerializer.Deserialize<ArrayResponse>(responseString);
 					}
 				}
 			}

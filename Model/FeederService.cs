@@ -20,9 +20,9 @@ namespace Model
 		}
 		public ArrayList GetFeeders()
 		{
-			FeedersResponse response = _feederDAO.GetFeeders();
+			ArrayResponse response = _feederDAO.GetFeeders();
 
-			if (response == null)
+			if (response == null || response.headers == null || response.body == null)
 			{
 				return null;
 			}
@@ -38,7 +38,7 @@ namespace Model
 
 			Response response = _feederDAO.Feed(feeder);
 
-			if (response == null || response.headers == null || response.body == null)
+			if (response == null)
 			{
 				return null;
 			}
@@ -73,7 +73,7 @@ namespace Model
 
 			Response response = _feederDAO.ChangeProperties(feeder);
 
-			if (response == null || response.headers == null || response.body == null)
+			if (response == null)
 			{
 				return null;
 			}
@@ -99,7 +99,7 @@ namespace Model
 
 			Response response = _feederDAO.ChangeProperties(currentFeeder);
 
-			if (response == null || response.headers == null || response.body == null)
+			if (response == null)
 			{
 				return "shit happens";
 			}

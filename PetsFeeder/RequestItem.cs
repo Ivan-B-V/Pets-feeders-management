@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PetsFeeder
 {
-    public partial class HelpUserControl : UserControl
+    public partial class RequestItem : UserControl
     {
-        public HelpUserControl()
+        public RequestItem()
         {
             InitializeComponent();
         }

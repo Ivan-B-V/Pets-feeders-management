@@ -36,9 +36,6 @@ namespace PetsFeeder
         private void FeedersListItem_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.Transparent;
-            //feederNameLabel.Text = feederName;
-            //feederTagLabel.Text = feederTag;
-            //feederCapacityBar.Value = feederAmount;
         }
 
         private void FeedersListItem_MouseClick(object sender, MouseEventArgs e)
@@ -55,7 +52,7 @@ namespace PetsFeeder
             feederNameLabel.Text = feederName;
             feederTagLabel.Text = feederTag;
             feederCapacityBar.Value = feederAmount;
-            feederCapacity.Text = feederAmount.ToString();
+            feederCapacity.Text = feederAmount.ToString() + "%";
         }
 
 		public bool Equals(int feederID)

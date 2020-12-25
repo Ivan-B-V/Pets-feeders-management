@@ -7,16 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Presenter.IViews;
+using Presenter;
 
 namespace PetsFeeder
 {
-    public partial class AdminForm : Form
+    public partial class AdminForm : Form, IAdminFormView
     {
         Point lastPoint;
+        AdminFormPresenter presenter;
 
         public AdminForm()
         {
             InitializeComponent();
+            presenter = new AdminFormPresenter(this);
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -31,16 +35,9 @@ namespace PetsFeeder
             this.contentPanel.Controls.Add(adminUsersControl);
         }
 
-        private void helpButton_Click(object sender, EventArgs e)
-        {
-            contentPanel.Controls.Clear();
-            HelpUserControl helpUserControl = new HelpUserControl();
-            contentPanel.Controls.Add(helpUserControl);
-        }
-
         private void logsButton_Click(object sender, EventArgs e)
         {
-          
+            presenter.LoadLogs();
             contentPanel.Controls.Clear();
             LogsUserControl logsUserControl = new LogsUserControl();
             this.contentPanel.Controls.Add(logsUserControl);
@@ -67,5 +64,10 @@ namespace PetsFeeder
                 lastPoint.Y = e.Y;
             }
         }
+
+        public void ShowMessage(string message)
+		{
+            MessageBox.Show(message);
+		}
     }
 }

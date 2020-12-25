@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json;
 using Entities;
+using System.Collections;
 
 namespace Model
 {
@@ -46,6 +47,29 @@ namespace Model
 			}
 			string message = response.headers["message"];
 			return message;
+		}
+		public string LoadLogs()
+		{
+			ArrayResponse response = _userDAO.GetLogs(_currentUserData.GetUser());
+
+			if (response == null || response.headers == null || response.body == null)
+			{
+				return "shit happens";
+			}
+			
+			string message = response.headers["message"];
+			if (!"ok".Equals(message.ToLower()))
+			{
+				return message;
+			}
+
+			_currentUserData.ReplaceLogs(response);
+
+			return "OK";
+		}
+		public ArrayList GetLogs()
+		{
+			return _currentUserData.GetLogs();
 		}
 	}
 }

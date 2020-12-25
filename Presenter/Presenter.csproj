@@ -40,16 +40,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddFeederPresenter.cs" />
+    <Compile Include="AdminFormPresenter.cs" />
     <Compile Include="FeederListControlPresenter.cs" />
     <Compile Include="FeederListItemPresenter.cs" />
     <Compile Include="IViews\IAddFeederView.cs" />
+    <Compile Include="IViews\IAdminFormView.cs" />
     <Compile Include="IViews\IFeederListControlView.cs" />
     <Compile Include="IViews\IFeederListItemView.cs" />
     <Compile Include="IViews\ILoginView.cs" />
+    <Compile Include="IViews\ILogsUserControlView.cs" />
     <Compile Include="IViews\IRegistrationView.cs" />
     <Compile Include="IViews\ISetScheduleView.cs" />
     <Compile Include="IViews\IUserView.cs" />
     <Compile Include="LoginPresenter.cs" />
+    <Compile Include="LogsUserControlPresenter.cs" />
     <Compile Include="RegistrationPresenter.cs" />
     <Compile Include="SetSchedulePresenter.cs" />
     <Compile Include="UserFormPresenter.cs" />

@@ -12,11 +12,24 @@ namespace Model
 	class CurrentUserData
 	{
 		private static User _user;
+		private static ArrayList logs = new ArrayList();
 		public CurrentUserData()
 		{
-
+		
 		}
-
+		public ArrayList GetLogs()
+		{
+			return logs;
+		}
+		public void ReplaceLogs(ArrayResponse response)
+		{
+			logs.Clear();
+			foreach (Dictionary<string, JsonElement> element in response.body)
+			{
+				Log log = new Log(element);
+				logs.Add(log);
+			}
+		}
 		public void SetCurrentUser(User user)
 		{
 			_user = user;
@@ -25,11 +38,9 @@ namespace Model
 		{
 			_user.AddFeeders(feeders);
 		}
-		public void AddFeeders(FeedersResponse response)
+		public void AddFeeders(ArrayResponse response)
 		{
 			ArrayList feeders = new ArrayList();
-
-			int len = response.body.Length;
 
 			foreach (Dictionary<string, JsonElement> element in response.body)
 			{
@@ -39,7 +50,7 @@ namespace Model
 
 			_user.AddFeeders(feeders);
 		}
-		public void ReplaceFeeders(FeedersResponse response)
+		public void ReplaceFeeders(ArrayResponse response)
 		{
 			_user.DeleteAllFeeders();
 			AddFeeders(response);

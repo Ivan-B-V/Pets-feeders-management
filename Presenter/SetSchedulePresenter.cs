@@ -53,7 +53,10 @@ namespace Presenter
                 day2Schedule.Add(day2[i]);
             }
             string message = feederService.ExportSchedule(day1Schedule, day2Schedule, fileName);
-            _setScheduleView.ShowMessage(message);
+            if (!"ok".Equals(message.ToLower()))
+            {
+                _setScheduleView.ShowMessage(message);
+            }
         }
 
         public void ImportSchedule(string fileName)

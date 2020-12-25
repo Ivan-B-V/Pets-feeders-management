@@ -45,18 +45,23 @@ namespace Entities
 
 			string str = response.body["UserFeeders"].ToString();
 			str = str.Trim(useless);
-			
-			string[] idsString = str.Split(separator);
-
-			int len = idsString.Length;
-
-			int[] arr = new int[len];
-			for (int i = 0; i < len; i++)
+			if ("".Equals(str))
 			{
-				arr[i] = int.Parse(idsString[i]);
+				UserFeeders = new int[0];
 			}
-			UserFeeders = arr;
+			else
+			{
+				string[] idsString = str.Split(separator);
 
+				int len = idsString.Length;
+
+				int[] arr = new int[len];
+				for (int i = 0; i < len; i++)
+				{
+					arr[i] = int.Parse(idsString[i]);
+				}
+				UserFeeders = arr;
+			}
 			feeders = new ArrayList();
 		}
 

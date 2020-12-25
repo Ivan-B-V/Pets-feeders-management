@@ -106,9 +106,18 @@ namespace PetsFeeder
 
 		public void Confirm(string username)
 		{
-            UserForm userForm = new UserForm(username);
-            userForm.Show();
-            this.Hide();
+            if ("Admin".Equals(username))
+            {
+                AdminForm adminForm = new AdminForm();
+                adminForm.Show();
+                this.Hide();
+            }
+			else
+			{
+                UserForm userForm = new UserForm(username);
+                userForm.Show();
+                this.Hide();
+            }
         }
 
 		public void ShowMessage(string message)

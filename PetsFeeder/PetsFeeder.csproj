@@ -83,18 +83,6 @@
     <Compile Include="FeedersListItem.Designer.cs">
       <DependentUpon>FeedersListItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="HelpForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HelpForm.Designer.cs">
-      <DependentUpon>HelpForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HelpUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="HelpUserControl.Designer.cs">
-      <DependentUpon>HelpUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +100,12 @@
     </Compile>
     <Compile Include="SetScheduleUserControl.Designer.cs">
       <DependentUpon>SetScheduleUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogsListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LogsListItem.Designer.cs">
+      <DependentUpon>LogsListItem.cs</DependentUpon>
     </Compile>
     <Compile Include="UserForm.cs">
       <SubType>Form</SubType>
@@ -133,11 +127,11 @@
     <Compile Include="UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserItemAdmin.cs">
+    <Compile Include="RequestItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserItemAdmin.Designer.cs">
-      <DependentUpon>UserItemAdmin.cs</DependentUpon>
+    <Compile Include="RequestItem.Designer.cs">
+      <DependentUpon>RequestItem.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddFeederControl.resx">
       <DependentUpon>AddFeederControl.cs</DependentUpon>
@@ -157,14 +151,11 @@
     <EmbeddedResource Include="FeedersListItem.resx">
       <DependentUpon>FeedersListItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HelpForm.resx">
-      <DependentUpon>HelpForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HelpUserControl.resx">
-      <DependentUpon>HelpUserControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogsListItem.resx">
+      <DependentUpon>LogsListItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogsUserControl.resx">
       <DependentUpon>LogsUserControl.cs</DependentUpon>
@@ -191,8 +182,8 @@
     <EmbeddedResource Include="UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserItemAdmin.resx">
-      <DependentUpon>UserItemAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="RequestItem.resx">
+      <DependentUpon>RequestItem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

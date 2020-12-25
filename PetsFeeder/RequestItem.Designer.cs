@@ -1,6 +1,6 @@
 ﻿namespace PetsFeeder
 {
-    partial class UserItemAdmin
+    partial class RequestItem
     {
         /// <summary> 
         /// Required designer variable.

@@ -40,7 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Feeder.cs" />
-    <Compile Include="FeedersResponse.cs" />
+    <Compile Include="ArrayResponse.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="Schedule.cs" />
     <Compile Include="User.cs" />
