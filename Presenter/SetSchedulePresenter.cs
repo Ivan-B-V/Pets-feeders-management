@@ -70,5 +70,36 @@ namespace Presenter
 
             _setScheduleView.ImportSchedule(day1, day2);
         }
+
+        public void LoadSchedule(int feederID)
+		{
+            string[] day1;
+            string[] day2;
+            bool done = feederService.GetSchedule(feederID, out day1, out day2);
+
+            if (!done)
+            {
+                _setScheduleView.ShowMessage("shit happens");
+                return;
+            }
+
+            for (int i = 0; i < day1.Length; i++)
+			{
+                if (day1[i] == null)
+				{
+                    day1[i] = "0:0";
+				}
+			}
+
+            for (int i = 0; i < day2.Length; i++)
+            {
+                if (day2[i] == null)
+                {
+                    day2[i] = "0:0";
+                }
+            }
+
+            _setScheduleView.ImportSchedule(day1, day2);
+        }
     }
 }

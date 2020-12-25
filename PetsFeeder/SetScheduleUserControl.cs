@@ -22,6 +22,7 @@ namespace PetsFeeder
             InitializeComponent();
             presenter = new SetSchedulePresenter(this);
             _feederID = feederID;
+            presenter.LoadSchedule(feederID);
         }
 
         private void SetScheduleUserControl_Load(object sender, EventArgs e)

@@ -183,5 +183,38 @@ namespace Model
 
 			return true;
 		}
+		public bool GetSchedule(int feederID, out string[] day1, out string[] day2)
+		{
+			day1 = new string[5];
+			day2 = new string[5];
+
+			Feeder feeder = GetFeeder(feederID);
+
+			if (feeder == null)
+			{
+				return false;
+			}
+
+			Schedule schedule = feeder.Schedule;
+
+			/*if (schedule == null)
+			{
+				return false;
+			}*/
+
+			string[] daySchedule = schedule.Day1;
+			for (int i = 0; i < daySchedule.Length; i++)
+			{
+				day1[i] = daySchedule[i];
+			}
+
+			daySchedule = schedule.Day1;
+			for (int i = 0; i < daySchedule.Length; i++)
+			{
+				day2[i] = daySchedule[i];
+			}
+
+			return true;
+		}
 	}
 }
