@@ -42,6 +42,10 @@ namespace Model
 			{
 				return null;
 			}
+			if (response.body == null)
+			{
+				return null;
+			}
 
 			Feeder newFeeder = new Feeder(response.body);
 			_currentUserData.UpdateFeeder(newFeeder);
