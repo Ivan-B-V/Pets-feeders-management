@@ -109,7 +109,7 @@ namespace Model
 			{
 				foreach (Feeder feeder in _currentUserData.GetFeeders())
 				{
-					if (feeder.FeederID == feederID)
+					if (feeder.FeederID.Equals(feederID))
 					{
 						feeder.Schedule = schedule;
 					}
@@ -126,7 +126,7 @@ namespace Model
 			Feeder feeder = null;
 			foreach (Feeder item in feeders)
 			{
-				if (item.FeederID == feederID)
+				if (item.FeederID.Equals(feederID))
 				{
 					feeder = item;
 					return feeder;

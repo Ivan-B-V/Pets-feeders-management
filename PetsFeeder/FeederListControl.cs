@@ -61,11 +61,6 @@ namespace PetsFeeder
             showFeederCustomizationPanel(feederID);
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
 		private void feedButton_Click(object sender, EventArgs e)
         {
             presenter.Feed(selectedFeederID);

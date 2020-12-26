@@ -19,10 +19,6 @@ namespace PetsFeeder
         FeederListItemPresenter presenter;
         private MyDelegate myDelegate;
         private int feederID;
-        private string feederName;
-        private string feederTag;
-        private int feederAmount;
-        private string stringCapacity;
         
         public FeedersListItem(MyDelegate sender, int feederID)
         {
@@ -45,10 +41,6 @@ namespace PetsFeeder
 
         public void UpdateFeederInformation(string feederName, string feederTag, int feederAmount)
 		{ 
-            this.feederName = feederName;
-            this.feederTag = feederTag;
-            this.feederAmount = feederAmount;
-            this.stringCapacity = feederAmount.ToString();
             feederNameLabel.Text = feederName;
             feederTagLabel.Text = feederTag;
             feederCapacityBar.Value = feederAmount;
