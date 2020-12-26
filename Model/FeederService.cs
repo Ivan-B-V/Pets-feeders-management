@@ -105,7 +105,7 @@ namespace Model
 			}
 			string message = response.headers["message"];
 
-			if ("Ok".Equals(message))//сообщение удачи. Изменить если надо
+			if ("ok".Equals(message.ToLower()))//сообщение удачи. Изменить если надо
 			{
 				foreach (Feeder feeder in _currentUserData.GetFeeders())
 				{

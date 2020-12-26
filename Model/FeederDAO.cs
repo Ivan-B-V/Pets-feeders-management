@@ -185,9 +185,9 @@ namespace Model
 			}
 			catch
 			{
-				return "shit happens";
+				return "Export failed";
 			}
-			return "OK";
+			return "Export succeed";
 		}
 
 		public string ImportSchedule(string fileName)

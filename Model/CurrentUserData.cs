@@ -31,6 +31,16 @@ namespace Model
 				userRequests.Add(log);
 			}
 		}
+		public void DeleteUserRequest(UserRequest request)
+		{
+			foreach (UserRequest req in userRequests)
+			{
+				if (req.UserID.Equals(request.UserID))
+				{
+					userRequests.Remove(req);
+				}
+			}
+		}
 		public ArrayList GetLogs()
 		{
 			return logs;
@@ -47,10 +57,6 @@ namespace Model
 		public void SetCurrentUser(User user)
 		{
 			_user = user;
-		}
-		public void AddFeeders(ArrayList feeders)
-		{
-			_user.AddFeeders(feeders);
 		}
 		public void AddFeeders(ArrayResponse response)
 		{

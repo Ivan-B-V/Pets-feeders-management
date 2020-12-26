@@ -37,7 +37,14 @@ namespace Entities
 		{
 			char[] useless = { '[', ']' };
 			char[] separator = { ',' };
-			//проверка на null
+			if (response == null)
+			{
+				UserID = "0";
+				Username = "DefaultName";
+				Password = "DefaultPassword";
+				feeders = new ArrayList();
+				return;
+			}
 
 			UserID = response.body["UserID"].GetString();
 			Username = response.body["Username"].GetString();
@@ -65,11 +72,6 @@ namespace Entities
 			feeders = new ArrayList();
 		}
 
-		public void AddFeeder(Feeder feeder)
-		{
-			feeders.Add(feeder);
-		}
-
 		public void AddFeeders(ArrayList newFeeders)
 		{
 			foreach (Feeder feeder in newFeeders)
@@ -87,7 +89,7 @@ namespace Entities
 		{
 			foreach (Feeder current in feeders)
 			{
-				if ((current.FeederID == feeder.FeederID) && (current.OwnerID == feeder.OwnerID))
+				if ((current.FeederID.Equals(feeder.FeederID)) && (current.OwnerID.Equals(feeder.OwnerID)))
 				{
 					current.Update(feeder);
 				}
