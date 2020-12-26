@@ -111,7 +111,9 @@ namespace Model
 				return null;
 			}
 
-			return "ok";
+			_currentUserData.DeleteUserRequest(request);
+			string message = response.headers["message"];
+			return message;
 		}
 
 		public string RemoveUserRequest(string ID)
@@ -124,21 +126,23 @@ namespace Model
 				return null;
 			}
 
-			return "ok";
+			_currentUserData.DeleteUserRequest(request);
+			string message = response.headers["message"];
+			return message;
 		}
 		public string ExportLogs(string fileName)
 		{
 			ArrayList logs = _currentUserData.GetLogs();
-
-			foreach(Log log in logs)
+			string message = "";
+			foreach (Log log in logs)
 			{
-				string message = _userDAO.ExportLogs(log, fileName);
+				message = _userDAO.ExportLogs(log, fileName);
 				if (message == null)
 				{
-					return "shit happens";
+					return "Export failed";
 				}
 			}
-			return "ok";
+			return message;
 		}
 	}
 }

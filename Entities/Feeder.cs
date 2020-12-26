@@ -32,14 +32,6 @@ namespace Entities
 			Type = type;
 		}
 
-		public Feeder(string id, int amo, string name, string tag)
-		{
-			FeederID = id;
-			AmountOfFeed = amo;
-			Name = name;
-			Tag = tag;
-		}
-
 		public Feeder(Dictionary<string, JsonElement> element)
 		{
 			AmountOfFeed = element["AmountOfFeed"].GetInt32();

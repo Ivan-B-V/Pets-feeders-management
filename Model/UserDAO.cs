@@ -261,7 +261,7 @@ namespace Model
 			{
 				return null;
 			}
-			return "OK";
+			return "Export succeed";
 		}
 	}
 }

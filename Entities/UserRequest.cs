@@ -14,7 +14,7 @@ namespace Entities
 
 		public UserRequest()
 		{
-
+			
 		}
 		public UserRequest(Dictionary<string, JsonElement> element)
 		{

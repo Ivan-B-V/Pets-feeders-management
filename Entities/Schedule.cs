@@ -14,7 +14,8 @@ namespace Entities
 
 		public Schedule()
 		{
-
+			Day1 = new string[0];
+			Day2 = new string[0];
 		}
 		public Schedule(ArrayList day1List, ArrayList day2List)
 		{
