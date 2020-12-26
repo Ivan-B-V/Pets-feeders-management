@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json;
 using Entities;
+using System.Collections;
 
 namespace Model
 {
@@ -23,7 +24,7 @@ namespace Model
 
 			Response response = _userDAO.SignIn(user);
 
-			if (response == null)
+			if (response == null || response.headers == null || response.body == null || response.body.Count == 0)
 			{
 				return null;
 			}
@@ -40,12 +41,104 @@ namespace Model
 
 			Response response = _userDAO.Register(user);
 
-			if (response == null)
+			if (response == null || response.headers == null)
 			{
 				return "shit happend";
 			}
 			string message = response.headers["message"];
 			return message;
+		}
+		public string LoadLogs()
+		{
+			ArrayResponse response = _userDAO.GetLogs(_currentUserData.GetUser());
+
+			if (response == null || response.headers == null || response.body == null)
+			{
+				return "shit happens";
+			}
+			
+			string message = response.headers["message"];
+			if (!"ok".Equals(message.ToLower()))
+			{
+				return message;
+			}
+
+			_currentUserData.ReplaceLogs(response);
+
+			return "OK";
+		}
+		public ArrayList GetLogs()
+		{
+			return _currentUserData.GetLogs();
+		}
+		public ArrayList GetRequests()
+		{
+			ArrayResponse response = _userDAO.GetUserRequests(_currentUserData.GetUser());
+
+			if (response == null || response.body == null)
+			{
+				return null;
+			}
+
+			_currentUserData.ReplaceUserRequests(response);
+
+			return _currentUserData.GetUserRequests();
+		}
+		public UserRequest GetRequest(string ID)
+		{
+			ArrayList requests = _currentUserData.GetUserRequests();
+
+			UserRequest request = null;
+			foreach (UserRequest item in requests)
+			{
+				if (item.UserID.Equals(ID))
+				{
+					request = item;
+					return request;
+				}
+			}
+
+			return null;
+		}
+
+		public string AcceptUserRequest(string ID)
+		{
+			UserRequest request = GetRequest(ID);
+			Response response = _userDAO.AcceptUserRequest(request);
+
+			if (response == null || response.headers == null || response.body == null)
+			{
+				return null;
+			}
+
+			return "ok";
+		}
+
+		public string RemoveUserRequest(string ID)
+		{
+			UserRequest request = GetRequest(ID);
+			Response response = _userDAO.RemoveUserRequest(request);
+
+			if (response == null || response.headers == null || response.body == null)
+			{
+				return null;
+			}
+
+			return "ok";
+		}
+		public string ExportLogs(string fileName)
+		{
+			ArrayList logs = _currentUserData.GetLogs();
+
+			foreach(Log log in logs)
+			{
+				string message = _userDAO.ExportLogs(log, fileName);
+				if (message == null)
+				{
+					return "shit happens";
+				}
+			}
+			return "ok";
 		}
 	}
 }

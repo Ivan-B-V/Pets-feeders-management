@@ -32,13 +32,13 @@ namespace Presenter
 				return;
 			}
 
-			if (("Username".Equals(login)) && ("11111111".Equals(password)) && ("11111111".Equals(passwordRepeat)))
+			if (("Username".Equals(login)) || ("11111111".Equals(password)) || ("11111111".Equals(passwordRepeat)))
 			{
 				_registrationView.ShowMessage("login or password not entered");
 				return;
 			}
 
-			if (password.Equals(passwordRepeat))
+			if (!password.Equals(passwordRepeat))
 			{
 				_registrationView.ShowMessage("passwords are not equal");
 				return;

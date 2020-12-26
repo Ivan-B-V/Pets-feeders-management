@@ -7,7 +7,7 @@ using System.Text.Json;
 
 namespace Entities
 {
-	public class FeedersResponse
+	public class ArrayResponse
 	{
 		public int statusCode { get; set; }
 		public Dictionary<string, string> headers { get; set; }

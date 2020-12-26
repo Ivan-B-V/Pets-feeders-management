@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Presenter.IViews
 {
-    public interface ISetScheduleView
-    {
-        void ImportSchedule(string[] day1, string[] day2);
-        void ShowMessage(string message);
-    }
+	public interface ILogsUserControlView
+	{
+		void ShowMessage(string message);
+		void ImportLogs(string username, string time, string data);
+	}
 }

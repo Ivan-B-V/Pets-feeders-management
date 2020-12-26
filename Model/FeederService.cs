@@ -20,9 +20,9 @@ namespace Model
 		}
 		public ArrayList GetFeeders()
 		{
-			FeedersResponse response = _feederDAO.GetFeeders();
+			ArrayResponse response = _feederDAO.GetFeeders();
 
-			if (response == null)
+			if (response == null || response.headers == null || response.body == null)
 			{
 				return null;
 			}
@@ -32,13 +32,13 @@ namespace Model
 			return _currentUserData.GetFeeders();
 		}
 
-		public Feeder Feed(int feederID)
+		public Feeder Feed(string feederID)
 		{
 			Feeder feeder = GetFeeder(feederID);
 
 			Response response = _feederDAO.Feed(feeder);
 
-			if (response == null)
+			if (response == null || response.body == null)
 			{
 				return null;
 			}
@@ -56,7 +56,7 @@ namespace Model
 			feeder.OwnerID = _currentUserData.GetUser().UserID;
 			Response response = _feederDAO.AddFeeder(feeder);
 
-			if (response == null)
+			if (response == null || response.headers == null || response.body == null)
 			{
 				return "shit happens";
 			}	
@@ -65,7 +65,7 @@ namespace Model
 			return message;
 		}
 
-		public Feeder ChangeProperties(int feederID, string name, string tag)
+		public Feeder ChangeProperties(string feederID, string name, string tag)
 		{
 			Feeder feeder = GetFeeder(feederID);
 			feeder.Name = name;
@@ -84,7 +84,7 @@ namespace Model
 			return newFeeder;
 		}
 
-		public string SetSchedule(int feederID, ArrayList day1, ArrayList day2)
+		public string SetSchedule(string feederID, ArrayList day1, ArrayList day2)
 		{
 			Schedule schedule = new Schedule(day1, day2);
 
@@ -109,7 +109,7 @@ namespace Model
 			{
 				foreach (Feeder feeder in _currentUserData.GetFeeders())
 				{
-					if (feeder.FeederID == feederID)
+					if (feeder.FeederID.Equals(feederID))
 					{
 						feeder.Schedule = schedule;
 					}
@@ -119,14 +119,14 @@ namespace Model
 			return message;
 		}
 
-		public Feeder GetFeeder(int feederID)
+		public Feeder GetFeeder(string feederID)
 		{
 			ArrayList feeders = _currentUserData.GetFeeders();
 
 			Feeder feeder = null;
 			foreach (Feeder item in feeders)
 			{
-				if (item.FeederID == feederID)
+				if (item.FeederID.Equals(feederID))
 				{
 					feeder = item;
 					return feeder;
@@ -134,6 +134,82 @@ namespace Model
 			}
 
 			return null;
+		}
+
+		public string ExportSchedule(ArrayList day1, ArrayList day2, string fileName)
+		{
+			Schedule schedule = new Schedule(day1, day2);
+
+			string result = _feederDAO.ExportSchedule(schedule, fileName);
+
+			return result;
+		}
+
+		public bool ImportSchedule(string fileName, out string[] day1, out string[] day2)
+		{
+			string result = _feederDAO.ImportSchedule(fileName);
+			Schedule schedule = null;
+			day1 = new string[0];
+			day2 = new string[0];
+			try
+			{
+				schedule = JsonSerializer.Deserialize<Schedule>(result);
+			}
+			catch
+			{
+				return false;
+			}
+
+			if (schedule == null)
+			{
+				return false;
+			}
+
+			day1 = new string[schedule.Day1.Length];
+			int i = 0;
+			foreach (string element in schedule.Day1)
+			{
+				day1[i] = element;
+				i++;
+			}
+
+			day2 = new string[schedule.Day2.Length];
+			i = 0;
+			foreach (string element in schedule.Day2)
+			{
+				day2[i] = element;
+				i++;
+			}
+
+			return true;
+		}
+		public bool GetSchedule(string feederID, out string[] day1, out string[] day2)
+		{
+			day1 = new string[5];
+			day2 = new string[5];
+
+			Feeder feeder = GetFeeder(feederID);
+
+			if (feeder == null)
+			{
+				return false;
+			}
+
+			Schedule schedule = feeder.Schedule;
+
+			string[] daySchedule = schedule.Day1;
+			for (int i = 0; i < daySchedule.Length; i++)
+			{
+				day1[i] = daySchedule[i];
+			}
+
+			daySchedule = schedule.Day1;
+			for (int i = 0; i < daySchedule.Length; i++)
+			{
+				day2[i] = daySchedule[i];
+			}
+
+			return true;
 		}
 	}
 }

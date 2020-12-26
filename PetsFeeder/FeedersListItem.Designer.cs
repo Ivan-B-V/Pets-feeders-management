@@ -28,26 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.FeederImageBox = new System.Windows.Forms.PictureBox();
 			this.feederNameLabel = new System.Windows.Forms.Label();
 			this.feederTagLabel = new System.Windows.Forms.Label();
 			this.feederCapacityBar = new System.Windows.Forms.ProgressBar();
+			this.feederCapacity = new System.Windows.Forms.Label();
+			this.FeederImageBox = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.FeederImageBox)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// FeederImageBox
-			// 
-			this.FeederImageBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-			this.FeederImageBox.BackColor = System.Drawing.Color.Transparent;
-			this.FeederImageBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-			this.FeederImageBox.Image = global::PetsFeeder.Properties.Resources.dog;
-			this.FeederImageBox.Location = new System.Drawing.Point(20, 11);
-			this.FeederImageBox.Name = "FeederImageBox";
-			this.FeederImageBox.Size = new System.Drawing.Size(128, 130);
-			this.FeederImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.FeederImageBox.TabIndex = 5;
-			this.FeederImageBox.TabStop = false;
 			// 
 			// feederNameLabel
 			// 
@@ -77,10 +64,35 @@
 			this.feederCapacityBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
 			this.feederCapacityBar.Location = new System.Drawing.Point(159, 116);
 			this.feederCapacityBar.Name = "feederCapacityBar";
-			this.feederCapacityBar.Size = new System.Drawing.Size(442, 23);
+			this.feederCapacityBar.Size = new System.Drawing.Size(432, 23);
 			this.feederCapacityBar.Step = 1;
 			this.feederCapacityBar.TabIndex = 9;
 			this.feederCapacityBar.Value = 50;
+			// 
+			// feederCapacity
+			// 
+			this.feederCapacity.AutoSize = true;
+			this.feederCapacity.BackColor = System.Drawing.Color.Transparent;
+			this.feederCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.feederCapacity.Location = new System.Drawing.Point(597, 115);
+			this.feederCapacity.Name = "feederCapacity";
+			this.feederCapacity.Size = new System.Drawing.Size(55, 24);
+			this.feederCapacity.TabIndex = 11;
+			this.feederCapacity.Text = "123%";
+			// 
+			// FeederImageBox
+			// 
+			this.FeederImageBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+			this.FeederImageBox.BackColor = System.Drawing.Color.Transparent;
+			this.FeederImageBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.FeederImageBox.Image = global::PetsFeeder.Properties.Resources.dog;
+			this.FeederImageBox.Location = new System.Drawing.Point(20, 11);
+			this.FeederImageBox.Name = "FeederImageBox";
+			this.FeederImageBox.Size = new System.Drawing.Size(128, 128);
+			this.FeederImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.FeederImageBox.TabIndex = 5;
+			this.FeederImageBox.TabStop = false;
 			// 
 			// FeedersListItem
 			// 
@@ -88,12 +100,14 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
 			this.BackColor = System.Drawing.Color.White;
+			this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.Controls.Add(this.feederCapacity);
 			this.Controls.Add(this.feederCapacityBar);
 			this.Controls.Add(this.feederTagLabel);
 			this.Controls.Add(this.feederNameLabel);
 			this.Controls.Add(this.FeederImageBox);
 			this.Name = "FeedersListItem";
-			this.Size = new System.Drawing.Size(660, 152);
+			this.Size = new System.Drawing.Size(658, 150);
 			this.Load += new System.EventHandler(this.FeedersListItem_Load);
 			this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FeedersListItem_MouseClick);
 			((System.ComponentModel.ISupportInitialize)(this.FeederImageBox)).EndInit();
@@ -108,5 +122,6 @@
         private System.Windows.Forms.Label feederNameLabel;
         private System.Windows.Forms.Label feederTagLabel;
         private System.Windows.Forms.ProgressBar feederCapacityBar;
-    }
+		private System.Windows.Forms.Label feederCapacity;
+	}
 }

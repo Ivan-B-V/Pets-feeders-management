@@ -10,9 +10,9 @@ namespace Entities
 	public class Feeder
 	{
 		public int AmountOfFeed { get; set; }
-		public int FeederID { get; set; }
+		public string FeederID { get; set; }
 		public string Name { get; set; }
-		public int OwnerID { get; set; }
+		public string OwnerID { get; set; }
 		public int PortionSize { get; set; }
 		public Schedule Schedule { get; set; }
 		public string Tag { get; set; }
@@ -32,7 +32,7 @@ namespace Entities
 			Type = type;
 		}
 
-		public Feeder(int id, int amo, string name, string tag)
+		public Feeder(string id, int amo, string name, string tag)
 		{
 			FeederID = id;
 			AmountOfFeed = amo;
@@ -43,8 +43,8 @@ namespace Entities
 		public Feeder(Dictionary<string, JsonElement> element)
 		{
 			AmountOfFeed = element["AmountOfFeed"].GetInt32();
-			FeederID = element["FeederID"].GetInt32();
-			OwnerID = element["OwnerID"].GetInt32();
+			FeederID = element["FeederID"].GetString();
+			OwnerID = element["OwnerID"].GetString();
 			PortionSize = element["PortionSize"].GetInt32();
 			Tag = element["Tag"].GetString();
 			Type = element["Type"].GetString();

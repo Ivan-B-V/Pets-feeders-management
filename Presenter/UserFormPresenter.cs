@@ -14,10 +14,12 @@ namespace Presenter
 	{
 		IUserView _userView;
 		FeederService feederService;
+		UserService userService;
 		public UserFormPresenter(IUserView userView)
 		{
 			_userView = userView;
 			feederService = new FeederService();
+			userService = new UserService();
 		}
 		public void ShowFeeders()
 		{
@@ -34,6 +36,15 @@ namespace Presenter
 				IDs.Add(feeder.FeederID);
 			}
 			_userView.ShowFeeders(IDs);
+		}
+		public void LoadLogs()
+		{
+			string message = userService.LoadLogs();
+			
+			if (!"ok".Equals(message.ToLower()))
+			{
+				_userView.ShowMessage(message);
+			}
 		}
 	}
 }

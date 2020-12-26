@@ -31,14 +31,12 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserForm));
 			this.barPanel = new System.Windows.Forms.Panel();
 			this.exitButton = new System.Windows.Forms.Button();
-			this.searchTextBox = new System.Windows.Forms.TextBox();
 			this.accountPanel = new System.Windows.Forms.Panel();
 			this.usernameLabel = new System.Windows.Forms.Label();
 			this.userPictureBox = new System.Windows.Forms.PictureBox();
 			this.addFeederButton = new System.Windows.Forms.Button();
 			this.panelMenu = new System.Windows.Forms.Panel();
 			this.selectedButtonPanel = new System.Windows.Forms.Panel();
-			this.helpButton = new System.Windows.Forms.Button();
 			this.myFeedersButton = new System.Windows.Forms.Button();
 			this.viewLogsButton = new System.Windows.Forms.Button();
 			this.contentPanel = new System.Windows.Forms.Panel();
@@ -54,7 +52,6 @@
 			this.barPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.barPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
 			this.barPanel.Controls.Add(this.exitButton);
-			this.barPanel.Controls.Add(this.searchTextBox);
 			this.barPanel.Controls.Add(this.accountPanel);
 			this.barPanel.Controls.Add(this.addFeederButton);
 			this.barPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -83,16 +80,6 @@
 			this.exitButton.Text = "X";
 			this.exitButton.UseVisualStyleBackColor = false;
 			this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-			// 
-			// searchTextBox
-			// 
-			this.searchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.searchTextBox.Location = new System.Drawing.Point(273, 26);
-			this.searchTextBox.MaxLength = 50;
-			this.searchTextBox.Name = "searchTextBox";
-			this.searchTextBox.Size = new System.Drawing.Size(244, 26);
-			this.searchTextBox.TabIndex = 2;
-			this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
 			// 
 			// accountPanel
 			// 
@@ -139,7 +126,7 @@
 			this.addFeederButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.addFeederButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.addFeederButton.ForeColor = System.Drawing.Color.White;
-			this.addFeederButton.Location = new System.Drawing.Point(587, 18);
+			this.addFeederButton.Location = new System.Drawing.Point(275, 15);
 			this.addFeederButton.Name = "addFeederButton";
 			this.addFeederButton.Size = new System.Drawing.Size(155, 39);
 			this.addFeederButton.TabIndex = 1;
@@ -152,7 +139,6 @@
 			this.panelMenu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
 			this.panelMenu.Controls.Add(this.selectedButtonPanel);
-			this.panelMenu.Controls.Add(this.helpButton);
 			this.panelMenu.Controls.Add(this.myFeedersButton);
 			this.panelMenu.Controls.Add(this.viewLogsButton);
 			this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -170,24 +156,6 @@
 			this.selectedButtonPanel.Name = "selectedButtonPanel";
 			this.selectedButtonPanel.Size = new System.Drawing.Size(10, 50);
 			this.selectedButtonPanel.TabIndex = 5;
-			// 
-			// helpButton
-			// 
-			this.helpButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.helpButton.BackColor = System.Drawing.Color.Transparent;
-			this.helpButton.Cursor = System.Windows.Forms.Cursors.Arrow;
-			this.helpButton.FlatAppearance.BorderSize = 0;
-			this.helpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.helpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.helpButton.ForeColor = System.Drawing.Color.White;
-			this.helpButton.Location = new System.Drawing.Point(0, 606);
-			this.helpButton.Name = "helpButton";
-			this.helpButton.Size = new System.Drawing.Size(250, 50);
-			this.helpButton.TabIndex = 4;
-			this.helpButton.Text = "Write us";
-			this.helpButton.UseVisualStyleBackColor = false;
-			this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
 			// 
 			// myFeedersButton
 			// 
@@ -250,7 +218,6 @@
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.barPanel.ResumeLayout(false);
-			this.barPanel.PerformLayout();
 			this.accountPanel.ResumeLayout(false);
 			this.accountPanel.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).EndInit();
@@ -264,14 +231,12 @@
 
         private System.Windows.Forms.Panel barPanel;
         private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Button helpButton;
         private System.Windows.Forms.Button myFeedersButton;
         private System.Windows.Forms.Button viewLogsButton;
         private System.Windows.Forms.Button addFeederButton;
         private System.Windows.Forms.Panel accountPanel;
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.PictureBox userPictureBox;
-        private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Panel selectedButtonPanel;
         private System.Windows.Forms.Panel contentPanel;

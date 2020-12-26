@@ -7,16 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Presenter.IViews;
+using Presenter;
+using System.Collections;
 
 namespace PetsFeeder
 {
-    public partial class AdminForm : Form
+    public partial class AdminForm : Form, IAdminFormView
     {
         Point lastPoint;
+        AdminFormPresenter presenter;
 
         public AdminForm()
         {
             InitializeComponent();
+            presenter = new AdminFormPresenter(this);
+            LoadLogs();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -24,23 +30,29 @@ namespace PetsFeeder
             Application.Exit();
         }
 
-        private void usersButton_Click(object sender, EventArgs e)
+        private void requestsButton_Click(object sender, EventArgs e)
         {
-            contentPanel.Controls.Clear();
-            AdminUsersControl adminUsersControl = new AdminUsersControl();
-            this.contentPanel.Controls.Add(adminUsersControl);
+            presenter.ShowRequests();
         }
+        public void ShowRequests(ArrayList requestsIDs)
+		{
+            if (requestsIDs == null)
+            {
+                return;
+            }
 
-        private void helpButton_Click(object sender, EventArgs e)
-        {
             contentPanel.Controls.Clear();
-            HelpUserControl helpUserControl = new HelpUserControl();
-            contentPanel.Controls.Add(helpUserControl);
+            AdminUsersControl adminUsersControl = new AdminUsersControl(requestsIDs);
+            this.contentPanel.Controls.Add(adminUsersControl);
         }
 
         private void logsButton_Click(object sender, EventArgs e)
         {
-          
+            LoadLogs();
+        }
+        private void LoadLogs()
+		{
+            presenter.LoadLogs();
             contentPanel.Controls.Clear();
             LogsUserControl logsUserControl = new LogsUserControl();
             this.contentPanel.Controls.Add(logsUserControl);
@@ -67,5 +79,29 @@ namespace PetsFeeder
                 lastPoint.Y = e.Y;
             }
         }
-    }
+
+        private void feedersButton_Click(object sender, EventArgs e)
+        {
+            presenter.ShowFeeders();
+        }
+
+        public void ShowFeeders(ArrayList feederIDs)
+		{
+            if (feederIDs == null)
+			{
+                return;
+			}
+            contentPanel.Controls.Clear();
+
+            AdminFeedersControl adminFeedersControl = new AdminFeedersControl(feederIDs);
+            contentPanel.Controls.Add(adminFeedersControl);
+            
+        }
+
+        public void ShowMessage(string message)
+		{
+            MessageBox.Show(message);
+		}
+
+	}
 }

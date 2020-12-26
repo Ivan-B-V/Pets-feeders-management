@@ -18,15 +18,15 @@ namespace Presenter
             _setScheduleView = setScheduleView;
             feederService = new FeederService();
         }
-        public void SetSchedule(int feederID, string[] day1, bool[] day1Check, string[] day2, bool[] day2Check)
+        public void SetSchedule(string feederID, string[] day1, bool[] day1Check, string[] day2, bool[] day2Check)
 		{
             ArrayList day1Schedule = new ArrayList();
             for (int i = 0; i < day1Check.Length; i++)
             { 
                 if (day1Check[i])
-				{
+        		{
                     day1Schedule.Add(day1[i]);
-				}
+        		}
             }
             ArrayList day2Schedule = new ArrayList();
             for (int i = 0; i < day2Check.Length; i++)
@@ -39,5 +39,70 @@ namespace Presenter
             string message = feederService.SetSchedule(feederID, day1Schedule, day2Schedule);
             _setScheduleView.ShowMessage(message);
 		}
+
+        public void ExportSchedule(string[] day1, string[] day2, string fileName)
+		{
+            ArrayList day1Schedule = new ArrayList();
+            for (int i = 0; i < day1.Length; i++)
+            {
+                day1Schedule.Add(day1[i]);
+            }
+            ArrayList day2Schedule = new ArrayList();
+            for (int i = 0; i < day2.Length; i++)
+            {
+                day2Schedule.Add(day2[i]);
+            }
+            string message = feederService.ExportSchedule(day1Schedule, day2Schedule, fileName);
+            if (!"ok".Equals(message.ToLower()))
+            {
+                _setScheduleView.ShowMessage(message);
+            }
+        }
+
+        public void ImportSchedule(string fileName)
+		{
+            string[] day1;
+            string[] day2;
+            bool done = feederService.ImportSchedule(fileName, out day1, out day2);
+
+            if (!done)
+			{
+                _setScheduleView.ShowMessage("shit happens");
+                return;
+			}
+
+            _setScheduleView.ImportSchedule(day1, day2);
+        }
+
+        public void LoadSchedule(string feederID)
+		{
+            string[] day1;
+            string[] day2;
+            bool done = feederService.GetSchedule(feederID, out day1, out day2);
+
+            if (!done)
+            {
+                _setScheduleView.ShowMessage("shit happens");
+                return;
+            }
+
+            for (int i = 0; i < day1.Length; i++)
+			{
+                if (day1[i] == null)
+				{
+                    day1[i] = "0:0";
+				}
+			}
+
+            for (int i = 0; i < day2.Length; i++)
+            {
+                if (day2[i] == null)
+                {
+                    day2[i] = "0:0";
+                }
+            }
+
+            _setScheduleView.ImportSchedule(day1, day2);
+        }
     }
 }

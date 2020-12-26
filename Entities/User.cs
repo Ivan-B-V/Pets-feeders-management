@@ -10,16 +10,16 @@ namespace Entities
 {
 	public class User
 	{
-		public int UserID { get; set; }
+		public string UserID { get; set; }
 		public string Username { get; set; }
 		public string Password { get; set; }
-		public int[] UserFeeders { get; set; }
+		public string[] UserFeeders { get; set; }
 
 		private ArrayList feeders;
 
 		public User()
 		{
-			UserID = 0;
+			UserID = "0";
 			Username = "DefaultName";
 			Password = "DefaultPassword";
 			feeders = new ArrayList();
@@ -27,7 +27,7 @@ namespace Entities
 
 		public User(string login, string password)
 		{
-			UserID = 0;
+			UserID = "0";
 			Username = login;
 			Password = password;
 			feeders = new ArrayList();
@@ -39,24 +39,29 @@ namespace Entities
 			char[] separator = { ',' };
 			//проверка на null
 
-			UserID = response.body["UserID"].GetInt32();
+			UserID = response.body["UserID"].GetString();
 			Username = response.body["Username"].GetString();
 			Password = response.body["Password"].GetString();
 
 			string str = response.body["UserFeeders"].ToString();
 			str = str.Trim(useless);
-			
-			string[] idsString = str.Split(separator);
-
-			int len = idsString.Length;
-
-			int[] arr = new int[len];
-			for (int i = 0; i < len; i++)
+			if ("".Equals(str))
 			{
-				arr[i] = int.Parse(idsString[i]);
+				UserFeeders = new string[0];
 			}
-			UserFeeders = arr;
+			else
+			{
+				string[] idsString = str.Split(separator);
 
+				int len = idsString.Length;
+
+				string[] arr = new string[len];
+				for (int i = 0; i < len; i++)
+				{
+					arr[i] = idsString[i];
+				}
+				UserFeeders = arr;
+			}
 			feeders = new ArrayList();
 		}
 

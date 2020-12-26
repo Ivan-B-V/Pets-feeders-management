@@ -12,18 +12,15 @@ using Presenter.IViews;
 
 namespace PetsFeeder
 {
-    public delegate void MyDelegate(int feederID);
+    public delegate void MyDelegate(string feederID);
 
     public partial class FeedersListItem : UserControl, IFeederListItemView
     {
         FeederListItemPresenter presenter;
         private MyDelegate myDelegate;
-        private int feederID;
-        private string feederName;
-        private string feederTag;
-        private int feederAmount;
+        private string feederID;
         
-        public FeedersListItem(MyDelegate sender, int feederID)
+        public FeedersListItem(MyDelegate sender, string feederID)
         {
             InitializeComponent();
             myDelegate = sender;
@@ -35,9 +32,6 @@ namespace PetsFeeder
         private void FeedersListItem_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.Transparent;
-            feederNameLabel.Text = feederName;
-            feederTagLabel.Text = feederTag;
-            feederCapacityBar.Value = feederAmount;
         }
 
         private void FeedersListItem_MouseClick(object sender, MouseEventArgs e)
@@ -47,17 +41,15 @@ namespace PetsFeeder
 
         public void UpdateFeederInformation(string feederName, string feederTag, int feederAmount)
 		{ 
-            this.feederName = feederName;
-            this.feederTag = feederTag;
-            this.feederAmount = feederAmount;
             feederNameLabel.Text = feederName;
             feederTagLabel.Text = feederTag;
             feederCapacityBar.Value = feederAmount;
+            feederCapacity.Text = feederAmount.ToString() + "%";
         }
 
-		public bool Equals(int feederID)
+		public bool Equals(string feederID)
 		{
-            if (this.feederID == feederID)
+            if (this.feederID.Equals(feederID))
             {
                 return true;
             }

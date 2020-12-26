@@ -19,9 +19,13 @@ namespace Presenter
 			feederService = new FeederService();
 		}
 
-		public void LoadData(int feederID)
+		public void LoadData(string feederID)
 		{
 			Feeder feeder = feederService.GetFeeder(feederID);
+			if (feeder == null)
+			{
+				return;
+			}
 			_feederListItemView.UpdateFeederInformation(feeder.Name, feeder.Tag, feeder.AmountOfFeed);
 		}
 	}

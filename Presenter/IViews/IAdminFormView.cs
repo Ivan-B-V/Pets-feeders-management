@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entities;
+using System.Collections;
 
 namespace Presenter.IViews
 {
-	public interface IFeederListControlView
+	public interface IAdminFormView
 	{
-		void UpdateSelectedFeeder(string name, string tag, int amount);
-		void SetFeederData(string name, string tag);
 		void ShowMessage(string message);
+		void ShowFeeders(ArrayList IDs);
+		void ShowRequests(ArrayList requestsIDs);
 	}
 }
