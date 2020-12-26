@@ -16,8 +16,8 @@ namespace PetsFeeder
     public partial class SetScheduleUserControl : UserControl, ISetScheduleView
     {
         SetSchedulePresenter presenter;
-        private int _feederID;
-        public SetScheduleUserControl(int feederID)
+        private string _feederID;
+        public SetScheduleUserControl(string feederID)
         {
             InitializeComponent();
             presenter = new SetSchedulePresenter(this);

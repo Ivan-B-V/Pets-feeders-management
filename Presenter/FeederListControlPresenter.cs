@@ -18,7 +18,7 @@ namespace Presenter
 			_feederListControlView = feederListControlView;
 			feederService = new FeederService();
 		}
-		public void Feed(int feederID)
+		public void Feed(string feederID)
 		{
 			Feeder newFeeder = feederService.Feed(feederID);
 			if (newFeeder == null)
@@ -28,12 +28,12 @@ namespace Presenter
 			}
 			_feederListControlView.UpdateSelectedFeeder(newFeeder.Name, newFeeder.Tag, newFeeder.AmountOfFeed);
 		}
-		public void ChangeProperties(int feederID, string name, string tag)
+		public void ChangeProperties(string feederID, string name, string tag)
 		{
 			Feeder newFeeder = feederService.ChangeProperties(feederID, name, tag);
 			_feederListControlView.UpdateSelectedFeeder(newFeeder.Name, newFeeder.Tag, newFeeder.AmountOfFeed);
 		}
-		public void GetFeederData(int feederID)
+		public void GetFeederData(string feederID)
 		{
 			Feeder feeder = feederService.GetFeeder(feederID);
 			_feederListControlView.UpdateSelectedFeeder(feeder.Name, feeder.Tag, feeder.AmountOfFeed);

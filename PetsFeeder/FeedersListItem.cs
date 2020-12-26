@@ -12,15 +12,15 @@ using Presenter.IViews;
 
 namespace PetsFeeder
 {
-    public delegate void MyDelegate(int feederID);
+    public delegate void MyDelegate(string feederID);
 
     public partial class FeedersListItem : UserControl, IFeederListItemView
     {
         FeederListItemPresenter presenter;
         private MyDelegate myDelegate;
-        private int feederID;
+        private string feederID;
         
-        public FeedersListItem(MyDelegate sender, int feederID)
+        public FeedersListItem(MyDelegate sender, string feederID)
         {
             InitializeComponent();
             myDelegate = sender;
@@ -47,9 +47,9 @@ namespace PetsFeeder
             feederCapacity.Text = feederAmount.ToString() + "%";
         }
 
-		public bool Equals(int feederID)
+		public bool Equals(string feederID)
 		{
-            if (this.feederID == feederID)
+            if (this.feederID.Equals(feederID))
             {
                 return true;
             }

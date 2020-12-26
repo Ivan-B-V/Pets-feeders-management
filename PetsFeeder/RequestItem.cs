@@ -15,8 +15,8 @@ namespace PetsFeeder
     public partial class RequestItem : UserControl, IRequestItemView
     {
         RequestItemPresenter presenter;
-        int requestID;
-        public RequestItem( int requestID)
+        string requestID;
+        public RequestItem(string requestID)
         {
             InitializeComponent();
             this.requestID = requestID;

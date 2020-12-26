@@ -29,6 +29,7 @@ namespace PetsFeeder
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Width = this.MinimumSize.Width;
+            presenter.ShowFeeders();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

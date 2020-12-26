@@ -16,7 +16,7 @@ namespace PetsFeeder
         public AdminUsersControl(ArrayList feederIDs)
         {
             InitializeComponent();
-            foreach (int feederID in feederIDs)
+            foreach (string feederID in feederIDs)
             {
                 RequestItem requestItem = new RequestItem(feederID);
                 usersListPanel.Controls.Add(requestItem);

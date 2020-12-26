@@ -15,7 +15,7 @@ namespace PetsFeeder
 {
     public partial class FeederListControl : UserControl, IFeederListControlView
     {
-        private int selectedFeederID;
+        private string selectedFeederID;
         private string selectedFeederName;
         private string selectedFeederTag;
         FeederListControlPresenter presenter;
@@ -31,7 +31,7 @@ namespace PetsFeeder
         {
             InitializeComponent();
 
-            foreach (int feederID in feederIDs)
+            foreach (string feederID in feederIDs)
             {
                 FeedersListItem feederform = new FeedersListItem(new MyDelegate(func), feederID);
                 feedersListPanel.Controls.Add(feederform);
@@ -48,7 +48,7 @@ namespace PetsFeeder
             selectedFeederTag = tag;
 		}
 
-        public void showFeederCustomizationPanel(int feederID)
+        public void showFeederCustomizationPanel(string feederID)
         {
             selectedFeederID = feederID;
             presenter.GetFeederData(feederID);
@@ -56,7 +56,7 @@ namespace PetsFeeder
             feederCustomizationPanel.Visible = true;
         }
 
-        private void func(int feederID)
+        private void func(string feederID)
         {
             showFeederCustomizationPanel(feederID);
         }

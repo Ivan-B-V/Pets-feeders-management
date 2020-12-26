@@ -16,13 +16,13 @@ namespace PetsFeeder
 		public AdminFeedersControl(ArrayList feederIDs)
 		{
 			InitializeComponent();
-			foreach (int feederID in feederIDs)
+			foreach (string feederID in feederIDs)
 			{
 				FeedersListItem feederform = new FeedersListItem(new MyDelegate(func), feederID);
 				flowFeedersPanel.Controls.Add(feederform);
 			}
 		}
-		private void func(int feederID)
+		private void func(string feederID)
 		{
 
 		}

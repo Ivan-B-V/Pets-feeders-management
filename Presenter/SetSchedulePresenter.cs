@@ -18,7 +18,7 @@ namespace Presenter
             _setScheduleView = setScheduleView;
             feederService = new FeederService();
         }
-        public void SetSchedule(int feederID, string[] day1, bool[] day1Check, string[] day2, bool[] day2Check)
+        public void SetSchedule(string feederID, string[] day1, bool[] day1Check, string[] day2, bool[] day2Check)
 		{
             ArrayList day1Schedule = new ArrayList();
             for (int i = 0; i < day1Check.Length; i++)
@@ -74,7 +74,7 @@ namespace Presenter
             _setScheduleView.ImportSchedule(day1, day2);
         }
 
-        public void LoadSchedule(int feederID)
+        public void LoadSchedule(string feederID)
 		{
             string[] day1;
             string[] day2;

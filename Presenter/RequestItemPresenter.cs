@@ -20,12 +20,12 @@ namespace Presenter
 			userService = new UserService();
 		}
 
-		public void GetUserRequest(int requestID)
+		public void GetUserRequest(string requestID)
 		{
 			UserRequest request = userService.GetRequest(requestID);
 			_requestItemView.UpdateInformation(request.Username);
 		}
-		public void AddUser(int ID)
+		public void AddUser(string ID)
 		{
 			string message = userService.AcceptUserRequest(ID);
 			if (message == null)
@@ -33,7 +33,7 @@ namespace Presenter
 				_requestItemView.ShowMessage("shit happend");
 			}
 		}
-		public void RemoveUser(int ID)
+		public void RemoveUser(string ID)
 		{
 			string message = userService.RemoveUserRequest(ID);
 			if (message == null)

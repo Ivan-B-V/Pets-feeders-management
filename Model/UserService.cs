@@ -84,14 +84,14 @@ namespace Model
 
 			return _currentUserData.GetUserRequests();
 		}
-		public UserRequest GetRequest(int ID)
+		public UserRequest GetRequest(string ID)
 		{
 			ArrayList requests = _currentUserData.GetUserRequests();
 
 			UserRequest request = null;
 			foreach (UserRequest item in requests)
 			{
-				if (item.UserID == ID)
+				if (item.UserID.Equals(ID))
 				{
 					request = item;
 					return request;
@@ -101,7 +101,7 @@ namespace Model
 			return null;
 		}
 
-		public string AcceptUserRequest(int ID)
+		public string AcceptUserRequest(string ID)
 		{
 			UserRequest request = GetRequest(ID);
 			Response response = _userDAO.AcceptUserRequest(request);
@@ -114,7 +114,7 @@ namespace Model
 			return "ok";
 		}
 
-		public string RemoveUserRequest(int ID)
+		public string RemoveUserRequest(string ID)
 		{
 			UserRequest request = GetRequest(ID);
 			Response response = _userDAO.RemoveUserRequest(request);

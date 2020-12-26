@@ -13,7 +13,7 @@ namespace Entities
 		public string UserID { get; set; }
 		public string Username { get; set; }
 		public string Password { get; set; }
-		public int[] UserFeeders { get; set; }
+		public string[] UserFeeders { get; set; }
 
 		private ArrayList feeders;
 
@@ -47,7 +47,7 @@ namespace Entities
 			str = str.Trim(useless);
 			if ("".Equals(str))
 			{
-				UserFeeders = new int[0];
+				UserFeeders = new string[0];
 			}
 			else
 			{
@@ -55,10 +55,10 @@ namespace Entities
 
 				int len = idsString.Length;
 
-				int[] arr = new int[len];
+				string[] arr = new string[len];
 				for (int i = 0; i < len; i++)
 				{
-					arr[i] = int.Parse(idsString[i]);
+					arr[i] = idsString[i];
 				}
 				UserFeeders = arr;
 			}

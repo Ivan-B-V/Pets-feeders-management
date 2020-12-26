@@ -18,7 +18,7 @@ namespace Model
 		private const string GetLogsURL = "https://zl4faz06ua.execute-api.eu-central-1.amazonaws.com/prod";
 		private const string GetUserRequestsURL = "https://83zswxc86d.execute-api.eu-central-1.amazonaws.com/prod";
 		private const string AcceptUserRequestURL = "https://7zws77q7z3.execute-api.eu-central-1.amazonaws.com/prod";
-		private const string RemoveUserRequestURL = "";
+		private const string RemoveUserRequestURL = "https://0mi8ejeyb6.execute-api.eu-central-1.amazonaws.com/prod";
 		public Response SignIn(User user)
 		{
 			string requestString = JsonSerializer.Serialize<User>(user);

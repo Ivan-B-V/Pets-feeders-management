@@ -19,7 +19,7 @@ namespace Presenter
 			feederService = new FeederService();
 		}
 
-		public void LoadData(int feederID)
+		public void LoadData(string feederID)
 		{
 			Feeder feeder = feederService.GetFeeder(feederID);
 			if (feeder == null)

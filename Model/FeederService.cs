@@ -32,7 +32,7 @@ namespace Model
 			return _currentUserData.GetFeeders();
 		}
 
-		public Feeder Feed(int feederID)
+		public Feeder Feed(string feederID)
 		{
 			Feeder feeder = GetFeeder(feederID);
 
@@ -65,7 +65,7 @@ namespace Model
 			return message;
 		}
 
-		public Feeder ChangeProperties(int feederID, string name, string tag)
+		public Feeder ChangeProperties(string feederID, string name, string tag)
 		{
 			Feeder feeder = GetFeeder(feederID);
 			feeder.Name = name;
@@ -84,7 +84,7 @@ namespace Model
 			return newFeeder;
 		}
 
-		public string SetSchedule(int feederID, ArrayList day1, ArrayList day2)
+		public string SetSchedule(string feederID, ArrayList day1, ArrayList day2)
 		{
 			Schedule schedule = new Schedule(day1, day2);
 
@@ -119,7 +119,7 @@ namespace Model
 			return message;
 		}
 
-		public Feeder GetFeeder(int feederID)
+		public Feeder GetFeeder(string feederID)
 		{
 			ArrayList feeders = _currentUserData.GetFeeders();
 
@@ -183,7 +183,7 @@ namespace Model
 
 			return true;
 		}
-		public bool GetSchedule(int feederID, out string[] day1, out string[] day2)
+		public bool GetSchedule(string feederID, out string[] day1, out string[] day2)
 		{
 			day1 = new string[5];
 			day2 = new string[5];

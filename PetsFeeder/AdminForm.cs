@@ -22,6 +22,7 @@ namespace PetsFeeder
         {
             InitializeComponent();
             presenter = new AdminFormPresenter(this);
+            LoadLogs();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -47,6 +48,10 @@ namespace PetsFeeder
 
         private void logsButton_Click(object sender, EventArgs e)
         {
+            LoadLogs();
+        }
+        private void LoadLogs()
+		{
             presenter.LoadLogs();
             contentPanel.Controls.Clear();
             LogsUserControl logsUserControl = new LogsUserControl();
